@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-Here are my configuration files and folders. Im constantly updating my .vimrc and .vim, if you like my vim setup, feel free to clone it or simply use it as an example and make your personal configuration! :smile::+1:
+Here are my configuration files and folders. Im constantly updating my .vimrc, if you like my vim setup, feel free to clone it or simply use it as an example and make your personal configuration! :smile::+1:
 
 This is how my vim setup looks like.
 ![vim-config](https://github.com/kriox26/dotfiles/blob/master/vim-config.png)
