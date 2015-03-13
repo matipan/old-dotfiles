@@ -22,7 +22,7 @@ Full path fuzzy file finder for vim. https://github.com/kien/ctrlp.vim
 
 **Tabular**
 
-Vim script for text filtering and alignment. https://github.com/vim-scripts/Tabular
+Vim script for text filtering and alignment. https://github.com/godlygeek/tabular
 
 **NERDTree**
 
