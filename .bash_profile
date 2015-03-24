@@ -9,9 +9,11 @@
 alias vimbp='vim ~/.bash_profile' #For faster openning of .bash_profile
 alias sbp='source ~/.bash_profile' #For faster sourcing 
 alias vimrc='vim ~/.vimrc'	#convenient way for open .vimrc
+alias vimgc='vim ~/.gitconfig' #vimgc: open .gitconfig
 alias c='clear' #I'm lazy, so what...
 alias ls='ls -G' # Displays the list of dir and files with colors
 alias la='ls -Ga' #Displays all hidden files and reg files with la
+alias lf='ls -GFlash' #Displays hidden and reg files with usefull info
 
 #Networking
 alias myip='curl ip.appspot.com' 		#myip: public facing IP address

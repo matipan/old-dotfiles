@@ -30,7 +30,7 @@ A tree explorer for vim. https://github.com/scrooloose/nerdtree
 
 **NERDCommenter**
 
-Vim plugin better commenting. https://github.com/scrooloose/nerdcommenter
+Vim plugin for better commenting. https://github.com/scrooloose/nerdcommenter
 
 **Vim-surround**
 
