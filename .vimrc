@@ -19,6 +19,9 @@
 "Open vimrc while on normal mode
 	nnoremap <leader>v :tabedit $MYVIMRC<CR>
 
+"Use Vim configurations instead of Vi
+	set nocompatible
+
 "Set to autoread when a file is change from the ouside
 	set autoread
 
@@ -34,8 +37,9 @@
 " display incomplete commands
 	set showcmd	
 
-"Use Vim configurations instead of Vi
-	set nocompatible
+"Enable per-directory .vimrc files and disable unasfe commands in them
+	set exrc
+	"set secure
 
 "Reduce timeout after <ESC> is pressed
 	set ttimeout
