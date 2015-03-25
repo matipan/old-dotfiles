@@ -1,4 +1,5 @@
-" Vim configuration by - Matias Pan <matias.pan26@gmail.com> - 
+" Vim configuration by - Matias Pan <matias.pan26@gmail.com> -
+" https://github.com/kriox26
 "
 " 1 -- General settings
 " 2 -- GUI (Graphical user interface)
