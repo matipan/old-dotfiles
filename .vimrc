@@ -18,7 +18,7 @@
 	let mapleader = "-"
 
 "Open vimrc while on normal mode
-	nnoremap <leader>v :tabedit $MYVIMRC<CR>
+	nnoremap <leader>v :edit $MYVIMRC<CR>
 
 "Use Vim configurations instead of Vi
 	set nocompatible
@@ -61,7 +61,7 @@
 	  augroup vimrcEx
 	  au!
   " For all text files set 'textwidth' to 78 characters.
-	  autocmd FileType text setlocal textwidth=78
+	  autocmd FileType text setlocal textwidth=120
   " When editing a file, always jump to the last known cursor position.
   " don't do it when the mark is in the first line, that is the default
   " position when opening a file. 
