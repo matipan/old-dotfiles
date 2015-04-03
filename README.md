@@ -5,7 +5,7 @@ Here are my configuration files and folders. Im constantly updating my .vimrc, i
 
 This is how my vim setup looks like.
 ![vim-config](https://github.com/kriox26/dotfiles/blob/master/vim-config.png)
-![vim-config2](https://github.com.kriox26/dotfiles/blob/mater/vim-config2.png)
+![vim-config2](https://github.com/kriox26/dotfiles/blob/mater/vim-config2.png)
 
 ###Plugins installed
 
