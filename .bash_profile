@@ -1,4 +1,4 @@
-#Maintainer: Matias Pan - https://github.com/kriox26
+#Maintainer: Matias Pan - https://github.com/kriox26/dotfiles
 
 #Main configs
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
