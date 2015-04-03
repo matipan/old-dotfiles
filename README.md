@@ -4,8 +4,8 @@ dotfiles
 Here are my configuration files and folders. Im constantly updating my .vimrc, if you like my vim setup, feel free to clone it or simply use it as an example and make your personal configuration! :smile::+1:
 
 This is how my vim setup looks like.
-![vim-config](https://github.com/kriox26/dotfiles/blob/master/vim-config.png)
-![vim-config2](https://github.com/kriox26/dotfiles/blob/mater/vim-config2.png)
+![vim-config with nerdtree](https://github.com/kriox26/dotfiles/blob/master/vim-config.png)
+![vim-config2 with tagbar](https://github.com/kriox26/dotfiles/blob/mater/vim-config2.png)
 
 ###Plugins installed
 
