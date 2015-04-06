@@ -9,75 +9,77 @@ This is how my vim setup looks like.
 
 ###Plugins installed
 
-**Vim-airline**
+**[Vim-airline](https://github.com/bling/vim-airline)**
 
-lean & mean status/tabline. https://github.com/bling/vim-airline
+lean & mean status/tabline. 
 
-**Ag**
+**[Ag](https://github.com/ervandew/ag)**
 
-Vim plugin to search using the silver searcher. https://github.com/ervandew/ag
+Vim plugin to search using the silver searcher. 
 
-**CtrlP**
+**[CtrlP](https://github.com/kien/ctrlp.vim)**
 
-Full path fuzzy file finder for vim. https://github.com/kien/ctrlp.vim
+Full path fuzzy file finder for vim. 
 
-**Tabular**
+**[Tabular](https://github.com/godlygeek/tabular)**
 
-Vim script for text filtering and alignment. https://github.com/godlygeek/tabular
+Vim script for text filtering and alignment. 
 
-**NERDTree**
+**[NERDTree](https://github.com/scrooloose/nerdtree)**
 
-A tree explorer for vim. https://github.com/scrooloose/nerdtree
+A tree explorer for vim. 
 
-**NERDCommenter**
+**[NERDCommenter](https://github.com/scrooloose/nerdcommenter)**
 
-Vim plugin for better commenting. https://github.com/scrooloose/nerdcommenter
+Vim plugin for better commenting. 
 
-**Vim-surround**
+**[Vim-surround](https://github.com/tpope/vim-surround)**
 
-Enclose text objects. https://github.com/tpope/vim-surround
+Enclose text objects. 
 
-**Tagbar**
+**[Tagbar](https://github.com/majutsushi/tagbar)**
 
-Displays tags in a window. https://github.com/majutsushi/tagbar
+Displays tags in a window. 
 
-**Syntastic**
+**[Syntastic](https://github.com/scrooloose/syntastic)**
 
-Syntax checker for vim. https://github.com/scrooloose/syntastic
+Syntax checker for vim. 
 
-**Vim-fugitive**
+**[Vim-fugitive](https://github.com/tpope/vim-fugitive)**
 
-Awesome git wrapper for vim. https://github.com/tpope/vim-fugitive
+Awesome git wrapper for vim. 
 
-**Vim-exchange**
+**[Vim-exchange](https://github.com/tommcdo/vim-exchange)**
 
-Easy text exchange operator. https://github.com/tommcdo/vim-exchange
+Easy text exchange operator. 
 
-**Vim-multiple-cursors**
+**[Vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)**
 
-Multiple selection. https://github.com/terryma/vim-multiple-cursors
+Multiple selection. 
 
-**Vim-ruby**
+**[Vim-ruby](https://github.com/vim-ruby/vim-ruby)**
 
-For better syntax highlight and integration. https://github.com/vim-ruby/vim-ruby
+For better syntax highlight and integration. 
 
-**Vim-rails**
+**[Vim-rails](https://github.com/tpope/vim-rails)**
 
-Ruby on rails power tools. https://github.com/tpope/vim-rails
+Ruby on rails power tools. 
 
-**Vim-bundler**
+**[Vim-bundler](https://github.com/tpope/vim-bundler)**
 
-Lightweight support for Ruby's bundler. https://github.com/tpope/vim-bundler
+Lightweight support for Ruby's bundler. 
 
 **[Vim-vjde](https://github.com/cespare/vjde)**
-Turn your vim into an IDE(projects manager). https://github.com/cespare/vjde
-**YouCompleteMe**
 
-Really cool code-completion engine. https://github.com/Valloric/YouCompleteMe
+Turn your vim into an IDE(projects manager). 
 
-**UltiSnips**
+**[YouCompleteMe](https://github.com/Valloric/YouCompleteMe)**
 
-Awesome snippets(works really good with YCM). https://github.com/SirVer/ultisnips
+Really cool code-completion engine. 
+
+**[UltiSnips](https://github.com/SirVer/ultisnips)**
+
+Awesome snippets(works really good with YCM). 
 
 
 PD: I recommend to use pathogen as a plugin manager :smiley: :ok_hand:
