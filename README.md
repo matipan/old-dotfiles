@@ -69,6 +69,8 @@ Ruby on rails power tools. https://github.com/tpope/vim-rails
 
 Lightweight support for Ruby's bundler. https://github.com/tpope/vim-bundler
 
+**Vim-vjde[https://github.com/cespare/vjde]**
+Turn your vim into an IDE(projects manager). https://github.com/cespare/vjde
 **YouCompleteMe**
 
 Really cool code-completion engine. https://github.com/Valloric/YouCompleteMe
