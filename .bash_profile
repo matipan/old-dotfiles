@@ -16,6 +16,7 @@
 	alias .3='cd ../../../'
 	alias .4='cd ../../../../'
 	alias .5='cd ../../../../../'
+	alias .6='cd ../../../../../../'
 	alias c='clear' #I'm lazy, so what...
 	alias e='exit'
 	alias o='open'
