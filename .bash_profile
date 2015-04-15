@@ -25,6 +25,8 @@
 	alias ls='ls -G'  #Displays a list of dirs and files with colors
 	alias la='ls -Ga' #Displays all hidden files and reg files with la
 	alias lf='ls -GFlash' #Displays hidden and reg files with usefull info
+	alias del='rmtrash' 
+	alias trash='rmtrash' #del / trash are shorter than rmtrash
 
 #Networking
 	alias myip='curl ip.appspot.com' 		#myip: public facing IP address
@@ -32,6 +34,10 @@
 	alias ipInfo0='ipconfig getpacket en0'	#ipInfo0: Get info on connections for en0
 	alias ipInfo1='ipconfig getpacket en1'	#ipInfo1: Get info on connections for en1
 	alias openPorts='sudo lsof -i | grep LISTEN'	#openPorts: All listening connections
+
+#Brew
+	alias bupd='brew update'  				#bupd = brew update
+	alias bdtr='brew doctor'				#bdtr = brew doctor
 
 #Git shortcuts alias
 	alias gadd='git add'
