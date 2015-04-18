@@ -39,6 +39,8 @@
 	alias bupd='brew update'  				#bupd = brew update
 	alias bdtr='brew doctor'				#bdtr = brew doctor
 
+#For developing
+	alias r='ruby'
 #Git shortcuts alias
 	alias gadd='git add'
 	alias gstatus='git status'
