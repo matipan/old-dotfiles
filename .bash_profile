@@ -40,7 +40,8 @@
 	alias bdtr='brew doctor'				#bdtr = brew doctor
 
 #For developing
-	alias r='ruby'
+	alias irbs='irb --simple-prompt'
+
 #Git shortcuts alias
 	alias gadd='git add'
 	alias gstatus='git status'
