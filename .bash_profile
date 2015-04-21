@@ -41,6 +41,7 @@
 
 #For developing
 	alias irbs='irb --simple-prompt'
+	alias irbsc='irb --simple-prompt -rrbconfig'
 
 #Git shortcuts alias
 	alias gadd='git add'
