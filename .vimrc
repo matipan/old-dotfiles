@@ -60,8 +60,9 @@
   " Put these in an autocmd group, so that we can delete them easily.
 	  augroup vimrcEx
 	  au!
-  " For all text files set 'textwidth' to 78 characters.
+  " For all text files set 'textwidth' to 120 characters.
 	  autocmd FileType text setlocal textwidth=120
+	  autocmd FileType ruby set tabstop=8|set shiftwidth=2|set expandtab
   " When editing a file, always jump to the last known cursor position.
   " don't do it when the mark is in the first line, that is the default
   " position when opening a file. 
