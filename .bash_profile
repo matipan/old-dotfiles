@@ -5,7 +5,14 @@
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-#Usefull alias
+#Change prompt
+#export PS1="________________________________________________________________________________\n| \w @ \h (\u) \n| => "
+#export PS2="| => "
+export PS1="\[\033[90m\]\u\[\033[1;94m\]@\[\033[90m\]\h: \[\033[1;95m\]\w\[\033[1;95m\]: \[\033[m\]\$ "
+export CLICOLOR=1
+
+
+#usefull alias
 	alias vimbp='vim ~/.bash_profile' #For faster openning of .bash_profile
 	alias sbp='source ~/.bash_profile' #For faster sourcing 
 	alias vimrc='vim ~/.vimrc'	#convenient way for open .vimrc
@@ -34,6 +41,8 @@
 	alias ipInfo0='ipconfig getpacket en0'	#ipInfo0: Get info on connections for en0
 	alias ipInfo1='ipconfig getpacket en1'	#ipInfo1: Get info on connections for en1
 	alias openPorts='sudo lsof -i | grep LISTEN'	#openPorts: All listening connections
+	alias unloadlaunchctl='sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.discoveryd.plist'
+	alias loadlaunchctl='sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.discoveryd.plist'
 
 #Brew
 	alias bupd='brew update'  				#bupd = brew update
