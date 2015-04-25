@@ -105,6 +105,7 @@
 	"set background=dark
 	"let g:solarized_termcolors = 256
 	
+	"hola
 "Set colorscheme
 	colorscheme kolor
 
