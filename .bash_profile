@@ -54,7 +54,7 @@ export CLICOLOR=1
 #Git shortcuts alias
 	alias gadd='git add'
 	alias gstatus='git status'
-	alias gcommit='git commit -m'
+	alias gcommit='git commit'
 	alias glog='git log'
 	alias gpush='git push -u origin master'
 	alias gclone='git clone'
