@@ -8,9 +8,8 @@
 #Change prompt
 #export PS1="________________________________________________________________________________\n| \w @ \h (\u) \n| => "
 #export PS2="| => "
-export PS1="\[\033[90m\]\u\[\033[1;94m\]@\[\033[90m\]\h: \[\033[1;95m\]\w\[\033[1;95m\]: \[\033[m\]\$\[\033[m\] "
+export PS1="\[\033[90m\]\u\[\033[1;94m\]@\[\033[90m\]\h: \[\033[1;95m\]\w\[\033[1;95m\]: \[\033[1;94m\]> \[\033[m\]"
 export CLICOLOR=1
-
 
 #usefull alias
 	alias vimbp='vim ~/.bash_profile' #For faster openning of .bash_profile
