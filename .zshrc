@@ -82,8 +82,10 @@ source $ZSH/oh-my-zsh.sh
 #Basic alias
 	alias vimbp='vim ~/.bash_profile' #For faster openning of .bash_profile
 	alias sbp='source ~/.bash_profile' #For faster sourcing 
+	alias sz='source ~/.zshrc'
 	alias vimrc='vim ~/.vimrc'	#convenient way for open .vimrc
 	alias vimgc='vim ~/.gitconfig' #vimgc: open .gitconfig
+	alias vimz='vim ~/.zshrc'
 	alias c='clear' #I'm lazy, so what...
 	alias e='exit'
 	alias o='open'
@@ -106,3 +108,8 @@ source $ZSH/oh-my-zsh.sh
 #Some for git
 	alias gstatus='git status'
 	alias gpush='git push -u origin master'
+
+#tmux
+	alias tmuxa='tmux attach -t'
+	alias tmuxk='tmux kill-session -t'
+	alias tls='tmux ls'
