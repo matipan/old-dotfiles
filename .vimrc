@@ -199,7 +199,7 @@
 	
 "set syntastic mode active at startup with certain fyletype
     let g:syntastic_mode_map = { "mode": "active",
-                               \ "active_filetypes": ["ruby", "php","c","javascript","css","cpp","java","go"],
+                               \ "active_filetypes": ["ruby", "php","c","javascript","css","cpp","java","go","python"],
                                \ "passive_filetypes": [] }
 
 """"""""""""""""""""""""""""""""""""""""""""""""
