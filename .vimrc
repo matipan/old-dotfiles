@@ -102,12 +102,14 @@
 
 "Use 256 color(only when terminal support it)
 	set t_Co=256		
-
+	"set background=dark
+	"let g:solarized_termcolors = 256
+	
 "Set colorscheme
 	colorscheme kolor
 
 "original molokai background
-	let g:molokai_original=0 
+	let g:molokai_original=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => Searching settings
