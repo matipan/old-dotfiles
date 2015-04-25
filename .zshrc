@@ -113,3 +113,4 @@ source $ZSH/oh-my-zsh.sh
 	alias tmuxa='tmux attach -t'
 	alias tmuxk='tmux kill-session -t'
 	alias tls='tmux ls'
+	alias tns='tmux new-session'
