@@ -9,8 +9,8 @@ PR_PROMPT='➤'
 
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
 
-PROMPT='%{$fg_bold[green]%}╭─ %{$fg[cyan]%}%~ %{$fg_bold[green]%}:: %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}
-%{$fg_bold[green]%}╰─%{$fg_bold[green]%}$PR_PROMPT %{$fg[red]%}\$ % %{$reset_color%}'
+PROMPT='%{$fg_bold[white]%}╭─ %{$fg[cyan]%}%~ %{$fg_bold[white]%}:: %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}
+%{$fg_bold[white]%}╰─%{$fg_bold[white]%}$PR_PROMPT %{$fg[red]%}\$ % %{$reset_color%}'
 
 #${ret_status}%{$fg_bold[green]%}%p 
 
