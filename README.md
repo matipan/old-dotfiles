@@ -1,13 +1,15 @@
 dotfiles
 ========
 
-Here are my configuration files and folders. Im constantly updating my .vimrc, if you like my vim setup, feel free to clone it or simply use it as an example and make your personal configuration! :smile::+1:
+This my Vim/Tmux setup, using oh_my_zsh terminal. I'm constantly updating my .vimrc and .tmux.conf. If you liked my config, feel free to clone it, or simply use it as an example an build your own setup!! :smile::+1:
 
-This is how my vim setup looks like.
+Here are a couple of pictures with vim, tmux and some plugins
+![vim-tmux](https://github.com/kriox26/dotfiles/blob/master/vim-tmux.png)
+![tmux-top configs](https://github.com/kriox26/dotfiles/blob/master/tmux.png)
 ![vim-config with nerdtree](https://github.com/kriox26/dotfiles/blob/master/vim-config.png)
 ![vim-config2 with tagbar](https://github.com/kriox26/dotfiles/blob/master/vim-config2.png)
 
-###Plugins installed
+###Vim-plugins installed
 
 **[Vim-airline](https://github.com/bling/vim-airline)**
 
