@@ -109,7 +109,7 @@
 	colorscheme kolor
 
 "original molokai background
-	let g:molokai_original=0
+	"let g:molokai_original=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " => Searching settings
