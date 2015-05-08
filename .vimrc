@@ -106,7 +106,7 @@
 	"let g:solarized_termcolors = 256
 	
 "Set colorscheme
-	colorscheme railscasts
+	colorscheme kolor
 
 "original molokai background
 	"let g:molokai_original=1
@@ -193,7 +193,7 @@
 	let g:airline_section_c = '%t' "type of file on section C of status line
 	let g:airline#extensions#tabline#left_sep=''
 	let g:airline#extensions#tabline#left_alt_sep=''
-	let g:airline_theme= 'wombat'
+	let g:airline_theme= 'mkolor'
 	
 "Extensions configs for airline status bar
 	let g:airline#extensions#disable_rtp_load = 1
