@@ -108,6 +108,7 @@ source $ZSH/oh-my-zsh.sh
 #Some for git
 	alias gstatus='git status'
 	alias gpush='git push -u origin master'
+	alias gdiff='git diff'
 
 #tmux
 	alias tmuxa='tmux attach -t'
