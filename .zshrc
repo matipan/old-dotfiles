@@ -97,6 +97,10 @@ source $ZSH/oh-my-zsh.sh
 	alias del='rmtrash' 
 	alias trash='rmtrash' #del / trash are shorter than rmtrash
 
+#FPP alias
+	alias lp = 'ls | fpp' #list with simple gui
+	alias gstfpp = 'git status | fpp' #same as lp but with non staged files
+
 #Brew
 	alias bupd='brew update'  				#bupd = brew update
 	alias bdtr='brew doctor'				#bdtr = brew doctor
