@@ -64,6 +64,7 @@
 	  autocmd FileType text setlocal textwidth=120
 	  autocmd FileType ruby set tabstop=8|set shiftwidth=2|set expandtab
 	  autocmd FileType python set tabstop=8|set shiftwidth=2|set expandtab
+	  autocmd FileType erb set tabsopt=8|set shiftwidth=3|set expandtab
   " When editing a file, always jump to the last known cursor position.
   " don't do it when the mark is in the first line, that is the default
   " position when opening a file. 
@@ -106,7 +107,7 @@
 	"let g:solarized_termcolors = 256
 	
 "Set colorscheme
-	colorscheme kolor
+	colorscheme symfony
 
 "original molokai background
 	"let g:molokai_original=1
