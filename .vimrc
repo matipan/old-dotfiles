@@ -266,6 +266,23 @@
 
 "Set LEADER + r + n to change to relative number of lines
 	nnoremap <leader>rn :set relativenumber<return>
+
+"For basic pair completion of {}
+	inoremap {			{}<Left>
+	inoremap {<CR>		{<CR>}<Esc>O
+	inoremap {{			{
+	inoremap {}			{}
+
+"To handle () and [] pair completion, we change a bit the mapping
+	inoremap (			()<Left>
+	inoremap <expr>	)	strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+	inoremap [			[]<Left>
+	inoremap <expr>	]	strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+
+"For single and double quotes we do the following
+	inoremap <expr> ' 	strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
+	inoremap "			""<Left>
+	inoremap <			<><Left>
 	
 "Set control + e to sparkup completion
 	let g:sparkupExecuteMapping='<C-e>'
