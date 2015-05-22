@@ -106,7 +106,8 @@
 	"set background=dark
 	"let g:solarized_termcolors = 256
 	
-"Set colorscheme
+"Set colorscheme, i modified the symfony colorscheme, it's not the one by
+"default
 	colorscheme symfony
 
 "original molokai background
