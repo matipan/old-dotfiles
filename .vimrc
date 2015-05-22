@@ -269,7 +269,7 @@
 	nnoremap <leader>rn :set relativenumber<return>
 
 "For basic pair completion of {}
-	inoremap {			{}<Left>
+	inoremap {			{  }<Left><Left>
 	inoremap {<CR>		{<CR>}<Esc>O
 	inoremap {{			{
 	inoremap {}			{}
