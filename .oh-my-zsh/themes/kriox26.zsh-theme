@@ -1,4 +1,4 @@
-# make some aliases for the colours: (could use normal escape sequences too)
+# make some aliases for the colors: (could use normal escape sequences too)
 for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
   eval PR_$color='%{$fg[${(L)color}]%}'
 done
