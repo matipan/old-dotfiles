@@ -61,7 +61,7 @@
 	  augroup vimrcEx
 	  au!
   " For all text files set 'textwidth' to 120 characters.
-	  autocmd FileType text setlocal textwidth=120
+	  autocmd FileType text setlocal textwidth=400
 	  autocmd FileType ruby set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
 	  autocmd FileType python set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
 	  autocmd FileType erb set tabsopt=4|set shiftwidth=2|set expandtab|set smarttab|set softtabstop=0
@@ -324,6 +324,21 @@
 	let g:ycm_use_ultisnips_completer = 2
 	let g:ycm_error_symbol = "✗"
 	let g:ycm_warning_symbol = "⚠ "
+
+
+	let g:startify_custom_header = [
+				\'				***************************				',
+				\'		   *****					       *****		',
+				\'		 **	  The programmers of tomorrow are   **		',
+				\'	   **   the wizards of the future, you are    **	',
+				\'	   *   gonna look like you have magic powers   *	',
+				\'	   **         compare to everybody else		  **	',
+				\'		 **			  - Gabe Newell -			**		',
+				\'		   *****					       *****		',
+				\'				***************************				',
+				\'',					
+				\'',
+				\]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around buffers, tabs and windows
