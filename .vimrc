@@ -304,7 +304,6 @@
 "For single and double quotes we do the following
 	inoremap <expr> ' 	strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
 	inoremap "			""<Left>
-	inoremap <			<><Left>
 	
 "Set control + e to sparkup completion
 	let g:sparkupExecuteMapping='<C-e>'
