@@ -18,4 +18,4 @@ RPROMPT='%{$fg_bold[yellow]%}$(rvm_prompt_info) % %{$reset_color%}'
 ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}) %{$fg[blue]%}✗%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[red]%})"
