@@ -325,7 +325,7 @@
 	let g:ycm_error_symbol = "✗"
 	let g:ycm_warning_symbol = "⚠ "
 
-
+"Startify header, appears only if you launch vim with no arguments
 	let g:startify_custom_header = [
 				\'				***************************				',
 				\'		   *****					       *****		',
