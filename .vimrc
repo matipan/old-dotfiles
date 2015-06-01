@@ -343,10 +343,10 @@
 
 	let g:startify_session_dir = '~/.vim/session'
 	let g:startify_list_order =[
-		\ ['	Recently used files'],
-		\ 'files',
 		\ ['	Recently used in current dir:'],
 		\ 'dir',
+		\ ['	Recently used files:'],
+		\ 'files',
 		\ ['	Sessions available: '],
 		\ 'sessions',
 		\ ['	Bookmarks: '],
