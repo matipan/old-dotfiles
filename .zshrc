@@ -53,6 +53,7 @@ export PATH=$PATH:"/Users/Matias/.rvm/gems/ruby-2.2.0/bin:/Users/Matias/.rvm/gem
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+source ~/.bin/tmuxinator.zsh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
