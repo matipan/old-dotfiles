@@ -263,6 +263,7 @@
 		"setlocal nomodifiable
 		1
 	endfunction
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mappings and misc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -340,6 +341,17 @@
 				\'',
 				\]
 
+	let g:startify_session_dir = '~/.vim/session'
+	let g:startify_list_order =[
+		\ ['	Recently used files'],
+		\ 'files',
+		\ ['	Recently used in current dir:'],
+		\ 'dir',
+		\ ['	Sessions available: '],
+		\ 'sessions',
+		\ ['	Bookmarks: '],
+		\ 'bookmarks',
+		\ ]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around buffers, tabs and windows
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
