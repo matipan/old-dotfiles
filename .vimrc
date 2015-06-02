@@ -103,8 +103,6 @@
 
 "Use 256 color(only when terminal support it)
 	set t_Co=256		
-	"set background=dark
-	"let g:solarized_termcolors = 256
 	
 "Set colorscheme, i modified the symfony colorscheme, it's not the one by
 "default
@@ -323,8 +321,8 @@
 	let g:ycm_collect_identifiers_from_comments_and_strings = 1
 	let g:ycm_min_num_of_chars_for_completion = 1
 	let g:ycm_use_ultisnips_completer = 2
-	let g:ycm_error_symbol = "✗"
-	let g:ycm_warning_symbol = "⚠ "
+	let g:ycm_warning_symbol="⚠"
+	let g:ycm_error_symbol="✗"
 
 "Startify header, appears only if you launch vim with no arguments
 	let g:startify_custom_header = [
