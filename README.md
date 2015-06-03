@@ -63,5 +63,7 @@ Really cool code-completion engine.
 **[UltiSnips](https://github.com/SirVer/ultisnips)**:
 Awesome snippets(works really good with YCM). 
 
+**(Vim-expand-region)[https://github.com/terryma/vim-expand-region]**:
+Allows you to visually select increasingly larger regions of text using the same key combination. 
 
 PD: I recommend to use pathogen as a plugin manager :smiley: :ok_hand:
