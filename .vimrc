@@ -240,6 +240,12 @@
 		autocmd bufwritepost .vimrc source $MYVIMRC
 	endif
 
+"Change the PWD of current window to the dir of currently opened file, only
+"if the file is not in a /tmp folder
+	if has("autocmd")
+		autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
+	endif
+
 " Command for openning a buffer with the output of a shell command, such as
 " ls or ruby myprogram.rb"
 	command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
