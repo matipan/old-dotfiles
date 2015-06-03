@@ -9,7 +9,7 @@ Here are a couple of pictures with vim, tmux and some plugins
 
 ###Vim-plugins installed
 
-**[Vim-airline](https://github.com/bling/vim-airline)**:
+* **[Vim-airline](https://github.com/bling/vim-airline)**:
 lean & mean status/tabline. 
 
 **[Ag](https://github.com/ervandew/ag)**:
