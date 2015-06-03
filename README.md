@@ -5,7 +5,7 @@ This my Vim/Tmux setup, using oh_my_zsh terminal. I'm constantly updating my .vi
 
 Here are a couple of pictures with vim, tmux and some plugins
 ![vim-tmux-config](https://github.com/kriox26/dotfiles/blob/master/imgs/vim-tmux-config.png)
-![vim-config with tagbar](https://github.com/kriox26/dotfiles/blob/master/imgs/vim-config2.png)
+![vim-config with tagbar](https://github.com/kriox26/dotfiles/blob/master/imgs/vim-config.png)
 
 ###Vim-plugins installed
 
