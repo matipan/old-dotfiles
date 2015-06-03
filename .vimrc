@@ -217,16 +217,16 @@
 " => Helper functions
 """"""""""""""""""""""""""""""""""""""""""""""""
 
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
+	" Convenient command to see the difference between the current buffer and the
+	" file it was loaded from, thus the changes you made.
+	" Only define it when not defined already.
 	if !exists(":DiffOrig")
 	  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 			  \ | wincmd p | diffthis
 	endif
 
-"Show highlighting groups for current word with CTRL-SHIFT-H, usefull when
-"having miss syntax highlight
+	"Show highlighting groups for current word with CTRL-SHIFT-H, usefull when
+	"having miss syntax highlight
 	nmap <C-S-H> :call <SID>SynStack()<CR>
 	function! <SID>SynStack()
 		if !exists("*synstack")
@@ -235,19 +235,28 @@
 		echo map(synstack(line('.'),col('.')),'synIDattr(v:val, "name")')
 	endfunc
 
-"Update vimrc on the fly, based on drew neil example at vimcasts.org
+	"Update vimrc on the fly, based on drew neil example at vimcasts.org
 	if has("autocmd")
 		autocmd bufwritepost .vimrc source $MYVIMRC
 	endif
 
-"Change the PWD of current window to the dir of currently opened file, only
-"if the file is not in a /tmp folder
+	"Change the PWD of current window to the dir of currently opened file, only
+	"if the file is not in a /tmp folder
 	if has("autocmd")
 		autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 	endif
 
-" Command for openning a buffer with the output of a shell command, such as
-" ls or ruby myprogram.rb"
+	"Underlines current line with ="
+	function! s:Underline(chars)
+		let chars = empty(a:chars) ? '=' : a:chars
+		let nr_columns = virtcol('$') - 1
+		let uline = repeat(chars, (nr_columns / len(chars)) + 1)
+		put =strpart(uline, 0, nr_columns)
+	endfunction
+	command! -nargs=? Underline call s:Underline(<q-args>)
+
+	" Command for openning a buffer with the output of a shell command, such as
+	" ls or ruby myprogram.rb"
 	command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 	function! s:RunShellCommand(cmdline)
 		echo a:cmdline
@@ -268,59 +277,61 @@
 		1
 	endfunction
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Mappings and misc
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	" => Mappings and misc
+	""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"Visual mode pressing * or # searches for the current selection
+	"Visual mode pressing * or # searches for the current selection
 	vnoremap <silent> *:call VisualSelection('f')<CR>
 	vnoremap <silent> #:call VisualSelection('b')<CR>
 
-" Don't use Ex mode, use Q for formatting
+	" Don't use Ex mode, use Q for formatting
 	map Q gq
 
-"Toggle tagbar with LEADER + f
+	"Toggle tagbar with LEADER + f
 	nnoremap <leader>tf :TagbarToggle<return>    
 
-"Toggle NERDTree with LEADER + n
+	"Toggle NERDTree with LEADER + n
 	nnoremap <leader>nt :NERDTree<return>
 
-"Set LEADER + q to :exit
+	"Use Underline function to underline current line with =
+	nnoremap <leader>un :Underline =<return>
+	"Set LEADER + q to :exit
 	nnoremap <leader>q :q!<return>
 
-"Set LEADER + s to save the current buffer and file
+	"Set LEADER + s to save the current buffer and file
 	nnoremap <leader>w :w<return>
 
-"Set LEADER + r + n to change to relative number of lines
+	"Set LEADER + r + n to change to relative number of lines
 	nnoremap <leader>rn :set relativenumber<return>
 
-"For basic pair completion of {}
+	"For basic pair completion of {}
 	inoremap {			{  }<Left><Left>
 	inoremap {<CR>		{<CR>}<Esc>O
 	inoremap {{			{
 	inoremap {}			{}
 
-"To handle () and [] pair completion, we change a bit the mapping
+	"To handle () and [] pair completion, we change a bit the mapping
 	inoremap (			()<Left>
 	inoremap <expr>	)	strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 	inoremap [			[]<Left>
 	inoremap <expr>	]	strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
 
-"For single and double quotes we do the following
+	"For single and double quotes we do the following
 	inoremap <expr> ' 	strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
 	inoremap "			""<Left>
-	
-"Set control + e to sparkup completion
+
+	"Set control + e to sparkup completion
 	let g:sparkupExecuteMapping='<C-e>'
 
-"Ultisnips triggers
+	"Ultisnips triggers
 	let g:UltiSnipsSnippetsDir = $HOME.'/.vim/bundle/vim-snippets/UltiSnips/'
 	let g:UltiSnipsExpandTrigger="<c-j>"
 	let g:UltiSnipsJumpForwardTrigger="<c-s-y>"
 	let g:UltiSnipsJumpBackwardTrigger = "<c-s-o>"
 	let g:UltiSnipsListSnippets = "<c-h>"
-	
-"You complete me, set global path for .ycm_extra_conf.py
+
+	"You complete me, set global path for .ycm_extra_conf.py
 	let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 	let g:ycm_complete_in_comments = 1
 	let g:ycm_seed_identifiers_with_syntax = 1
@@ -330,7 +341,7 @@
 	let g:ycm_warning_symbol="⚠"
 	let g:ycm_error_symbol="✗"
 
-"Startify header, appears only if you launch vim with no arguments
+	"Startify header, appears only if you launch vim with no arguments
 	let g:startify_custom_header = [
 				\'				***************************				',
 				\'		   *****					       *****		',
@@ -347,45 +358,45 @@
 
 	let g:startify_session_dir = '~/.vim/session'
 	let g:startify_list_order =[
-		\ ['	Recently used in current dir:'],
-		\ 'dir',
-		\ ['	Recently used files:'],
-		\ 'files',
-		\ ['	Sessions available: '],
-		\ 'sessions',
-		\ ['	Bookmarks: '],
-		\ 'bookmarks',
-		\ ]
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around buffers, tabs and windows
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+				\ ['	Recently used in current dir:'],
+				\ 'dir',
+				\ ['	Recently used files:'],
+				\ 'files',
+				\ ['	Sessions available: '],
+				\ 'sessions',
+				\ ['	Bookmarks: '],
+				\ 'bookmarks',
+				\ ]
+	"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	" => Moving around buffers, tabs and windows
+	"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"Smart move betwen windows
+	"Smart move betwen windows
 	map <C-j> <C-W>j
 	map <C-k> <C-W>k
 	map <C-l> <C-W>l
 	map <C-h> <C-W>h
 
-"Set LEADER + t to open new tab
+	"Set LEADER + t to open new tab
 	nnoremap <leader>tn :tabnew<return>
 
-"Set LEADER + w to close current tab
+	"Set LEADER + w to close current tab
 	nnoremap <leader>tc :close!<return>
 
-"Set LEADER + d to go to next tab
+	"Set LEADER + d to go to next tab
 	nnoremap ]t :tabn<return>
 
-"Set LEADER + a to go to previous tab
+	"Set LEADER + a to go to previous tab
 	nnoremap [t :tabp<return>
 
-"Set [b to go next buffer
+	"Set [b to go next buffer
 	nnoremap ]b :bn<return>
 
-"Set ]b to go to previous buffer
+	"Set ]b to go to previous buffer
 	nnoremap [b :bp<return>
 
-"Set LEADER + b + c to close current buffer
+	"Set LEADER + b + c to close current buffer
 	nnoremap <leader>bc :bd!<return>
 
-"Set LEADER + l + b to show current buffers
+	"Set LEADER + l + b to show current buffers
 	nnoremap <leader>bl :ls<return>
