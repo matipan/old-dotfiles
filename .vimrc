@@ -293,9 +293,17 @@
 
 	"Toggle NERDTree with LEADER + n
 	nnoremap <leader>nt :NERDTree<return>
+	nnoremap <leader>cnt :NERDTreeClose<return>
 
 	"Use Underline function to underline current line with =
 	nnoremap <leader>un :Underline =<return>
+
+	" toggle buffergator list of opened buffers
+	nnoremap <leader>bt :BuffergatorToggle<return>
+
+	" toggle buffergator list of opened tabs
+	nnoremap <leader>tt :BuffergatorTabsToggle<return>
+
 	"Set LEADER + q to :exit
 	nnoremap <leader>q :q!<return>
 
@@ -323,6 +331,9 @@
 
 	"Set control + e to sparkup completion
 	let g:sparkupExecuteMapping='<C-e>'
+
+	" Suppress buffergator keymaps
+	let g:buffergator_suppress_keymaps=1
 
 	"Ultisnips triggers
 	let g:UltiSnipsSnippetsDir = $HOME.'/.vim/bundle/vim-snippets/UltiSnips/'
