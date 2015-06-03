@@ -377,12 +377,12 @@
 
 	let g:startify_session_dir = '~/.vim/session'
 	let g:startify_list_order =[
+				\ ['	Sessions available: '],
+				\ 'sessions',
 				\ ['	Recently used in current dir:'],
 				\ 'dir',
 				\ ['	Recently used files:'],
 				\ 'files',
-				\ ['	Sessions available: '],
-				\ 'sessions',
 				\ ['	Bookmarks: '],
 				\ 'bookmarks',
 				\ ]
