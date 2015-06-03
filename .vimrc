@@ -313,28 +313,36 @@
 	"Set LEADER + r + n to change to relative number of lines
 	nnoremap <leader>rn :set relativenumber<return>
 
+	"Mappings for sourcing and making sessions, ss for save session and so
+	" session-source
+	nnoremap <leader>ss :mksession ~/.vim/session/
+	nnoremap <leader>so :source ~/.vim/session/
+
 	"For basic pair completion of {}
-	inoremap {			{  }<Left><Left>
-	inoremap {<CR>		{<CR>}<Esc>O
-	inoremap {{			{
-	inoremap {}			{}
+	"inoremap {			{  }<Left><Left>
+	"inoremap {<CR>		{<CR>}<Esc>O
+	"inoremap {{			{
+	"inoremap {}			{}
 
 	"To handle () and [] pair completion, we change a bit the mapping
-	inoremap (			()<Left>
-	inoremap <expr>	)	strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-	inoremap [			[]<Left>
-	inoremap <expr>	]	strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+	"inoremap (			()<Left>
+	"inoremap <expr>	)	strpart(getline('.'), col('.')-1, 1) == \")" ?
+	"\"\<Right>" : \")"
+	"inoremap [			[]<Left>
+	"inoremap <expr>	]	strpart(getline('.'), col('.')-1, 1) == \"]" ?
+	"\"\<Right>" : \"]"
 
 	"For single and double quotes we do the following
-	inoremap <expr> ' 	strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
-	inoremap "			""<Left>
+	"inoremap <expr> ' 	strpart(getline('.'), col('.')-1, 1) == \"\'" ?
+	"\"\<Right>" : \"\'\'\<Left>"
+	"inoremap \"			\""<Left>
 
 	"Set control + e to sparkup completion
 	let g:sparkupExecuteMapping='<C-e>'
 
 	" Suppress buffergator keymaps
 	let g:buffergator_suppress_keymaps=1
-
+	 
 	"Ultisnips triggers
 	let g:UltiSnipsSnippetsDir = $HOME.'/.vim/bundle/vim-snippets/UltiSnips/'
 	let g:UltiSnipsExpandTrigger="<c-j>"
