@@ -73,4 +73,4 @@ Vim plugin, insert or delete brackets, parens, quotes in pair
 Vim motions on speed! 
 
 
-PD: I recommend to use pathogen as a plugin manager :smiley: :ok_hand:
+PD: I recommend to use [pathogen](https://github.com/tpope/vim-pathogen) as a plugin manager :smiley: :ok_hand:
