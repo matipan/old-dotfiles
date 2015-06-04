@@ -66,4 +66,11 @@ Awesome snippets(works really good with YCM).
 * **[Vim-expand-region](https://github.com/terryma/vim-expand-region)**:
 Allows you to visually select increasingly larger regions of text using the same key combination. 
 
+* **[Auto-pairs](https://github.com/jiangmiao/auto-pairs)**: 
+Vim plugin, insert or delete brackets, parens, quotes in pair
+
+* **[Vim-easymotion](https://github.com/Lokaltog/vim-easymotion)**:
+Vim motions on speed! 
+
+
 PD: I recommend to use pathogen as a plugin manager :smiley: :ok_hand:
