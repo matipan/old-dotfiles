@@ -67,10 +67,13 @@ Awesome snippets(works really good with YCM).
 Allows you to visually select increasingly larger regions of text using the same key combination. 
 
 * **[Auto-pairs](https://github.com/jiangmiao/auto-pairs)**: 
-Vim plugin, insert or delete brackets, parens, quotes in pair
+Vim plugin, insert or delete brackets, parens, quotes in pair.
 
 * **[Vim-easymotion](https://github.com/Lokaltog/vim-easymotion)**:
 Vim motions on speed! 
+
+* **[Vim-buffergator](https://github.com/jeetsukumaran/vim-buffergator)**:
+Vim plugin to list, select and switch between buffers. 
 
 
 PD: I recommend to use [pathogen](https://github.com/tpope/vim-pathogen) as a plugin manager :smiley: :ok_hand:
