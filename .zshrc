@@ -98,6 +98,9 @@ source ~/.bin/tmuxinator.zsh
 	alias lf='ls -GFlash' #Displays hidden and reg files with usefull info
 	alias del='rmtrash' 
 	alias trash='rmtrash' #del / trash are shorter than rmtrash
+	alias starwars='telnet towel.blinkenlights.nl'
+	alias changelog='sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText'
+	alias resetlog='sudo defaults delete /Library/Preferences/com.apple.loginwindow'
 #Brew
 	alias bupd='brew update'  				#bupd = brew update
 	alias bdtr='brew doctor'				#bdtr = brew doctor
