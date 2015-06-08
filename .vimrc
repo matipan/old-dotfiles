@@ -315,7 +315,7 @@
 
 	"Mappings for sourcing and making sessions, ss for save session and so
 	" session-source
-	nnoremap <leader>ss :mksession ~/.vim/session/
+	nnoremap <leader>ss :mksession! ~/.vim/session/
 	nnoremap <leader>so :source ~/.vim/session/
 
 	"For basic pair completion of {}
