@@ -109,6 +109,15 @@ source ~/.bin/tmuxinator.zsh
 	alias irbs='irb --simple-prompt'
 	alias irbsc='irb --simple-prompt -rrbconfig'
 
+#Networking
+	alias myip='curl ip.appspot.com' 		#myip: public facing IP address
+	alias netCons='lsof -i'			 		#netCons: show all TCP/IP sockets
+	alias ipInfo0='ipconfig getpacket en0'	#ipInfo0: Get info on connections for en0
+	alias ipInfo1='ipconfig getpacket en1'	#ipInfo1: Get info on connections for en1
+	alias openPorts='sudo lsof -i | grep LISTEN'	#openPorts: All listening connections
+	alias unloadlaunchctl='sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.discoveryd.plist'
+	alias loadlaunchctl='sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.discoveryd.plist'
+
 #Some for git
 	alias gstatus='git status'
 	alias gpush='git push -u origin master'
