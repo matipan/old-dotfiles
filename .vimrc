@@ -20,6 +20,9 @@
 "Open vimrc while on normal mode
 	nnoremap <leader>v :edit $MYVIMRC<CR>
 
+"Vim sessions default to capturing all global options, which includes the 'runtimepath' that pathogen.vim manipulates, so turn that behavior off
+	set sessionoptions-=options
+
 "Use Vim configurations instead of Vi
 	set nocompatible
 
@@ -416,6 +419,9 @@
 
 	"Set LEADER + b + c to close current buffer
 	nnoremap <leader>bc :bd!<return>
+
+	"set leader + e to open a new empty buffer
+	nnoremap <leader>e :enew<return>
 
 	"Set LEADER + l + b to show current buffers
 	nnoremap <leader>bl :ls<return>
