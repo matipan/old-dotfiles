@@ -279,6 +279,8 @@
 		"setlocal nomodifiable
 		1
 	endfunction
+	"Set leader + rc to run the ruby program in current buffer
+	nnoremap <leader>rc :Shell ruby %:t<return>
 
 	""""""""""""""""""""""""""""""""""""""""""""""""""""""
 	" => Mappings and misc
