@@ -342,6 +342,9 @@
 	"\"\<Right>" : \"\'\'\<Left>"
 	"inoremap \"			\""<Left>
 
+	" Indent when defining private, protected or public methods
+	let g:ruby_indent_access_modifier_style = 'indent'
+
 	"Set control + e to sparkup completion
 	let g:sparkupExecuteMapping='<C-e>'
 
