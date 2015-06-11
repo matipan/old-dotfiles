@@ -3,8 +3,6 @@
 #Main configs
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 #Change prompt
 #export PS1="________________________________________________________________________________\n| \w @ \h (\u) \n| => "
 #export PS2="| => "
@@ -59,3 +57,5 @@ export CLICOLOR=1
 	alias gpush='git push -u origin master'
 	alias gclone='git clone'
 	alias gdiff='git diff'
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

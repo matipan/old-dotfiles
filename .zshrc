@@ -137,3 +137,5 @@ source ~/.bin/tmuxinator.zsh
 	alias tmxls='tmuxinator list'
 	alias tmxd='tmuxinator doctor'
 	alias tmxv='tmuxinator version'
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
