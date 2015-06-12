@@ -257,6 +257,9 @@
 		put =strpart(uline, 0, nr_columns)
 	endfunction
 	command! -nargs=? Underline call s:Underline(<q-args>)
+	nnoremap <leader>u= :Underline =<return>
+	nnoremap <leader>u" :Underline "<return>
+	nnoremap <leader>u* :Underline *<return>
 
 	" Command for openning a buffer with the output of a shell command, such as
 	" ls or ruby myprogram.rb"
@@ -279,6 +282,7 @@
 		"setlocal nomodifiable
 		1
 	endfunction
+
 	"Set leader + rc to run the ruby program in current buffer
 	nnoremap <leader>rc :Shell ruby %:t<return>
 
