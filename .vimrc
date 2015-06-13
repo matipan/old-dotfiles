@@ -330,6 +330,9 @@
 	"Override colors
 	let g:gitgutter_override_sign_column_highlight = 1
 
+	"Substitute easyclip options, map to 's' by default
+	let g:EasyClipUseSubstituteDefaults=1
+
 	" Indent when defining private, protected or public methods
 	let g:ruby_indent_access_modifier_style = 'indent'
 
