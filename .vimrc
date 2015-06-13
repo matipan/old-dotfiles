@@ -327,24 +327,8 @@
 	nnoremap <leader>ss :mksession! ~/.vim/session/
 	nnoremap <leader>so :source ~/.vim/session/
 
-	"For basic pair completion of {}
-	"inoremap {			{  }<Left><Left>
-	"inoremap {<CR>		{<CR>}<Esc>O
-	"inoremap {{			{
-	"inoremap {}			{}
-
-	"To handle () and [] pair completion, we change a bit the mapping
-	"inoremap (			()<Left>
-	"inoremap <expr>	)	strpart(getline('.'), col('.')-1, 1) == \")" ?
-	"\"\<Right>" : \")"
-	"inoremap [			[]<Left>
-	"inoremap <expr>	]	strpart(getline('.'), col('.')-1, 1) == \"]" ?
-	"\"\<Right>" : \"]"
-
-	"For single and double quotes we do the following
-	"inoremap <expr> ' 	strpart(getline('.'), col('.')-1, 1) == \"\'" ?
-	"\"\<Right>" : \"\'\'\<Left>"
-	"inoremap \"			\""<Left>
+	"Override colors
+	let g:gitgutter_override_sign_column_highlight = 1
 
 	" Indent when defining private, protected or public methods
 	let g:ruby_indent_access_modifier_style = 'indent'
