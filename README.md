@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-This my Vim/Tmux setup, using oh_my_zsh terminal. I'm constantly updating my .vimrc and .tmux.conf. If you liked my config, feel free to clone it, or simply use it as an example an build your own setup!! :smile::+1:
+This my Vim/Tmux setup, using zsh terminal with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework. I'm constantly updating this repo. If you are new to vim i recommend that you use it as an example instead of cloning it. If you already have a config setup and you're thinking of chaging it, give it a try to this config!!!
 
 Here are a couple of pictures with vim, tmux and some plugins
 ![vim-tmux-config](https://github.com/kriox26/dotfiles/blob/master/imgs/vim-tmux-config.png)
