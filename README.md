@@ -75,5 +75,23 @@ Vim motions on speed!
 * **[Vim-buffergator](https://github.com/jeetsukumaran/vim-buffergator)**:
 Vim plugin to list, select and switch between buffers. 
 
+* **[Vim-easyclip](https://github.com/svermeulen/vim-easyclip)**:
+Simplified clipboard functionality for Vim.
+
+* **[Vim-abolish](https://github.com/tpope/vim-abolish)**:
+Easily search for, substitute, and abbreviate multiple variants of a word.
+
+* **[Vim-gitgutter](https://github.com/airblade/vim-gitgutter)**:
+A Vim plugin which shows a git diff in the gutter (sign column) and stages/reverts.
+
+* **[Vim-repeat](https://github.com/tpope/vim-repeat)**:
+Enable repeating supported plugin maps with ".".
+
+* **[Vim-rvm](https://github.com/tpope/vim-rvm)**:
+Switch Ruby versions from inside Vim.
+
+* **[Vim-vroom](https://github.com/skalnik/vim-vroom)**:
+A vim plugin for running your Ruby tests.
+
 
 PD: I recommend to use [pathogen](https://github.com/tpope/vim-pathogen) as a plugin manager :smiley: :ok_hand:
