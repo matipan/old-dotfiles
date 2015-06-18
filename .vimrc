@@ -29,17 +29,17 @@
 "Set to autoread when a file is change from the ouside
 	set autoread
 
-"Displays lines number on the left of the screen 
-	set number 			
+"Displays lines number on the left of the screen
+	set number
 
 " keep 500 lines of command line history
-	set history=500		
+	set history=500
 
 " show the cursor position all the time
-	set ruler	
+	set ruler
 
 " display incomplete commands
-	set showcmd	
+	set showcmd
 
 "Enable per-directory .vimrc files and disable unasfe commands in them
 	set exrc
@@ -70,7 +70,7 @@
 	  autocmd FileType erb set tabsopt=4|set shiftwidth=2|set expandtab|set smarttab|set softtabstop=0
   " When editing a file, always jump to the last known cursor position.
   " don't do it when the mark is in the first line, that is the default
-  " position when opening a file. 
+  " position when opening a file.
 	  autocmd BufReadPost *
 		\ if line("'\"") > 1 && line("'\"") <= line("$") |
 		\   exe "normal! g`\"" |
@@ -93,7 +93,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " => GUI
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-" 
+"
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 	if &t_Co > 2 || has("gui_running")
@@ -105,8 +105,8 @@
 	autocmd FileType markdown setlocal spell
 
 "Use 256 color(only when terminal support it)
-	set t_Co=256		
-	
+	set t_Co=256
+
 "Set colorscheme, i modified the symfony colorscheme, it's not the one by
 "default
 	colorscheme symfony
@@ -144,7 +144,7 @@
 	nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " do incremental searching
-	set incsearch		
+	set incsearch
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " => Text tab and indentation related
@@ -154,31 +154,31 @@
 	set backspace=indent,eol,start
 
 "Allows to navigate between modified buffers
-	set hidden			
+	set hidden
 
 "Set tab indent, 4 spaces
-	set tabstop=4		
-    set	softtabstop=0 
+	set tabstop=4
+    set	softtabstop=0
 	set smarttab
 	set noexpandtab
     set	shiftwidth=4
 
 "allow to :write after each command
-	set autowrite		
+	set autowrite
 
 " do not keep a backup file, it's all in github anyway
-	set nobackup		
-	set noswapfile		
-	
+	set nobackup
+	set noswapfile
+
 "Set encoding to regular utf-8
 	set encoding=utf-8
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""	
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status line configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Always show statusline
-	set laststatus=2	
+	set laststatus=2
 
 "Set symbols and theme for airline status bar
 	if !exists('g:airline_symbols')
@@ -197,11 +197,11 @@
 	let g:airline#extensions#tabline#left_sep=''
 	let g:airline#extensions#tabline#left_alt_sep=''
 	let g:airline_theme= 'mkolor'
-	
+
 "Extensions configs for airline status bar
 	let g:airline#extensions#disable_rtp_load = 1
 	let g:airline#extensions#tabline#enabled=1		"Enables plugins to appear on statusline, such as syntastic
-	let g:airline#extensions#syntastic#enabled = 1 	"Enable syntastic 
+	let g:airline#extensions#syntastic#enabled = 1 	"Enable syntastic
   	let g:airline#extensions#whitespace#enabled = 0
 	let g:airline_detect_paste=1
 	let g:airline_detect_syntastic=1	"set the syntastic error message on statusline
@@ -210,7 +210,7 @@
 	let g:syntastic_auto_jump=1
 	let g:syntastic_error_symbol = "✗"
 	let g:syntastic_warning_symbol = "⚠ "
-	
+
 "set syntastic mode active at startup with certain fyletype
     let g:syntastic_mode_map = { "mode": "active",
                                \ "active_filetypes": ["ruby", "php","c","javascript","css","cpp","java","go","python"],
@@ -298,7 +298,7 @@
 	map Q gq
 
 	"Toggle tagbar with LEADER + f
-	nnoremap <leader>tf :TagbarToggle<return>    
+	nnoremap <leader>tf :TagbarToggle<return>
 
 	"Toggle NERDTree with LEADER + n
 	nnoremap <leader>nt :NERDTree<return>
@@ -341,12 +341,12 @@
 
 	" Suppress buffergator keymaps
 	let g:buffergator_suppress_keymaps=1
-	 
+
 	"Ultisnips triggers
 	let g:UltiSnipsSnippetsDir = $HOME.'/.vim/bundle/vim-snippets/UltiSnips/'
 	let g:UltiSnipsExpandTrigger="<c-j>"
-	let g:UltiSnipsJumpForwardTrigger="<c-s-y>"
-	let g:UltiSnipsJumpBackwardTrigger = "<c-s-o>"
+	let g:UltiSnipsJumpForwardTrigger="<c-h-h>"
+	let g:UltiSnipsJumpBackwardTrigger = "<c-h-j>"
 	let g:UltiSnipsListSnippets = "<c-h>"
 
 	"You complete me, set global path for .ycm_extra_conf.py
@@ -370,7 +370,7 @@
 				\'		 **            -Gabe Newell-            **		',
 				\'		   *****					       *****		',
 				\'				***************************				',
-				\'',					
+				\'',
 				\'',
 				\]
 
