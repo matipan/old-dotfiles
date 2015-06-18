@@ -345,9 +345,9 @@
 	"Ultisnips triggers
 	let g:UltiSnipsSnippetsDir = $HOME.'/.vim/bundle/vim-snippets/UltiSnips/'
 	let g:UltiSnipsExpandTrigger="<c-j>"
-	let g:UltiSnipsJumpForwardTrigger="<c-h-h>"
-	let g:UltiSnipsJumpBackwardTrigger = "<c-h-j>"
-	let g:UltiSnipsListSnippets = "<c-h>"
+	let g:UltiSnipsJumpForwardTrigger="<c-h>"
+	let g:UltiSnipsJumpBackwardTrigger = "<c-b>"
+	"let g:UltiSnipsListSnippets = "<c-h>"
 
 	"You complete me, set global path for .ycm_extra_conf.py
 	let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
