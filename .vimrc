@@ -1,4 +1,4 @@
-" Vim configuration by - Matias Pan <matias.pan26@gmail.com> -
+" Vim configuration by - Matias Pan <matias.pan26 at gmail dot com> -
 " https://github.com/kriox26
 "
 " 1 -- General settings
@@ -322,6 +322,7 @@
 
 	"Set LEADER + r + n to change to relative number of lines
 	nnoremap <leader>rn :set relativenumber<return>
+	nnoremap <leader>nrn :set norelativenumber<return>
 
 	"Mappings for sourcing and making sessions, ss for save session and so
 	" session-source
@@ -409,9 +410,6 @@
 	map <C-k> <C-W>k
 	map <C-l> <C-W>l
 	map <C-h> <C-W>h
-
-	"Use CONTROL + w instead of CONTROL + y when scrolling down
-	map <C-w> <c-y><C-R>
 
 	"Set LEADER + t to open new tab
 	nnoremap <leader>tn :tabnew<return>
