@@ -53,6 +53,9 @@
 "set <esc> for deselect highlighted text after doing a search
 	nnoremap <esc>k :noh<return>
 
+"For drew neils vim-textobj-rubyblock definition
+	runtime macros/matchit.vim
+
 " Only do this part when compiled with support for autocommands.
 	if has("autocmd")
   " Enable file type detection.
