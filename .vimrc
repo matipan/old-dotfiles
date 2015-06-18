@@ -327,6 +327,9 @@
 	nnoremap <leader>ss :mksession! ~/.vim/session/
 	nnoremap <leader>so :source ~/.vim/session/
 
+	"Call :StripWhitespace with <leader>sw
+	nnoremap <leader>sw :StripWhitespace<return>
+
 	"Override colors
 	let g:gitgutter_override_sign_column_highlight = 1
 
