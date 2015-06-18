@@ -361,28 +361,28 @@
 
 	"Startify header, appears only if you launch vim with no arguments
 	let g:startify_custom_header = [
-				\'				***************************				',
-				\'		   *****					       *****		',
-				\'		 **	  The programmers of tomorrow are   **		',
-				\'	   **   the wizards of the future, you are    **	',
-				\'	   *   gonna look like you have magic powers   *	',
-				\'	   **        compare to everybody else        **	',
-				\'		 **            -Gabe Newell-            **		',
-				\'		   *****					       *****		',
-				\'				***************************				',
+				\'				***************************',
+				\'		   *****					       *****',
+				\'		 **	  The programmers of tomorrow are   **',
+				\'	   **   the wizards of the future, you are    **',
+				\'	   *   gonna look like you have magic powers   *',
+				\'	   **        compare to everybody else        **',
+				\'		 **            -Gabe Newell-            **',
+				\'		   *****					       *****',
+				\'				***************************',
 				\'',
 				\'',
 				\]
 
 	let g:startify_session_dir = '~/.vim/session'
 	let g:startify_list_order =[
-				\ ['	Sessions available: '],
+				\ ['	Sessions available:'],
 				\ 'sessions',
 				\ ['	Recently used in current dir:'],
 				\ 'dir',
 				\ ['	Recently used files:'],
 				\ 'files',
-				\ ['	Bookmarks: '],
+				\ ['	Bookmarks:'],
 				\ 'bookmarks',
 				\ ]
 	"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
