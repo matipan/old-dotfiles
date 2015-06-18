@@ -334,12 +334,12 @@
 	nnoremap <leader>gb :Gblame<return>
 	nnoremap <leader>gd :Gdiff<return>
 	nnoremap <leader>gs :Gstatus<return>
-	nnoremap <leader>ga :Git add .<return>
 	nnoremap <leader>gc :Gcommit<return>
 	nnoremap <leader>gl :Glog<return>
 	nnoremap <leader>gw :Gwrite<return>
 	nnoremap <leader>ge :Gedit<return>
 	nnoremap <leader>gn :Gbrowse<return>
+	nnoremap <leader>gp :Gpush<return>
 
 	"Override colors
 	let g:gitgutter_override_sign_column_highlight = 1
