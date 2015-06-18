@@ -410,6 +410,9 @@
 	map <C-l> <C-W>l
 	map <C-h> <C-W>h
 
+	"Use CONTROL + w instead of CONTROL + y when scrolling down
+	map <C-w> <c-y><C-R>
+
 	"Set LEADER + t to open new tab
 	nnoremap <leader>tn :tabnew<return>
 
