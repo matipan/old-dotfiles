@@ -84,7 +84,7 @@ source ~/.bin/tmuxinator.zsh
 #
 #Basic alias
 	alias vimbp='vim ~/.bash_profile' #For faster openning of .bash_profile
-	alias sbp='source ~/.bash_profile' #For faster sourcing 
+	alias sbp='source ~/.bash_profile' #For faster sourcing
 	alias sz='source ~/.zshrc'
 	alias vimrc='vim ~/.vimrc'	#convenient way for open .vimrc
 	alias vimgc='vim ~/.gitconfig' #vimgc: open .gitconfig
@@ -97,7 +97,7 @@ source ~/.bin/tmuxinator.zsh
 	alias ls='ls -G'  #Displays a list of dirs and files with colors
 	alias la='ls -Ga' #Displays all hidden files and reg files with la
 	alias lf='ls -GFlash' #Displays hidden and reg files with usefull info
-	alias del='rmtrash' 
+	alias del='rmtrash'
 	alias trash='rmtrash' #del / trash are shorter than rmtrash
 	alias starwars='telnet towel.blinkenlights.nl'
 	alias changelog='sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText'
