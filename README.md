@@ -114,7 +114,7 @@ Text objects for indented blocks of lines.
 * **[Vim-textobj-line](https://github.com/kana/vim-textobj-line)**:
 Text objects for the current line.
 
- **[Vim-textobj-rubyblock](https://github.com/nelstrom/vim-textobj-rubyblock)**:
+* **[Vim-textobj-rubyblock](https://github.com/nelstrom/vim-textobj-rubyblock)**:
 A custom text object for selecting ruby blocks.
 
 * **[Vim-textobj-user](https://github.com/kana/vim-textobj-user)**:
