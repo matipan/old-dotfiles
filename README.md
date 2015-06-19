@@ -126,5 +126,8 @@ Vim plugin for tmux.conf.
 * **[Webapi-vim](https://github.com/mattn/webapi-vim)**:
 Vim interface to Web API.
 
+* **[Replace with register](https://github.com/vim-scripts/ReplaceWithRegister)**:
+Replace text with the contents of a register.
+
 
 PD: I recommend to use [pathogen](https://github.com/tpope/vim-pathogen) as a plugin manager :smiley: :ok_hand:
