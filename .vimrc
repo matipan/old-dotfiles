@@ -144,7 +144,7 @@
 	endif
 
 "bind K to search word under cursor
-	nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
+	nnoremap <leader>K :Ag! <C-R><C-W><CR>
 
 " do incremental searching
 	set incsearch
