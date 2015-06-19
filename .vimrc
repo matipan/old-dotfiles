@@ -23,6 +23,7 @@
 "Vim sessions default to capturing all global options, which includes the 'runtimepath' that pathogen.vim manipulates, so turn that behavior off
 	set sessionoptions-=options
 
+	set colorcolumn=140
 "Use Vim configurations instead of Vi
 	set nocompatible
 
@@ -67,7 +68,7 @@
 	  augroup vimrcEx
 	  au!
   " For all text files set 'textwidth' to 120 characters.
-	  autocmd FileType text setlocal textwidth=400
+	  autocmd FileType text setlocal textwidth=130
 	  autocmd FileType ruby set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
 	  autocmd FileType python set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
 	  autocmd FileType erb set tabsopt=4|set shiftwidth=2|set expandtab|set smarttab|set softtabstop=0
@@ -325,6 +326,9 @@
 
 	"Set LEADER + s to save the current buffer and file
 	nnoremap <leader>w :w<return>
+
+	"; instead of : for command mode
+	nnoremap ; :
 
 	"Set LEADER + r + n to change to relative number of lines
 	nnoremap <leader>rn :set relativenumber<return>
