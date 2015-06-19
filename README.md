@@ -10,70 +10,79 @@ Here are a couple of pictures with vim, tmux and some plugins
 ###Vim-plugins installed
 
 * **[Vim-airline](https://github.com/bling/vim-airline)**:
-lean & mean status/tabline. 
+lean & mean status/tabline.
 
 * **[Ag](https://github.com/ervandew/ag)**:
-Vim plugin to search using the silver searcher. 
+Vim plugin to search using the silver searcher.
 
 * **[CtrlP](https://github.com/kien/ctrlp.vim)**:
-Full path fuzzy file finder for vim. 
+Full path fuzzy file finder for vim.
 
 * **[Tabular](https://github.com/godlygeek/tabular)**:
-Vim script for text filtering and alignment. 
+Vim script for text filtering and alignment.
 
 * **[NERDTree](https://github.com/scrooloose/nerdtree)**:
-A tree explorer for vim. 
+A tree explorer for vim.
 
-* **[NERDCommenter](https://github.com/scrooloose/nerdcommenter)**:
-Vim plugin for better commenting. 
+* **[Vim-commentary](https://github.com/tpope/vim-commentary)**:
+Vim plugin for better commenting.
 
 * **[Vim-surround](https://github.com/tpope/vim-surround)**:
-Enclose text objects. 
+Enclose text objects.
 
 * **[Tagbar](https://github.com/majutsushi/tagbar)**:
-Displays tags in a window. 
+Displays tags in a window.
 
 * **[Syntastic](https://github.com/scrooloose/syntastic)**:
-Syntax checker for vim. 
+Syntax checker for vim.
 
 * **[Vim-fugitive](https://github.com/tpope/vim-fugitive)**:
-Awesome git wrapper for vim. 
+Awesome git wrapper for vim.
 
 * **[Vim-exchange](https://github.com/tommcdo/vim-exchange)**:
-Easy text exchange operator. 
+Easy text exchange operator.
 
 * **[Vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)**:
-Multiple selection. 
+Multiple selection.
 
 * **[Vim-ruby](https://github.com/vim-ruby/vim-ruby)**:
-For better syntax highlight and integration. 
+For better syntax highlight and integration.
 
 * **[Vim-rails](https://github.com/tpope/vim-rails)**:
-Ruby on rails power tools. 
+Ruby on rails power tools.
 
 * **[Vim-bundler](https://github.com/tpope/vim-bundler)**:
-Lightweight support for Ruby's bundler. 
+Lightweight support for Ruby's bundler.
+
+* **[Vim-rvm](https://github.com/tpope/vim-rvm)**:
+Switch Ruby versions from inside Vim.
+
+* **[Vim-vroom](https://github.com/skalnik/vim-vroom)**:
+A vim plugin for running your Ruby tests.
+
+* **[Vim-rake]()**:
+
 
 * **[Vim-startify](https://github.com/mhinz/vim-startify)**:
 Fancy start screen for vim
 
 * **[YouCompleteMe](https://github.com/Valloric/YouCompleteMe)**:
-Really cool code-completion engine. 
+Really cool code-completion engine.
 
 * **[UltiSnips](https://github.com/SirVer/ultisnips)**:
-Awesome snippets(works really good with YCM). 
+Awesome snippets(works really good with YCM).
 
 * **[Vim-expand-region](https://github.com/terryma/vim-expand-region)**:
-Allows you to visually select increasingly larger regions of text using the same key combination. 
+Allows you to visually select increasingly larger regions of text using the same key combination.
 
-* **[Auto-pairs](https://github.com/jiangmiao/auto-pairs)**: 
+* **[Auto-pairs](https://github.com/jiangmiao/auto-pairs)**:
 Vim plugin, insert or delete brackets, parens, quotes in pair.
 
 * **[Vim-easymotion](https://github.com/Lokaltog/vim-easymotion)**:
-Vim motions on speed! 
+Vim motions on speed!
 
 * **[Vim-buffergator](https://github.com/jeetsukumaran/vim-buffergator)**:
-Vim plugin to list, select and switch between buffers. 
+Vim plugin to list, select and switch between buffers.
 
 * **[Vim-easyclip](https://github.com/svermeulen/vim-easyclip)**:
 Simplified clipboard functionality for Vim.
@@ -87,11 +96,35 @@ A Vim plugin which shows a git diff in the gutter (sign column) and stages/rever
 * **[Vim-repeat](https://github.com/tpope/vim-repeat)**:
 Enable repeating supported plugin maps with ".".
 
-* **[Vim-rvm](https://github.com/tpope/vim-rvm)**:
-Switch Ruby versions from inside Vim.
+* **[Gist-vim](https://github.com/mattn/gist-vim)**:
+Vimscript for handling gists inside vim.
 
-* **[Vim-vroom](https://github.com/skalnik/vim-vroom)**:
-A vim plugin for running your Ruby tests.
+* **[Vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace)**:
+Better whitespace highlighting for Vim.
+
+* **[Vim-projectionist](https://github.com/tpope/vim-projectionist)**:
+Project configuration.
+
+* **[Vim-sort-motion](https://github.com/christoomey/vim-sort-motion)**:
+Vim mapping for sorting a range of text.
+
+* **[Vim-textobj-indent](https://github.com/kana/vim-textobj-indent)**:
+Text objects for indented blocks of lines.
+
+* **[Vim-textobj-line](https://github.com/kana/vim-textobj-line)**:
+Text objects for the current line.
+
+ **[Vim-textobj-rubyblock](https://github.com/nelstrom/vim-textobj-rubyblock)**:
+A custom text object for selecting ruby blocks.
+
+* **[Vim-textobj-user](https://github.com/kana/vim-textobj-user)**:
+Create your own text objects.
+
+* **[Vim-tmux](https://github.com/tmux-plugins/vim-tmux)**:
+Vim plugin for tmux.conf.
+
+* **[Webapi-vim](https://github.com/mattn/webapi-vim)**:
+Vim interface to Web API.
 
 
 PD: I recommend to use [pathogen](https://github.com/tpope/vim-pathogen) as a plugin manager :smiley: :ok_hand:
