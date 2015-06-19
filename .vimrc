@@ -349,6 +349,11 @@
 	nnoremap <leader>gn :Gbrowse<return>
 	nnoremap <leader>gp :Gpush<return>
 
+	"Gist plugin configs
+	let g:gist_detect_filetype = 1
+	let g:gist_open_browser_after_post = 1
+	nnoremap <leader>gg :Gist<return>
+
 	"Override colors
 	let g:gitgutter_override_sign_column_highlight = 1
 
