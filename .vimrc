@@ -298,6 +298,9 @@
 	vnoremap <silent> *:call VisualSelection('f')<CR>
 	vnoremap <silent> #:call VisualSelection('b')<CR>
 
+	"For adding tags, m is shadow by easyclip plugin
+    nnoremap gm m
+
 	" Don't use Ex mode, use Q for formatting
 	map Q gq
 
