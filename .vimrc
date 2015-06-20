@@ -345,7 +345,7 @@
 	nnoremap <leader>gb :Gblame<return>
 	nnoremap <leader>gd :Gdiff<return>
 	nnoremap <leader>gs :Gstatus<return>
-	nnoremap <leader>gm :Gcommit<return>
+	nnoremap <leader>gc :Gcommit<return>
 	nnoremap <leader>gl :Glog<return>
 	nnoremap <leader>gw :Gwrite<return>
 	nnoremap <leader>ge :Gedit<return>
