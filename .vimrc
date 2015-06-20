@@ -23,7 +23,6 @@
 "Vim sessions default to capturing all global options, which includes the 'runtimepath' that pathogen.vim manipulates, so turn that behavior off
 	set sessionoptions-=options
 
-	set colorcolumn=140
 "Use Vim configurations instead of Vi
 	set nocompatible
 
