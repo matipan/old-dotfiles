@@ -1,3 +1,19 @@
+" .nvimrc configuration by Matias Pan - < matias.pan26 at gmail dot com>
+" Github account: https://github.com/kriox26
+"=======================================================================
+"			Index
+" 1 -- Basics Configuration
+" 2 -- GUI configs
+" 3 -- Search configs
+" 4 -- Statusbar
+" 5 -- Helpers and functions
+" 6 -- Navigation keymaps
+" 7 -- Plugins configs
+"
+"=========================================================
+"					Basics configuration				 "
+"=========================================================
+"
 "Map leader key to -
 	let mapleader = "-"
 
@@ -12,8 +28,26 @@
 	set ttimeoutlen=20
 	set notimeout
 
+"Set tab indent, 4 spaces
+	set tabstop=4
+	set softtabstop=0
+	set noexpandtab
+	set shiftwidth=4
+
+" do not keep a backup file, it's all in github anyway
+	set nobackup
+	set noswapfile
+
+"Set LEADER + r + n to change to relative number of lines, just because
+"sometimes is better to have number instead of relative number
+	nnoremap <leader>rn :set relativenumber<return>
+	nnoremap <leader>nrn :set norelativenumber<return>
+
 "set <esc> for deselect highlighted text after doing a search
 	nnoremap <esc>k :noh<return>
+
+"Enable spellchecking for markdown
+	autocmd FileType markdown setlocal spell
 
 " Only do this part when compiled with support for autocommands.
 	if has("autocmd")
@@ -38,6 +72,10 @@
 "Pathogen plugin handles $RUNTIMEPATH
 execute pathogen#infect()
 
+"=========================================================
+"					GUI configs							 "
+"=========================================================
+"
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 	if &t_Co > 2 || has("gui_running")
@@ -47,22 +85,13 @@ execute pathogen#infect()
 
 	colorscheme symfony
 
-"Enable spellchecking for markdown
-	autocmd FileType markdown setlocal spell
-
 "Use 256 color(only when terminal support it)
 	set t_Co=256
 
-" Setup some default ignores
-	let g:ctrlp_custom_ignore = {
-		\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-		\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
-		 \}
-
-" Use the nearest .git directory as the cwd
-" This makes a lot of sense if you are working on a project that is in version control. It also supports works with .svn, .hg, .bzr.
-	let g:ctrlp_working_path_mode = 'c'
-
+"=========================================================
+"					Search configs						 "
+"=========================================================
+"
 " do incremental searching
 	set incsearch
 
@@ -81,16 +110,10 @@ execute pathogen#infect()
 "bind K to search word under cursor
 	nnoremap <leader>K :Ag! <C-R><C-W><CR>
 
-"Set tab indent, 4 spaces
-	set tabstop=4
-	set softtabstop=0
-	set noexpandtab
-	set shiftwidth=4
-
-" do not keep a backup file, it's all in github anyway
-	set nobackup
-	set noswapfile
-
+"=========================================================
+"					Statusbar config					 "
+"=========================================================
+"
 "Always show statusline
 	set laststatus=2
 
@@ -114,12 +137,16 @@ execute pathogen#infect()
     let g:syntastic_mode_map = { "mode": "active",
                                \ "active_filetypes": ["ruby", "php","c","javascript","css","cpp","java","go","python"],
                                \ "passive_filetypes": [] }
-	
+
 "Update vimrc on the fly, based on drew neil example at vimcasts.org
 	"if has("autocmd")
 	"	autocmd bufwritepost .nvimrc source $MYNVIMRC
 	"endif
-	
+
+"=========================================================
+"					Functions and helpers				 "
+"=========================================================
+"
 "Change the PWD of current window to the dir of currently opened file, only
 "if the file is not in a /tmp folder
 	if has("autocmd")
@@ -138,6 +165,10 @@ execute pathogen#infect()
 	nnoremap <leader>u" :Underline "<return>
 	nnoremap <leader>u* :Underline *<return>
 
+"=========================================================
+"				Navigation keymaps	 					 "
+"=========================================================
+"
 "Visual mode pressing * or # searches for the current selection
 	vnoremap <silent> *:call VisualSelection('f')<CR>
 	vnoremap <silent> #:call VisualSelection('b')<CR>
@@ -150,11 +181,6 @@ execute pathogen#infect()
 
 "; instead of : for command mode
 	nnoremap ; :
-
-"Set LEADER + r + n to change to relative number of lines, just because
-"sometimes is better to have number instead of relative number
-	nnoremap <leader>rn :set relativenumber<return>
-	nnoremap <leader>nrn :set norelativenumber<return>
 
 "For terminal mode navigation and modal editing
 	tnoremap <Esc> <C-\><C-n>
@@ -199,6 +225,11 @@ execute pathogen#infect()
 "Set LEADER + l + b to show current buffers
 	nnoremap <leader>bl :ls<return>
 
+
+"=========================================================
+"					Plugins config						 "
+"=========================================================
+"
 "Fugitive plugin keymaps for basic git operations:
 	nnoremap <leader>gb :Gblame<return>
 	nnoremap <leader>gd :Gdiff<return>
@@ -210,7 +241,16 @@ execute pathogen#infect()
 	nnoremap <leader>gn :Gbrowse<return>
 	nnoremap <leader>gp :Gpush<return>
 
-	"Gist plugin configs
+"Call :StripWhitespace with <leader>sw
+	nnoremap <leader>sw :StripWhitespace<return>
+
+"Ultisnips triggers
+	let g:UltiSnipsSnippetsDir = $HOME.'/.nvim/bundle/vim-snippets/UltiSnips/'
+	let g:UltiSnipsExpandTrigger="<c-j>"
+	let g:UltiSnipsJumpForwardTrigger="<c-h>"
+	let g:UltiSnipsJumpBackwardTrigger = "<c-b>"
+
+"Gist plugin configs
 	let g:gist_detect_filetype = 1
 	let g:gist_open_browser_after_post = 1
 	nnoremap <leader>gg :Gist<return>
@@ -219,3 +259,32 @@ execute pathogen#infect()
 	let g:multi_cursor_next_key='<C-n>'
 	let g:multi_cursor_skip_key='<C-x>'
 	let g:multi_cursor_quit_key='<Esc>'
+
+" Setup some default ignores
+	let g:ctrlp_custom_ignore = {
+		\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+		\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+		 \}
+
+" Use the nearest .git directory as the cwd
+" This makes a lot of sense if you are working on a project that is in version control. It also supports works with .svn, .hg, .bzr.
+	let g:ctrlp_working_path_mode = 'c'
+
+" Indent when defining private, protected or public methods
+	let g:ruby_indent_access_modifier_style = 'indent'
+
+"Set control + e to sparkup completion
+	let g:sparkupExecuteMapping='<C-e>'
+
+" Suppress buffergator keymaps
+	let g:buffergator_suppress_keymaps=1
+
+"You complete me, set global path for .ycm_extra_conf.py
+	let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+	let g:ycm_complete_in_comments = 1
+	let g:ycm_seed_identifiers_with_syntax = 1
+	let g:ycm_collect_identifiers_from_comments_and_strings = 1
+	let g:ycm_min_num_of_chars_for_completion = 2
+	let g:ycm_use_ultisnips_completer = 2
+	let g:ycm_warning_symbol="⚠"
+	let g:ycm_error_symbol="✗"
