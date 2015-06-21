@@ -272,7 +272,7 @@ execute pathogen#infect()
 "Ultisnips triggers
 	let g:UltiSnipsSnippetsDir = $HOME.'/.nvim/bundle/vim-snippets/UltiSnips/'
 	let g:UltiSnipsExpandTrigger="<c-j>"
-	let g:UltiSnipsJumpForwardTrigger="<c-s>"
+	let g:UltiSnipsJumpForwardTrigger="<c-h>"
 	let g:UltiSnipsJumpBackwardTrigger = "<c-b>"
 
 "Gist plugin configs
