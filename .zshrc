@@ -95,6 +95,7 @@ source ~/.bin/tmuxinator.zsh
 	alias o1='open .'
 	alias v='vim'
 	alias n='nvim'
+	alias nvimrc='nvim ~/.nvimrc'
 	alias ls='ls -G'  #Displays a list of dirs and files with colors
 	alias la='ls -Ga' #Displays all hidden files and reg files with la
 	alias lf='ls -GFlash' #Displays hidden and reg files with usefull info
