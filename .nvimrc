@@ -47,7 +47,8 @@
 "sometimes is better to have number instead of relative number
 	nnoremap <leader>rn :set relativenumber<return>
 	nnoremap <leader>nrn :set norelativenumber<return>
-	"Sometimes is useful to see where the cursor is
+
+"Sometimes is useful to see where the cursor is
 	nnoremap <leader>cl :set cursorline<return>
 	nnoremap <leader>cnl :set nocursorline<return>
 
@@ -210,10 +211,10 @@ execute pathogen#infect()
 	tnoremap <C-l> <C-\><C-n><C-w>l
 
 "better window navigation
-	map <C-h> <C-w>h
 	map <C-j> <C-w>j
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
+	map <C-h> <C-w>h
 
 "set tt for entering Terminal mode
 	nnoremap tt :terminal<return>
@@ -271,7 +272,7 @@ execute pathogen#infect()
 "Ultisnips triggers
 	let g:UltiSnipsSnippetsDir = $HOME.'/.nvim/bundle/vim-snippets/UltiSnips/'
 	let g:UltiSnipsExpandTrigger="<c-j>"
-	let g:UltiSnipsJumpForwardTrigger="<c-h>"
+	let g:UltiSnipsJumpForwardTrigger="<c-s>"
 	let g:UltiSnipsJumpBackwardTrigger = "<c-b>"
 
 "Gist plugin configs
