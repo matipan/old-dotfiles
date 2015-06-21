@@ -196,6 +196,12 @@ execute pathogen#infect()
 "; instead of : for command mode
 	nnoremap ; :
 
+"Maps for windows resize
+	nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+	nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+	nnoremap <silent> <Leader>] :vertical resize +5<CR>
+	nnoremap <silent> <Leader>[ :vertical resize -5<CR>
+
 "For terminal mode navigation and modal editing
 	tnoremap <Esc> <C-\><C-n>
 	tnoremap <C-h> <C-\><C-n><C-w>h
