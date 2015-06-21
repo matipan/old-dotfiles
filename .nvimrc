@@ -17,6 +17,9 @@
 "Map leader key to -
 	let mapleader = "-"
 
+"Open your .nvimrc with this key map
+	nnoremap <leader>n :edit $MYVIMRC<return>
+
 "Allows to navigate between modified buffers
 	set hidden
 
@@ -44,11 +47,14 @@
 "sometimes is better to have number instead of relative number
 	nnoremap <leader>rn :set relativenumber<return>
 	nnoremap <leader>nrn :set norelativenumber<return>
+	"Sometimes is useful to see where the cursor is
+	nnoremap <leader>cl :set cursorline<return>
+	nnoremap <leader>cnl :set nocursorline<return>
 
 "Mappings for sourcing and making sessions, ss for save session and so
 " session-source
-	nnoremap <leader>ss :mksession! ~/.vim/session/
-	nnoremap <leader>so :source ~/.vim/session/
+	nnoremap <leader>ss :mksession! ~/.nvim/session/
+	nnoremap <leader>so :source ~/.nvim/session/
 
 "set <esc> for deselect highlighted text after doing a search
 	nnoremap <esc>k :noh<return>
@@ -67,6 +73,7 @@
 		autocmd FileType ruby set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
 		autocmd FileType python set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
 		autocmd FileType erb set tabsopt=4|set shiftwidth=2|set expandtab|set smarttab|set softtabstop=0
+		autocmd bufwritepost .nvimrc source $MYVIMRC
 		" When editing a file, always jump to the last known cursor position.
 		" don't do it when the mark is in the first line, that is the default
 		" position when opening a file.
@@ -204,6 +211,10 @@ execute pathogen#infect()
 
 "set tt for entering Terminal mode
 	nnoremap tt :terminal<return>
+
+"Netrw is an awesome replacemente of nerdtree(and faster)
+	let g:netrw_liststyle=3
+	nnoremap <leader>k :Explore<return>
 
 "Set LEADER + t to open new tab
 	nnoremap <leader>tn :tabnew<return>
