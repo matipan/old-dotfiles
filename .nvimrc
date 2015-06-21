@@ -53,8 +53,33 @@ execute pathogen#infect()
 "Use 256 color(only when terminal support it)
 	set t_Co=256
 
+" Setup some default ignores
+	let g:ctrlp_custom_ignore = {
+		\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+		\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+		 \}
+
+" Use the nearest .git directory as the cwd
+" This makes a lot of sense if you are working on a project that is in version control. It also supports works with .svn, .hg, .bzr.
+	let g:ctrlp_working_path_mode = 'c'
+
 " do incremental searching
 	set incsearch
+
+"Ag for searching files
+	if executable('ag')
+		"Use ag over grep
+		set grepprg=ag\ --nogroup
+		let g:grep_cmd_opts = '--line-numbers --noheading'
+		"Use ag in CtrlP for listing files. Faster than grep and respects
+		".gitignore
+		let g:ctrlp_user_command = 'ag %s -l -g ""'
+		"ag is fast enough that CtrlP doesn't need to cache
+		let g:ctrlp_use_caching=0
+	endif
+
+"bind K to search word under cursor
+	nnoremap <leader>K :Ag! <C-R><C-W><CR>
 
 "Set tab indent, 4 spaces
 	set tabstop=4
@@ -74,6 +99,21 @@ execute pathogen#infect()
 	let g:airline#extensions#tabline#enabled = 1
 	let g:airline_theme = 'mkolor'
   	let g:airline#extensions#whitespace#enabled = 0
+	let g:airline#extensions#tabline#enabled=1		"Enables plugins to appear on statusline, such as syntastic
+	let g:airline#extensions#syntastic#enabled = 1 	"Enable syntastic
+  	let g:airline#extensions#whitespace#enabled = 0
+	let g:airline_detect_paste=1
+	let g:airline_detect_syntastic=1	"set the syntastic error message on statusline
+	let g:syntastic_enable_signs=1	 		"Enable signs for syntastic
+	let g:syntastic_always_populate_loc_list=1 "For using :lopen or :lwindow
+	let g:syntastic_auto_jump=1
+	let g:syntastic_error_symbol = "✗"
+	let g:syntastic_warning_symbol = "⚠ "
+
+"set syntastic mode active at startup with certain fyletype
+    let g:syntastic_mode_map = { "mode": "active",
+                               \ "active_filetypes": ["ruby", "php","c","javascript","css","cpp","java","go","python"],
+                               \ "passive_filetypes": [] }
 	
 "Update vimrc on the fly, based on drew neil example at vimcasts.org
 	"if has("autocmd")
@@ -158,3 +198,24 @@ execute pathogen#infect()
 
 "Set LEADER + l + b to show current buffers
 	nnoremap <leader>bl :ls<return>
+
+"Fugitive plugin keymaps for basic git operations:
+	nnoremap <leader>gb :Gblame<return>
+	nnoremap <leader>gd :Gdiff<return>
+	nnoremap <leader>gs :Gstatus<return>
+	nnoremap <leader>gc :Gcommit<return>
+	nnoremap <leader>gl :Glog<return>
+	nnoremap <leader>gw :Gwrite<return>
+	nnoremap <leader>ge :Gedit<return>
+	nnoremap <leader>gn :Gbrowse<return>
+	nnoremap <leader>gp :Gpush<return>
+
+	"Gist plugin configs
+	let g:gist_detect_filetype = 1
+	let g:gist_open_browser_after_post = 1
+	nnoremap <leader>gg :Gist<return>
+
+"Maps for vim-multiple cursor
+	let g:multi_cursor_next_key='<C-n>'
+	let g:multi_cursor_skip_key='<C-x>'
+	let g:multi_cursor_quit_key='<Esc>'
