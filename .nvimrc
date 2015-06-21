@@ -244,7 +244,7 @@ execute pathogen#infect()
 	nnoremap <leader>gw :Gwrite<return>
 	nnoremap <leader>ge :Gedit<return>
 	nnoremap <leader>gn :Gbrowse<return>
-	nnoremap <leader>gp :Gpush<return>
+	nnoremap <leader>gp :Git push<return>
 
 "Call :StripWhitespace with <leader>sw
 	nnoremap <leader>sw :StripWhitespace<return>
