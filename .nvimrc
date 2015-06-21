@@ -288,3 +288,30 @@ execute pathogen#infect()
 	let g:ycm_use_ultisnips_completer = 2
 	let g:ycm_warning_symbol="⚠"
 	let g:ycm_error_symbol="✗"
+
+"Startify header, appears only if you launch vim with no arguments
+	let g:startify_custom_header = [
+				\'				***************************',
+				\'		   *****					       *****',
+				\'		 **	  The programmers of tomorrow are   **',
+				\'	   **   the wizards of the future, you are    **',
+				\'	   *   gonna look like you have magic powers   *',
+				\'	   **        compare to everybody else        **',
+				\'		 **            -Gabe Newell-            **',
+				\'		   *****					       *****',
+				\'				***************************',
+				\'',
+				\'',
+				\]
+
+	let g:startify_session_dir = '~/.nvim/session'
+	let g:startify_list_order =[
+				\ ['	Sessions available:'],
+				\ 'sessions',
+				\ ['	Recently used in current dir:'],
+				\ 'dir',
+				\ ['	Recently used files:'],
+				\ 'files',
+				\ ['	Bookmarks:'],
+				\ 'bookmarks',
+				\ ]
