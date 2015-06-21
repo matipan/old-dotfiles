@@ -20,7 +20,9 @@
 "Allows to navigate between modified buffers
 	set hidden
 
-"Relative number es way better for motions performance
+"Relative number is way better for motions performance, set number first to
+"show the 'real' number of current line
+	set number
 	set relativenumber
 
 "Reduce timeout after <ESC> is pressed
