@@ -2,8 +2,8 @@
 " Github account: https://github.com/kriox26
 "=======================================================================
 "			Index
-" 1 -- Basics Configuration
-" 2 -- GUI configs
+" 1 -- General settings
+" 2 -- Graphical configs
 " 3 -- Search configs
 " 4 -- Statusbar
 " 5 -- Helpers and functions
@@ -11,7 +11,7 @@
 " 7 -- Plugins configs
 "
 "=========================================================
-"					Basics configuration				 "
+"					General settings					 "
 "=========================================================
 "
 "Map leader key to -
@@ -88,7 +88,7 @@
 execute pathogen#infect()
 
 "=========================================================
-"					GUI configs							 "
+"					Graphical configs					 "
 "=========================================================
 "
 " Switch syntax highlighting on, when the terminal has colors
