@@ -1,4 +1,4 @@
-" .nvimrc configuration by Matias Pan - < matias.pan26 at gmail dot com>
+" .nvimrc configuration by Matias Pan - <matias.pan26 at gmail dot com>
 " Github account: https://github.com/kriox26
 "=======================================================================
 "			Index
