@@ -43,6 +43,11 @@
 	nnoremap <leader>rn :set relativenumber<return>
 	nnoremap <leader>nrn :set norelativenumber<return>
 
+"Mappings for sourcing and making sessions, ss for save session and so
+" session-source
+	nnoremap <leader>ss :mksession! ~/.vim/session/
+	nnoremap <leader>so :source ~/.vim/session/
+
 "set <esc> for deselect highlighted text after doing a search
 	nnoremap <esc>k :noh<return>
 
