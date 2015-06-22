@@ -305,10 +305,11 @@ execute pathogen#infect()
 "Ultisnips triggers
 	let g:UltiSnipsSnippetsDir = $HOME.'/.nvim/bundle/vim-snippets/UltiSnips/'
 	let g:UltiSnipsExpandTrigger="<c-j>"
-	let g:UltiSnipsJumpForwardTrigger="<c-h>"
+	let g:UltiSnipsJumpForwardTrigger="<c-l>"
 	let g:UltiSnipsJumpBackwardTrigger = "<c-b>"
 
 "Gist plugin configs
+	let g:gist_clip_command = 'pbcopy'
 	let g:gist_detect_filetype = 1
 	let g:gist_open_browser_after_post = 1
 	nnoremap <leader>gg :Gist<return>
