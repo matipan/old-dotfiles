@@ -53,7 +53,7 @@ export PATH=$PATH:"/Users/Matias/.rvm/gems/ruby-2.2.0/bin:/Users/Matias/.rvm/gem
  export MANPATH="/usr/local/man:$MANPATH"
 
 
-export EDITOR="vim"
+export EDITOR="nvim"
 source $ZSH/oh-my-zsh.sh
 source ~/.bin/tmuxinator.zsh
 
@@ -96,6 +96,7 @@ source ~/.bin/tmuxinator.zsh
 	alias v='vim'
 	alias n='nvim'
 	alias nvimrc='nvim ~/.nvimrc'
+	alias nvimz='nvim ~/.zshrc'
 	alias ls='ls -G'  #Displays a list of dirs and files with colors
 	alias la='ls -Ga' #Displays all hidden files and reg files with la
 	alias lf='ls -GFlash' #Displays hidden and reg files with usefull info
@@ -105,8 +106,9 @@ source ~/.bin/tmuxinator.zsh
 	alias changelog='sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText'
 	alias resetlog='sudo defaults delete /Library/Preferences/com.apple.loginwindow'
 	alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+
 #Brew
-	alias bupd='brew update'  				#bupd = brew update
+	alias bupd='sudo brew update'  			#bupd = brew update
 	alias bdtr='brew doctor'				#bdtr = brew doctor
 
 #For developing
