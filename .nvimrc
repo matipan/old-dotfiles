@@ -161,6 +161,16 @@ execute pathogen#infect()
 "					Functions and helpers				 "
 "=========================================================
 "
+"Show highlighting groups for current word with CTRL-SHIFT-H, usefull when
+"having miss syntax highlight
+	nmap <C-S-H> :call <SID>SynStack()<CR>
+	function! <SID>SynStack()
+		if !exists("*synstack")
+			return
+		endif
+		echo map(synstack(line('.'),col('.')),'synIDattr(v:val, "name")')
+	endfunc
+
 "Underlines current line with ="
 	function! s:Underline(chars)
 		let chars = empty(a:chars) ? '=' : a:chars
