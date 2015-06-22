@@ -147,10 +147,11 @@ execute pathogen#infect()
 	let g:syntastic_auto_jump=1
 	let g:syntastic_error_symbol = "✗"
 	let g:syntastic_warning_symbol = "⚠ "
+	nnoremap <leader>sl :lopen<return>
 
 "set syntastic mode active at startup with certain fyletype
     let g:syntastic_mode_map = { "mode": "active",
-                               \ "active_filetypes": ["ruby", "php","c","javascript","css","cpp","java","go","python"],
+                               \ "active_filetypes": ["ruby", "php","c","javascript","css","cpp","go","python"],
                                \ "passive_filetypes": [] }
 
 "Update vimrc on the fly, based on drew neil example at vimcasts.org
