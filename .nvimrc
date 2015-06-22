@@ -18,7 +18,7 @@
 	let mapleader = "-"
 
 "Open your .nvimrc with this key map
-	nnoremap <leader>n :edit $MYVIMRC<return>
+	nnoremap <leader>nn :edit $MYVIMRC<return>
 
 "Allows to navigate between modified buffers
 	set hidden
@@ -75,6 +75,8 @@
 		autocmd FileType python set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
 		autocmd FileType erb set tabsopt=4|set shiftwidth=2|set expandtab|set smarttab|set softtabstop=0
 		autocmd bufwritepost .nvimrc source $MYVIMRC
+		"Change the PWD of current window to the dir of currently opened file, only if the file is not in a /tmp folder
+		autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 		" When editing a file, always jump to the last known cursor position.
 		" don't do it when the mark is in the first line, that is the default
 		" position when opening a file.
@@ -147,28 +149,18 @@ execute pathogen#infect()
 	let g:syntastic_auto_jump=1
 	let g:syntastic_error_symbol = "✗"
 	let g:syntastic_warning_symbol = "⚠ "
-	nnoremap <leader>sl :lopen<return>
+	nnoremap <leader>slc :lclose<return>
+	nnoremap <leader>sll :lopen<return>
 
 "set syntastic mode active at startup with certain fyletype
     let g:syntastic_mode_map = { "mode": "active",
                                \ "active_filetypes": ["ruby", "php","c","javascript","css","cpp","go","python"],
-                               \ "passive_filetypes": [] }
-
-"Update vimrc on the fly, based on drew neil example at vimcasts.org
-	"if has("autocmd")
-	"	autocmd bufwritepost .nvimrc source $MYNVIMRC
-	"endif
+                               \ "passive_filetypes": ["java"] }
 
 "=========================================================
 "					Functions and helpers				 "
 "=========================================================
 "
-"Change the PWD of current window to the dir of currently opened file, only
-"if the file is not in a /tmp folder
-	if has("autocmd")
-		autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
-	endif
-
 "Underlines current line with ="
 	function! s:Underline(chars)
 		let chars = empty(a:chars) ? '=' : a:chars
@@ -180,6 +172,30 @@ execute pathogen#infect()
 	nnoremap <leader>u= :Underline =<return>
 	nnoremap <leader>u" :Underline "<return>
 	nnoremap <leader>u* :Underline *<return>
+
+" Command for openning a buffer with the output of a shell command, such as
+" ls or ruby myprogram.rb"
+	command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+	function! s:RunShellCommand(cmdline)
+		echo a:cmdline
+		let expanded_cmdline = a:cmdline
+		for part in split(a:cmdline, ' ')
+			if part[0] =~ '\v[%#<]'
+				let expanded_part = fnameescape(expand(part))
+				let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
+			endif
+		endfor
+		botright new
+		setlocal bufhidden=wipe nobuflisted noswapfile nowrap "remove the buftype=file so that you can save the buffer into a file"
+		call setline(1, 'You entered:    ' . a:cmdline)
+		call setline(2, 'Expanded Form:  ' .expanded_cmdline)
+		call setline(3,substitute(getline(2),'.','=','g'))
+		execute '$read !'. expanded_cmdline
+		"setlocal nomodifiable
+		1
+	endfunction
+	"Set leader + rc to run the ruby program in current buffer
+	nnoremap <leader>rc :Shell ruby %:t<return>
 
 "=========================================================
 "				Navigation keymaps	 					 "
@@ -197,6 +213,9 @@ execute pathogen#infect()
 
 "; instead of : for command mode
 	nnoremap ; :
+
+"Leader + ct is :checktime for updateing current buffer
+	nnoremap <leader>ct :checktime<return>
 
 "Maps for windows resize
 	nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
@@ -301,6 +320,9 @@ execute pathogen#infect()
 
 " Indent when defining private, protected or public methods
 	let g:ruby_indent_access_modifier_style = 'indent'
+
+"For drew neils vim-textobj-rubyblock definition
+	runtime macros/matchit.vim
 
 "Set control + e to sparkup completion
 	let g:sparkupExecuteMapping='<C-e>'
