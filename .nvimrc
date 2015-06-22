@@ -217,8 +217,11 @@ execute pathogen#infect()
 	map <C-l> <C-w>l
 	map <C-h> <C-w>h
 
-"set tt for entering Terminal mode
+"set tt for entering Terminal mode, tv for vertical split, and th for
+"horizontal split
 	nnoremap tt :terminal<return>
+	nnoremap tv :vsplit +terminal<return>
+	nnoremap th :split +terminal<return>
 
 "Netrw is an awesome replacemente of nerdtree(and faster)
 	let g:netrw_liststyle=3
