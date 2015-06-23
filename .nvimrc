@@ -284,9 +284,17 @@ execute pathogen#infect()
 "set <esc> for deselect highlighted text after doing a search
 	nnoremap <esc>k :noh<return>
 
-"instead of dd we could use Control + d, and instad of ci) use <space>
+"instead of dd we could use Control + d, and instead of ci) use <space>
 	map <c-d> dd
 	nnoremap <space> ci)
+
+"control + b(below) to move current down one line, control + a(above) to move up one line
+	map <c-b> ddp
+	map <c-a> ddkP
+
+"Upcase inner word in normal or insert mode with control + u
+	imap <c-u> <Esc>gUiw
+	nmap <c-u> gUiw
 
 "=========================================================
 "					Plugins config						 "
