@@ -43,20 +43,6 @@
 	set nobackup
 	set noswapfile
 
-"Turn relative number on and off, sometimes is useful
-	nnoremap <leader>rn :set relativenumber!<return>
-
-"Sometimes is useful to see where the cursor is
-	nnoremap <leader>cl :set cursorline!<return>
-
-"Mappings for sourcing and making sessions, ss for save session and so
-" session-source
-	nnoremap <leader>ss :mksession! ~/.nvim/session/
-	nnoremap <leader>so :source ~/.nvim/session/
-
-"set <esc> for deselect highlighted text after doing a search
-	nnoremap <esc>k :noh<return>
-
 "Enable spellchecking for markdown
 	autocmd FileType markdown setlocal spell
 
@@ -205,7 +191,7 @@ execute pathogen#infect()
 	nnoremap <leader>rc :Shell ruby %:t<return>
 
 "=========================================================
-"				Navigation keymaps	 					 "
+"					Navigation keymaps 					 "
 "=========================================================
 "
 "Visual mode pressing * or # searches for the current selection
@@ -280,6 +266,27 @@ execute pathogen#infect()
 "Set LEADER + l + b to show current buffers
 	nnoremap <leader>bl :ls<return>
 
+"=========================================================
+"					Other keymaps	 					 "
+"=========================================================
+"
+"Turn relative number on and off, sometimes is useful
+	nnoremap <leader>rn :set relativenumber!<return>
+
+"Sometimes is useful to see where the cursor is
+	nnoremap <leader>cl :set cursorline!<return>
+
+"Mappings for sourcing and making sessions, ss for save session and so
+" session-source
+	nnoremap <leader>ss :mksession! ~/.nvim/session/
+	nnoremap <leader>so :source ~/.nvim/session/
+
+"set <esc> for deselect highlighted text after doing a search
+	nnoremap <esc>k :noh<return>
+
+"instead of dd we could use Control + d, and instad of ci) use <space>
+	map <c-d> dd
+	nnoremap <space> ci)
 
 "=========================================================
 "					Plugins config						 "
