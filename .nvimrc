@@ -215,10 +215,10 @@ execute pathogen#infect()
 	nnoremap <leader>ct :checktime<return>
 
 "Maps for windows resize
-	nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
-	nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
-	nnoremap <silent> <Leader>] :vertical resize +5<CR>
-	nnoremap <silent> <Leader>[ :vertical resize -5<CR>
+	nnoremap <silent> <leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+	nnoremap <silent> <leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+	nnoremap <silent> <leader>] :vertical resize +5<CR>
+	nnoremap <silent> <leader>[ :vertical resize -5<CR>
 
 "For terminal mode navigation and modal editing
 	tnoremap <Esc> <C-\><C-n>
