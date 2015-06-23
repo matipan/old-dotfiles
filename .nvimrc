@@ -289,11 +289,10 @@ execute pathogen#infect()
 	nnoremap <esc>k :noh<return>
 
 "instead of dd we could use Control + d, and instead of ci) use <space>
-	noremap <c-d> dd
 	nnoremap <space> ci)
 
-"control + b(below) to move current down one line, control + a(above) to move up one line
-	noremap <c-b> ddp
+"control + d(down) to move current down one line, control + a(above) to move up one line
+	noremap <c-d> ddp
 	noremap <c-a> ddkP
 
 "Upcase inner word in normal or insert mode with control + u
