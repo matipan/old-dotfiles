@@ -18,6 +18,9 @@
 "Map leader key to -
 	let mapleader = "-"
 
+"You complete me makes nvim startup kind of slow, disable it
+	" let pathogen_disabled=["YouCompleteMe"]
+
 "Open your .nvimrc with this key map
 	nnoremap <leader>en :edit $MYVIMRC<return>
 
