@@ -1,4 +1,4 @@
-" .nvimrc configuration by Matias Pan - <matias.pan26 at gmail dot com>
+" .nvimrc configuration by Matias Pan - <matias.pan26@gmail.com>
 " Github account: https://github.com/kriox26
 "=======================================================================
 "			Index
@@ -8,7 +8,8 @@
 " 4 -- Statusbar
 " 5 -- Helpers and functions
 " 6 -- Navigation keymaps
-" 7 -- Plugins configs
+" 7 -- Other keymaps and abbrev
+" 8 -- Plugins configs
 "
 "=========================================================
 "					General settings					 "
@@ -18,7 +19,7 @@
 	let mapleader = "-"
 
 "Open your .nvimrc with this key map
-	nnoremap <leader>nn :edit $MYVIMRC<return>
+	nnoremap <leader>en :edit $MYVIMRC<return>
 
 "Allows to navigate between modified buffers
 	set hidden
@@ -261,13 +262,13 @@ execute pathogen#infect()
 	nnoremap <leader>bc :bd!<return>
 
 "set leader + e to open a new empty buffer
-	nnoremap <leader>e :enew<return>
+	nnoremap <leader>eb :enew<return>
 
 "Set LEADER + l + b to show current buffers
 	nnoremap <leader>bl :ls<return>
 
 "=========================================================
-"					Other keymaps	 					 "
+"					Other keymaps and abbrev			 "
 "=========================================================
 "
 "Turn relative number on and off, sometimes is useful
@@ -295,6 +296,9 @@ execute pathogen#infect()
 "Upcase inner word in normal or insert mode with control + u
 	inoremap <c-u> <Esc>gUiw
 	nnoremap <c-u> gUiw
+
+"myemail = matias.pan26@gmail.com
+	iabbrev myemail matias.pan26@gmail.com
 
 "=========================================================
 "					Plugins config						 "
