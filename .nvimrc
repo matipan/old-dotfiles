@@ -43,14 +43,11 @@
 	set nobackup
 	set noswapfile
 
-"Set LEADER + r + n to change to relative number of lines, just because
-"sometimes is better to have number instead of relative number
-	nnoremap <leader>rn :set relativenumber<return>
-	nnoremap <leader>nrn :set norelativenumber<return>
+"Turn relative number on and off, sometimes is useful
+	nnoremap <leader>rn :set relativenumber!<return>
 
 "Sometimes is useful to see where the cursor is
-	nnoremap <leader>cl :set cursorline<return>
-	nnoremap <leader>cnl :set nocursorline<return>
+	nnoremap <leader>cl :set cursorline!<return>
 
 "Mappings for sourcing and making sessions, ss for save session and so
 " session-source
