@@ -286,7 +286,7 @@ execute pathogen#infect()
 	nnoremap <leader>so :source ~/.nvim/session/
 
 "set <esc> for deselect highlighted text after doing a search
-	nnoremap <esc>k :noh<return>
+	nnoremap <silent> <esc>k :noh<return>
 
 "Set jk to go back to normal mode when on insert mode
 	inoremap jk <esc>
