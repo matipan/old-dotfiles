@@ -225,8 +225,8 @@ execute pathogen#infect()
 "Set LEADER + q to :exit
 	nnoremap <leader>q :q!<return>
 
-"Set LEADER + s to save the current buffer and file
-	nnoremap <leader>w :w<return>
+"Set control + s to save the current buffer and file
+	noremap <c-s> <esc>:w!<return>
 
 "; instead of : for command mode
 	nnoremap ; :
