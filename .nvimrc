@@ -37,11 +37,15 @@
 	set ttimeoutlen=20
 	set notimeout
 
+" allow backspacing over everything in insert mode
+	set backspace=indent,eol,start
+
 "Set tab indent, 4 spaces
 	set tabstop=4
 	set softtabstop=0
 	set noexpandtab
 	set shiftwidth=4
+	set smarttab
 
 " do not keep a backup file, it's all in github anyway
 	set nobackup
@@ -50,16 +54,17 @@
 " Only do this part when compiled with support for autocommands.
 	if has("autocmd")
 		" Enable file type detection.
-		" Also load indent files, to automatically do language-dependent indenting.
-		filetype plugin indent on
-		filetype plugin on
 		filetype on
+		" Also load indent files, to automatically do language-dependent indenting.
+		filetype indent on
+		filetype plugin on
+		filetype plugin indent on
 		augroup filetypes
 			autocmd!
 			autocmd FileType text setlocal textwidth=130
-			autocmd FileType ruby set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
-			autocmd FileType python set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
-			autocmd FileType erb set tabsopt=4|set shiftwidth=2|set expandtab|set smarttab|set softtabstop=0
+			autocmd FileType ruby set tabstop=4|set shiftwidth=2|set noexpandtab|set softtabstop=0
+			autocmd FileType python set tabstop=4|set shiftwidth=2|set noexpandtab|set softtabstop=0
+			autocmd FileType erb set tabstop=4|set shiftwidth=2|set noexpandtab|set softtabstop=0
 			"Enable spellchecking for markdown
 			autocmd FileType markdown setlocal spell
 		augroup END
@@ -68,7 +73,8 @@
 			"Source .nvimrc after writing it, reloads nvim
 			autocmd bufwritepost .nvimrc source $MYVIMRC
 			"Indent .rb files before writing them
-			autocmd BufWritePre,BufRead *.rb :normal gg=G
+			autocmd BufWritePre *.rb :normal gg=G
+			" autocmd BufRead *.rb :normal gg=G
 			"Change the PWD of current window to the dir of currently opened file, only if the file is not in a /tmp folder
 			autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 			" When editing a file, always jump to the last known cursor position.
