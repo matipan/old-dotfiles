@@ -62,6 +62,7 @@
 		autocmd FileType python set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
 		autocmd FileType erb set tabsopt=4|set shiftwidth=2|set expandtab|set smarttab|set softtabstop=0
 		autocmd bufwritepost .nvimrc source $MYVIMRC
+		autocmd BufWritePre *.rb :normal gg=G
 		"Change the PWD of current window to the dir of currently opened file, only if the file is not in a /tmp folder
 		autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 		" When editing a file, always jump to the last known cursor position.
