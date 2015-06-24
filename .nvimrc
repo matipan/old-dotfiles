@@ -61,7 +61,7 @@
 		"Source .nvimrc after writing it, reloads nvim
 		autocmd bufwritepost .nvimrc source $MYVIMRC
 		"Indent .rb files before writing them
-		autocmd BufWritePre *.rb :normal gg=G
+		autocmd BufWritePre,BufRead *.rb :normal gg=G
 		"Enable spellchecking for markdown
 		autocmd FileType markdown setlocal spell
 		"Change the PWD of current window to the dir of currently opened file, only if the file is not in a /tmp folder
