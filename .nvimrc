@@ -54,25 +54,31 @@
 		filetype plugin indent on
 		filetype plugin on
 		filetype on
-		autocmd FileType text setlocal textwidth=130
-		autocmd FileType ruby set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
-		autocmd FileType python set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
-		autocmd FileType erb set tabsopt=4|set shiftwidth=2|set expandtab|set smarttab|set softtabstop=0
-		"Source .nvimrc after writing it, reloads nvim
-		autocmd bufwritepost .nvimrc source $MYVIMRC
-		"Indent .rb files before writing them
-		autocmd BufWritePre,BufRead *.rb :normal gg=G
-		"Enable spellchecking for markdown
-		autocmd FileType markdown setlocal spell
-		"Change the PWD of current window to the dir of currently opened file, only if the file is not in a /tmp folder
-		autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
-		" When editing a file, always jump to the last known cursor position.
-		" don't do it when the mark is in the first line, that is the default
-		" position when opening a file.
-		autocmd BufReadPost *
-		\ if line("'\"") > 1 && line("'\"") <= line("$") |
-		\   exe "normal! g`\"" |
-		\ endif
+		augroup filetypes
+			autocmd!
+			autocmd FileType text setlocal textwidth=130
+			autocmd FileType ruby set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
+			autocmd FileType python set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
+			autocmd FileType erb set tabsopt=4|set shiftwidth=2|set expandtab|set smarttab|set softtabstop=0
+			"Enable spellchecking for markdown
+			autocmd FileType markdown setlocal spell
+		augroup END
+		augroup sourcing_and_buffers
+			autocmd!
+			"Source .nvimrc after writing it, reloads nvim
+			autocmd bufwritepost .nvimrc source $MYVIMRC
+			"Indent .rb files before writing them
+			autocmd BufWritePre,BufRead *.rb :normal gg=G
+			"Change the PWD of current window to the dir of currently opened file, only if the file is not in a /tmp folder
+			autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
+			" When editing a file, always jump to the last known cursor position.
+			" don't do it when the mark is in the first line, that is the default
+			" position when opening a file.
+			autocmd BufReadPost *
+			\ if line("'\"") > 1 && line("'\"") <= line("$") |
+			\   exe "normal! g`\"" |
+			\ endif
+		augroup END
 	endif " has("autocmd")
 
 "Pathogen plugin handles $RUNTIMEPATH
