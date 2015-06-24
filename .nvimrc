@@ -47,9 +47,6 @@
 	set nobackup
 	set noswapfile
 
-"Enable spellchecking for markdown
-	autocmd FileType markdown setlocal spell
-
 " Only do this part when compiled with support for autocommands.
 	if has("autocmd")
 		" Enable file type detection.
@@ -61,8 +58,12 @@
 		autocmd FileType ruby set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
 		autocmd FileType python set tabstop=4|set shiftwidth=2|set noexpandtab|set smarttab|set softtabstop=0
 		autocmd FileType erb set tabsopt=4|set shiftwidth=2|set expandtab|set smarttab|set softtabstop=0
+		"Source .nvimrc after writing it, reloads nvim
 		autocmd bufwritepost .nvimrc source $MYVIMRC
+		"Indent .rb files before writing them
 		autocmd BufWritePre *.rb :normal gg=G
+		"Enable spellchecking for markdown
+		autocmd FileType markdown setlocal spell
 		"Change the PWD of current window to the dir of currently opened file, only if the file is not in a /tmp folder
 		autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 		" When editing a file, always jump to the last known cursor position.
