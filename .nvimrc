@@ -305,8 +305,14 @@ execute pathogen#infect()
 	noremap <Left> <NOP>
 	noremap <Right> <NOP>
 
-"instead of dd we could use Control + d, and instead of ci) use <space>
+"instead of ci) use <space>, in, il: {,(,[
 	nnoremap <space> ci)
+	onoremap in( :<c-u>normal! f(vi(<cr>
+	onoremap il( :<c-u>normal! F)vi(<cr>
+	onoremap in{ :<c-u>normal! f{vi{<cr>
+	onoremap il{ :<c-u>normal! F}vi{<cr>
+	onoremap in[ :<c-u>normal! f[vi[<cr>
+	onoremap il[ :<c-u>normal! F]vi[<cr>
 
 "control + d(down) to move current down one line, control + a(above) to move up one line
 	noremap <c-d> ddp
