@@ -144,3 +144,15 @@ source ~/.bin/tmuxinator.zsh
 	alias tmxv='tmuxinator version'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Load zsh-syntax-highlighting.
+# source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Load zsh-autosuggestions.
+# source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/autosuggestions.zsh
+
+# Enable autosuggestions automatically.
+# zle-line-init() {
+    # zle autosuggest-start
+# }
+# zle -N zle-line-init
