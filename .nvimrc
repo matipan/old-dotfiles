@@ -319,6 +319,8 @@ execute pathogen#infect()
 	onoremap il{ :<c-u>normal! F}vi{<cr>
 	onoremap in[ :<c-u>normal! f[vi[<cr>
 	onoremap il[ :<c-u>normal! F]vi[<cr>
+	"for changing headings when editing markdown files
+	onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
 
 "control + d(down) to move current down one line, control + a(above) to move up one line
 	noremap <c-d> ddp
