@@ -68,6 +68,12 @@
 			"Enable spellchecking for markdown
 			autocmd FileType markdown setlocal spell
 		augroup END
+		augroup markdownb
+			autocmd!
+			"for changing headings when editing markdown files
+			autocmd FileType markdown onoremap <buffer> ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
+			autocmd FileType markdown onoremap <buffer> ah :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rg_vk0"<cr>
+		augroup END
 		augroup sourcing_and_buffers
 			autocmd!
 			"Source .nvimrc after writing it, reloads nvim
@@ -319,9 +325,6 @@ execute pathogen#infect()
 	onoremap il{ :<c-u>normal! F}vi{<cr>
 	onoremap in[ :<c-u>normal! f[vi[<cr>
 	onoremap il[ :<c-u>normal! F]vi[<cr>
-	"for changing headings when editing markdown files
-	onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
-	onoremap ah :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rg_vk0"<cr>
 
 "control + d(down) to move current down one line, control + a(above) to move up one line
 	noremap <c-d> ddp
