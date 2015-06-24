@@ -288,6 +288,15 @@ execute pathogen#infect()
 "set <esc> for deselect highlighted text after doing a search
 	nnoremap <esc>k :noh<return>
 
+"Set jk to go back to normal mode when on insert mode
+	inoremap jk <esc>
+	"Disable esc to force jk, disable arroy keys also
+	inoremap <esc> <nop>
+	noremap <Down> <NOP>
+	noremap <Up> <NOP>
+	noremap <Left> <NOP>
+	noremap <Right> <NOP>
+
 "instead of dd we could use Control + d, and instead of ci) use <space>
 	nnoremap <space> ci)
 
