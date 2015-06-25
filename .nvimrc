@@ -40,6 +40,9 @@
 " allow backspacing over everything in insert mode
 	set backspace=indent,eol,start
 
+"Preview => more info of completion,menu=>when more than one result
+	set completeopt=preview,menu
+
 "Set tab indent, 4 spaces
 	set tabstop=4
 	set softtabstop=0
@@ -323,6 +326,7 @@ execute pathogen#infect()
 	noremap <Up> <NOP>
 	noremap <Left> <NOP>
 	noremap <Right> <NOP>
+	inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 "instead of ci) use <space>, in, il: {,(,[
 	nnoremap <space> ci)
@@ -406,8 +410,10 @@ execute pathogen#infect()
 	let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 	let g:ycm_complete_in_comments = 1
 	let g:ycm_seed_identifiers_with_syntax = 1
-	let g:ycm_collect_identifiers_from_comments_and_strings = 1
+	let g:ycm_min_num_identifier_candidate_chars = 2
+	" let g:ycm_collect_identifiers_from_comments_and_strings = 1
 	let g:ycm_min_num_of_chars_for_completion = 2
+	let g:ycm_auto_trigger = 1
 	let g:ycm_use_ultisnips_completer = 2
 	let g:ycm_warning_symbol="⚠"
 	let g:ycm_error_symbol="✗"
