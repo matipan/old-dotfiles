@@ -301,7 +301,7 @@ execute pathogen#infect()
 	nnoremap <leader>cl :set cursorline!<return>
 
 "Mappings for sourcing and making sessions, ss for save session and so
-" session-source
+" session-source, now works with neovim
 	nnoremap <leader>ss :mksession! ~/.nvim/session/
 	nnoremap <leader>so :source ~/.nvim/session/
 
