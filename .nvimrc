@@ -84,7 +84,7 @@
 			"Source .nvimrc after writing it, reloads nvim
 			autocmd bufwritepost .nvimrc source $MYVIMRC
 			"Indent .rb files before writing them
-			autocmd BufWritePre *.rb :normal gg=G
+			" autocmd BufWritePre *.rb :normal gg=G
 			" autocmd BufRead *.rb :normal gg=G
 			"Change the PWD of current window to the dir of currently opened file, only if the file is not in a /tmp folder
 			autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
