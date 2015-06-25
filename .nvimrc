@@ -223,7 +223,7 @@ execute pathogen#infect()
 	vnoremap <silent> #:call VisualSelection('b')<CR>
 
 "Set LEADER + q to :exit
-	nnoremap <leader>q :q!<return>
+	nnoremap <leader>q :qall!<return>
 
 "Set leader + w to save the current buffer and file
 	noremap <leader>w <esc>:w!<return>
