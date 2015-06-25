@@ -51,6 +51,7 @@
 	set nobackup
 	set noswapfile
 
+" Autocmd sections for specific filetypes and buffer events -------- {{{
 " Only do this part when compiled with support for autocommands.
 	if has("autocmd")
 		" Enable file type detection.
@@ -67,6 +68,7 @@
 			autocmd FileType erb set tabstop=4|set shiftwidth=2|set noexpandtab|set softtabstop=0
 			"Enable spellchecking for markdown
 			autocmd FileType markdown setlocal spell
+			autocmd FileType vim setlocal foldmethod=marker
 		augroup END
 		augroup markdownb
 			autocmd!
@@ -92,6 +94,7 @@
 			\ endif
 		augroup END
 	endif " has("autocmd")
+" }}}
 
 "Pathogen plugin handles $RUNTIMEPATH
 execute pathogen#infect()
@@ -141,6 +144,7 @@ execute pathogen#infect()
 "Always show statusline
 	set laststatus=2
 
+"Airline and syntastic global variables setup ------------------ {{{
 "airline configurations
 	let g:airline_powerline_fonts = 1
 	let g:airline#extensions#tabline#enabled = 1
@@ -163,6 +167,7 @@ execute pathogen#infect()
     let g:syntastic_mode_map = { "mode": "active",
                                \ "active_filetypes": ["ruby", "php","c","javascript","css","cpp","go","python"],
                                \ "passive_filetypes": ["java"] }
+" }}}
 
 "=========================================================
 "					Functions and helpers				 "
@@ -178,7 +183,7 @@ execute pathogen#infect()
 		echo map(synstack(line('.'),col('.')),'synIDattr(v:val, "name")')
 	endfunc
 
-"Underlines current line with ="
+"Underlines current line with =, ", or * {{{
 	function! s:Underline(chars)
 		let chars = empty(a:chars) ? '=' : a:chars
 		let nr_columns = virtcol('$') - 1
@@ -189,9 +194,9 @@ execute pathogen#infect()
 	nnoremap <leader>u= :Underline =<return>
 	nnoremap <leader>u" :Underline "<return>
 	nnoremap <leader>u* :Underline *<return>
+" }}}
 
-" Command for openning a buffer with the output of a shell command, such as
-" ls or ruby myprogram.rb"
+" Command for openning a buffer with the output of a shell command, such as ls or ruby myprogram.rb" -- {{{
 	command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 	function! s:RunShellCommand(cmdline)
 		echo a:cmdline
@@ -211,6 +216,7 @@ execute pathogen#infect()
 		"setlocal nomodifiable
 		1
 	endfunction
+" }}}
 	"Set leader + rc to run the ruby program in current buffer
 	nnoremap <leader>rc :terminal ruby %:t<return>
 
@@ -342,6 +348,7 @@ execute pathogen#infect()
 "					Plugins config						 "
 "=========================================================
 "
+"keymaps, global variables definition for plugins(Fugitive, ultisnips, CtrlP, gist, multicursor, startify, etc) -- {{{
 "Fugitive plugin keymaps for basic git operations:
 	nnoremap <leader>gb :Gblame<return>
 	nnoremap <leader>gd :Gdiff<return>
@@ -431,3 +438,4 @@ execute pathogen#infect()
 				\ ['	Bookmarks:'],
 				\ 'bookmarks',
 				\ ]
+" }}}
