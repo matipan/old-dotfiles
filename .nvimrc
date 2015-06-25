@@ -203,7 +203,7 @@ execute pathogen#infect()
 			endif
 		endfor
 		botright new
-		setlocal bufhidden=wipe nobuflisted noswapfile nowrap "remove the buftype=file so that you can save the buffer into a file"
+		setlocal bufhidden=wipe nobuflisted noswapfile nowrap "remove the buftype=file so that you can save the buffer into a file
 		call setline(1, 'You entered:    ' . a:cmdline)
 		call setline(2, 'Expanded Form:  ' .expanded_cmdline)
 		call setline(3,substitute(getline(2),'.','=','g'))
@@ -222,7 +222,8 @@ execute pathogen#infect()
 	vnoremap <silent> *:call VisualSelection('f')<CR>
 	vnoremap <silent> #:call VisualSelection('b')<CR>
 
-"Set LEADER + q to :exit
+"Set LEADER + q to quit by closing all windows, if there are unsaved changes,
+"it'll warn you about it
 	nnoremap <leader>q :qall<return>
 
 "Set leader + w to save the current buffer and file
