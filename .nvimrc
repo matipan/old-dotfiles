@@ -18,7 +18,8 @@
 "Map leader key to -
 	let mapleader = "-"
 
-"You complete me makes nvim startup kind of slow, disable it
+"You complete me makes nvim startup kind of slow, disable it, currently
+"uninstalled
 	" let pathogen_disabled=["YouCompleteMe"]
 
 "Open your .nvimrc with this key map
@@ -41,7 +42,7 @@
 	set backspace=indent,eol,start
 
 "Preview => more info of completion,menu=>when more than one result
-	set completeopt=preview,menu
+	set completeopt=preview,menuone
 
 "Set tab indent, 4 spaces
 	set tabstop=4
@@ -369,7 +370,7 @@ execute pathogen#infect()
 
 "Ultisnips triggers
 	let g:UltiSnipsSnippetsDir = $HOME.'/.nvim/bundle/vim-snippets/UltiSnips/'
-	let g:UltiSnipsExpandTrigger="<c-j>"
+	let g:UltiSnipsExpandTrigger="<tab>"
 	let g:UltiSnipsJumpForwardTrigger="<c-l>"
 	let g:UltiSnipsJumpBackwardTrigger = "<c-b>"
 
@@ -407,16 +408,18 @@ execute pathogen#infect()
 	let g:buffergator_suppress_keymaps=1
 
 "You complete me, set global path for .ycm_extra_conf.py
-	let g:ycm_global_ycm_extra_conf = $HOME.'/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-	let g:ycm_complete_in_comments = 1
-	let g:ycm_seed_identifiers_with_syntax = 1
-	let g:ycm_min_num_identifier_candidate_chars = 2
+	" let g:ycm_global_ycm_extra_conf = $HOME.'/.nvim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+	" let g:ycm_complete_in_comments = 1
+	" let g:ycm_seed_identifiers_with_syntax = 1
 	" let g:ycm_collect_identifiers_from_comments_and_strings = 1
-	let g:ycm_min_num_of_chars_for_completion = 2
-	let g:ycm_auto_trigger = 1
-	let g:ycm_use_ultisnips_completer = 2
-	let g:ycm_warning_symbol="⚠"
-	let g:ycm_error_symbol="✗"
+	" let g:ycm_min_num_of_chars_for_completion = 2
+	" let g:ycm_use_ultisnips_completer = 2
+	" let g:ycm_warning_symbol="⚠"
+	" let g:ycm_error_symbol="✗"
+
+"Supertab configuration
+    let g:SuperTabDefaultCompletionType = "context"
+    let g:SuperTabMappingForward = '<c-j>'
 
 "Startify header, appears only if you launch vim with no arguments
 	let g:startify_custom_header = [
