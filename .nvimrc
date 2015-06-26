@@ -126,6 +126,7 @@ execute pathogen#infect()
 " do incremental searching
 	set incsearch
 
+"Ag global configs, ctrlp also --- {{{
 "Ag for searching files
 	if executable('ag')
 		"Use ag over grep
@@ -140,6 +141,7 @@ execute pathogen#infect()
 
 "bind K to search word under cursor
 	nnoremap <leader>K :Ag! <C-R><C-W><CR>
+" }}}
 
 "=========================================================
 "					Statusbar config					 "
@@ -176,9 +178,8 @@ execute pathogen#infect()
 "=========================================================
 "					Functions and helpers				 "
 "=========================================================
-"
-"Show highlighting groups for current word with CTRL-SHIFT-H, usefull when
-"having miss syntax highlight
+"functions to show highligting groups for current word, underline current line, and bring a shell command output to a buffer - {{{
+"Show highlighting groups for current word with CTRL-SHIFT-H, usefull when having miss syntax highlight
 	nmap <C-S-H> :call <SID>SynStack()<CR>
 	function! <SID>SynStack()
 		if !exists("*synstack")
@@ -187,7 +188,7 @@ execute pathogen#infect()
 		echo map(synstack(line('.'),col('.')),'synIDattr(v:val, "name")')
 	endfunc
 
-"Underlines current line with =, ", or * {{{
+"Underlines current line with =, ", or *
 	function! s:Underline(chars)
 		let chars = empty(a:chars) ? '=' : a:chars
 		let nr_columns = virtcol('$') - 1
@@ -198,9 +199,8 @@ execute pathogen#infect()
 	nnoremap <leader>u= :Underline =<return>
 	nnoremap <leader>u" :Underline "<return>
 	nnoremap <leader>u* :Underline *<return>
-" }}}
 
-" Command for openning a buffer with the output of a shell command, such as ls or ruby myprogram.rb" -- {{{
+" Command for openning a buffer with the output of a shell command, such as ls or ruby myprogram.rb" --
 	command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 	function! s:RunShellCommand(cmdline)
 		echo a:cmdline
@@ -220,9 +220,9 @@ execute pathogen#infect()
 		"setlocal nomodifiable
 		1
 	endfunction
-" }}}
 	"Set leader + rc to run the ruby program in current buffer
 	nnoremap <leader>rc :terminal ruby %:t<return>
+" }}}
 
 "=========================================================
 "					Navigation keymaps 					 "
