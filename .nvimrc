@@ -115,6 +115,7 @@ execute pathogen#infect()
 	endif
 
 	colorscheme symfony
+	"jorge
 
 "Use 256 color(only when terminal support it)
 	set t_Co=256
