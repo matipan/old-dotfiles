@@ -75,6 +75,7 @@ source ~/.bin/tmuxinator.zsh
 #For developing
 	alias irbs='irb --simple-prompt'
 	alias irbsc='irb --simple-prompt -rrbconfig'
+	alias rspec='rspec --format doc'
 
 #Networking
 	alias myip='curl ip.appspot.com' 		#myip: public facing IP address
