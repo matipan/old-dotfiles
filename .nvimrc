@@ -223,6 +223,8 @@ execute pathogen#infect()
 	endfunction
 	"Set leader + rc to run the ruby program in current buffer
 	nnoremap <leader>rc :terminal ruby %:t<return>
+	"run rake routes and show the output on a :terminal buffer
+	nnoremap <leader>rr :terminal rake routes<return>
 " }}}
 
 "=========================================================
