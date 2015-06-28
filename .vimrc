@@ -1,5 +1,6 @@
 let mapleader="-"
 set number
+" Statusline configs --- {{{
 set laststatus=2
 set statusline=%f        " Path to the file
 set statusline+=%m
@@ -7,6 +8,7 @@ set statusline+=%=        " Switch to the right side
 set statusline+=%l        " Current line
 set statusline+=/         " Separator
 set statusline+=%L        " Total lines
+" }}}
 " do incremental searching
 set incsearch
 set relativenumber
@@ -23,6 +25,7 @@ set smarttab
 " do not keep a backup file, it's all in github anyway
 set nobackup
 set noswapfile
+" Autocmd settings ------ {{{
 if has("autocmd")
 	" Enable file type detection.
 	filetype on
@@ -69,6 +72,8 @@ if has("autocmd")
 					\ endif
 	augroup END
 endif " has("autocmd")
+" }}}
+"General use mappings --- {{{
 nnoremap <leader>w :w!<return>
 nnoremap <leader>q :q!<return>
 "Set LEADER + t to open new tab
@@ -89,24 +94,29 @@ nnoremap <leader>bc :bd!<return>
 nnoremap <leader>eb :enew<return>
 "Open your .nvimrc with this key map
 nnoremap <leader>ev :vsplit $MYVIMRC<return>
-vnoremap <leader>" <esc>`<i"<esc>`>la"<esc>
-nnoremap <leader>" viw<esc>`<i"<esc>`>la"<esc>
-inoremap jk <esc>
-inoremap <esc> <nop>
-"Set jk to go back to normal mode when on insert mode
-inoremap jk <esc>
-"Disable esc to force jk, disable arroy keys also
-inoremap <esc> <nop>
+nnoremap ; :
 noremap <Down> <NOP>
 noremap <Up> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+nnoremap <leader>" viw<esc>`<i"<esc>`>la"<esc>
+" }}}
+" Onoremaps, for creating motions --- {{{
 onoremap in( :<c-u>normal! f(vi(<cr>
 onoremap il( :<c-u>normal! F)vi(<cr>
 onoremap in{ :<c-u>normal! f{vi{<cr>
 onoremap il{ :<c-u>normal! F}vi{<cr>
 onoremap in[ :<c-u>normal! f[vi[<cr>
 onoremap il[ :<c-u>normal! F]vi[<cr>
+" }}}
+" Other mappings --- {{{
+vnoremap <leader>" <esc>`<i"<esc>`>la"<esc>
+inoremap jk <esc>
+inoremap <esc> <nop>
+"Set jk to go back to normal mode when on insert mode
+inoremap jk <esc>
+"Disable esc to force jk, disable arroy keys also
+inoremap <esc> <nop>
 "control + d(down) to move current down one line, control + a(above) to move up one line
 noremap <c-d> ddp
 noremap <c-a> ddkP
@@ -115,4 +125,4 @@ inoremap <c-u> <Esc>gUiw
 nnoremap <c-u> gUiw
 "myemail = matias.pan26@gmail.com
 iabbrev myemail matias.pan26@gmail.com
-nnoremap ; :
+" }}}
