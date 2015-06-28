@@ -115,7 +115,6 @@ execute pathogen#infect()
 	endif
 
 	colorscheme symfony
-	"jorge
 
 "Use 256 color(only when terminal support it)
 	set t_Co=256
@@ -273,7 +272,8 @@ execute pathogen#infect()
 
 "Netrw is an awesome replacemente of nerdtree(and faster)
 	let g:netrw_liststyle=3
-	nnoremap <leader>k :Explore<return>
+	let g:netrw_winsize=20
+	nnoremap <leader>k :Lexplore<return>
 
 "Set LEADER + t to open new tab
 	nnoremap <leader>tn :tabnew<return>
