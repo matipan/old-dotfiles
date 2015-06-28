@@ -84,6 +84,7 @@
 			autocmd!
 			"Source .nvimrc after writing it, reloads nvim
 			autocmd bufwritepost .nvimrc source $MYVIMRC
+			autocmd BufNewFile,BufRead *.json set ft=javascript
 			"Indent .rb files before writing them
 			" autocmd BufWritePre *.rb :normal gg=G
 			" autocmd BufRead *.rb :normal gg=G
