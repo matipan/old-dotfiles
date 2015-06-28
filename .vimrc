@@ -13,7 +13,7 @@ set relativenumber
 set hidden
 set ruler
 syntax on
-colorscheme solarized
+colorscheme github
 "Set tab indent, 4 spaces
 set tabstop=4
 set softtabstop=0
