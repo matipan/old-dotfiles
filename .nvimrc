@@ -374,7 +374,7 @@ execute pathogen#infect()
 
 "Ultisnips triggers
 	let g:UltiSnipsSnippetsDir = $HOME.'/.nvim/bundle/vim-snippets/UltiSnips/'
-	let g:UltiSnipsExpandTrigger="<tab>"
+	let g:UltiSnipsExpandTrigger="<c-j>"
 	let g:UltiSnipsJumpForwardTrigger="<c-l>"
 	let g:UltiSnipsJumpBackwardTrigger = "<c-b>"
 
@@ -423,7 +423,7 @@ execute pathogen#infect()
 
 "Supertab configuration
     let g:SuperTabDefaultCompletionType = "context"
-    let g:SuperTabMappingForward = '<c-j>'
+    let g:SuperTabMappingForward = '<tab>'
 
 "Startify header, appears only if you launch vim with no arguments
 	let g:startify_custom_header = [
