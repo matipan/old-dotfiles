@@ -225,6 +225,8 @@ execute pathogen#infect()
 	nnoremap <leader>rc :terminal ruby %:t<return>
 	"run rake routes and show the output on a :terminal buffer
 	nnoremap <leader>rr :terminal rake routes<return>
+	"run bundle exec ruby buffer_name.rb
+	nnoremap <leader>rbe :terminal bundle exec ruby %:t<return>
 " }}}
 
 "=========================================================
@@ -309,6 +311,10 @@ execute pathogen#infect()
 "					Other keymaps and abbrev			 "
 "=========================================================
 "
+"set rt to generate c-tags on current project, exlucing .git/ - pkg
+	noremap <leader>rt :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=javascript,sql<CR><CR>
+	set tags+=.git/tags
+
 "Turn relative number on and off, sometimes is useful
 	nnoremap <leader>rn :set relativenumber!<return>
 
