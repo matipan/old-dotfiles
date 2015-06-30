@@ -457,4 +457,7 @@ execute pathogen#infect()
 				\ ['	Bookmarks:'],
 				\ 'bookmarks',
 				\ ]
+
+"set to 0 so that vim-instant-markdown doesn't open a new tab in the browser
+	let g:instant_markdown_autostart = 0
 " }}}
