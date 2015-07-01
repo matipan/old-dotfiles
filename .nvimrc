@@ -311,8 +311,10 @@ execute pathogen#infect()
 "					Other keymaps and abbrev			 "
 "=========================================================
 "
-"set rt to generate c-tags on current project, exlucing .git/ - pkg
-	noremap <leader>rt :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=javascript,sql<CR><CR>
+"set rrt to generate c-tags on current project, excluding .git/ - pkg - only
+"for rails directory
+	noremap <leader>rrt :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=ruby,javascript,sql<CR><CR>
+	nnoremap <leader>rt :!ctags --tag-relative -R --languages=ruby --exclude=.git,log<CR><CR>
 	set tags+=.git/tags
 
 "Turn relative number on and off, sometimes is useful
@@ -404,6 +406,7 @@ execute pathogen#infect()
 " Use the nearest .git directory as the cwd
 " This makes a lot of sense if you are working on a project that is in version control. It also supports works with .svn, .hg, .bzr.
 	let g:ctrlp_working_path_mode = 'c'
+	nnoremap <leader>. :CtrlPTag<cr>
 
 " Indent when defining private, protected or public methods
 	let g:ruby_indent_access_modifier_style = 'indent'
