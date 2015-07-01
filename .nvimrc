@@ -311,9 +311,9 @@ execute pathogen#infect()
 "					Other keymaps and abbrev			 "
 "=========================================================
 "
-"set rrt to generate c-tags on current project, excluding .git/ - pkg - only
+"set rlt to generate c-tags on current project, excluding .git/ - pkg - only
 "for rails directory
-	noremap <leader>rrt :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=ruby,javascript,sql<CR><CR>
+	noremap <leader>rlt :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=ruby,javascript,sql<CR><CR>
 	nnoremap <leader>rt :!ctags --tag-relative -R --languages=ruby --exclude=.git,log<CR><CR>
 	set tags+=.git/tags
 
