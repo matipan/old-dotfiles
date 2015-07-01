@@ -118,3 +118,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
     # zle autosuggest-start
 # }
 # zle -N zle-line-init
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
