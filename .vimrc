@@ -1,23 +1,21 @@
 let mapleader="-"
-set number
+"Pathogen plugin handles $RUNTIMEPATH
+execute pathogen#infect()
 " Statusline configs --- {{{
 set laststatus=2
-"set statusline=%f        " Path to the file
-"set statusline+=%m
-"set statusline+=%=        " Switch to the right side
-"set statusline+=%l        " Current line
-"set statusline+=/         " Separator
-"set statusline+=%L        " Total lines
-"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
-"set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ %{strftime(\"%c\",getftime(expand(\"%:p\")))}%=\ lin:%l\,%L\ col:%c%V\ pos:%o\ ascii:%b\ %P
-set statusline=[%n]\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ @%{strftime(\"%H:%M:%S\")}
+set statusline=[%n]\ %<%F\ %h%m%r%{fugitive#statusline()}\ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ %P
 " }}}
+" General settings --- {{{
 " do incremental searching
 set incsearch
+set number
 set relativenumber
 set hidden
 set ruler
-syntax on
+if &t_Co > 2 || has("gui_running")
+	syntax on
+	set hlsearch
+endif
 colorscheme last256
 "Set tab indent, 4 spaces
 set tabstop=4
@@ -28,6 +26,7 @@ set smarttab
 " do not keep a backup file, it's all in github anyway
 set nobackup
 set noswapfile
+" }}}
 " Autocmd settings ------ {{{
 if has("autocmd")
 	" Enable file type detection.
@@ -113,6 +112,8 @@ onoremap in[ :<c-u>normal! f[vi[<cr>
 onoremap il[ :<c-u>normal! F]vi[<cr>
 " }}}
 " Other mappings --- {{{
+"set <esc> for deselect highlighted text after doing a search
+nnoremap <silent> <esc>k :noh<return>
 vnoremap <leader>" <esc>`<i"<esc>`>la"<esc>
 inoremap jk <esc>
 inoremap <esc> <nop>
@@ -129,3 +130,30 @@ nnoremap <c-u> gUiw
 "myemail = matias.pan26@gmail.com
 iabbrev myemail matias.pan26@gmail.com
 " }}}
+" Plugins configs -- {{{
+"Fugitive plugin keymaps for basic git operations:
+nnoremap <leader>gb :Gblame<return>
+nnoremap <leader>gd :Gdiff<return>
+nnoremap <leader>gs :Gstatus<return>
+nnoremap <leader>gc :Gcommit<return>
+nnoremap <leader>gl :Glog<return>
+nnoremap <leader>gw :Gwrite<return>
+nnoremap <leader>ge :Gedit<return>
+nnoremap <leader>gn :Gbrowse<return>
+nnoremap <leader>gp :Git push<return>
+"Ultisnips triggers
+let g:UltiSnipsSnippetsDir = $HOME.'/.vim/bundle/vim-snippets/UltiSnips/'
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-b>"
+
+"Gist plugin configs
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+nnoremap <leader>gg :Gist<return>
+"Set control + e to sparkup completion
+let g:sparkupExecuteMapping='<C-e>'
+"set to 0 so that vim-instant-markdown doesn't open a new tab in the browser
+let g:instant_markdown_autostart = 0
+" }}} 
