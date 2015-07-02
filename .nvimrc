@@ -15,6 +15,9 @@
 "					General settings					 "
 "=========================================================
 "
+"Pathogen plugin handles $RUNTIMEPATH
+	execute pathogen#infect()
+
 "Map leader key to -
 	let mapleader = "-"
 
@@ -100,9 +103,6 @@
 		augroup END
 	endif " has("autocmd")
 " }}}
-
-"Pathogen plugin handles $RUNTIMEPATH
-execute pathogen#infect()
 
 "=========================================================
 "					Graphical configs					 "
