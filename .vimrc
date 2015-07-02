@@ -71,7 +71,7 @@ if has("autocmd")
 	augroup sourcing_and_buffers
 		autocmd!
 		"Source .vimrc after writing it, reloads nvim
-		autocmd bufwritepost .vimrc source $MYVIMRC
+		autocmd bufwritepost .vimrc nested source $MYVIMRC
 		"Indent .rb files before writing them
 		autocmd BufWritePre *.rb :normal gg=G
 		" autocmd BufRead *.rb :normal gg=G
@@ -95,7 +95,44 @@ endif " has("autocmd")
 "
 " Statusline configs --- {{{
 set laststatus=2
-set statusline=[%n]\ %<%F\ %h%m%r%{fugitive#statusline()}\ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ %P
+" set statusline=[%n]\ %<%F\ %h%m%r%{fugitive#statusline()}\ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ %P
+let g:lightline = {
+			\ 'colorscheme': 'wombat',
+			\ 'active': {
+			\   'left': [ [ 'mode', 'paste' ],
+			\             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+			\ },
+			\ 'component_function': {
+			\   'fugitive': 'MyFugitive',
+			\   'readonly': 'MyReadonly',
+			\   'modified': 'MyModified'
+			\ },
+			\ }
+function! MyModified()
+	if &filetype == "help"
+		return ""
+	elseif &modified
+		return "+"
+	elseif &modifiable
+		return ""
+	else
+		return ""
+	endif
+endfunction
+
+function! MyReadonly()
+	if &filetype == "help"
+		return ""
+	elseif &readonly
+		return ""
+	else
+		return ""
+	endif
+endfunction
+
+function! MyFugitive()
+	return fugitive#statusline()
+endfunction
 " }}}
 "
 "=========================================================
@@ -164,52 +201,52 @@ nnoremap <leader>tf :TagbarToggle<return>
 "
 "functions to show highligting groups for current word, underline current line, and bring a shell command output to a buffer - {{{
 "Show highlighting groups for current word with CTRL-SHIFT-H, usefull when having miss syntax highlight
-	nmap <C-S-H> :call <SID>SynStack()<CR>
-	function! <SID>SynStack()
-		if !exists("*synstack")
-			return
-		endif
-		echo map(synstack(line('.'),col('.')),'synIDattr(v:val, "name")')
-	endfunc
+nmap <C-S-H> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+	if !exists("*synstack")
+		return
+	endif
+	echo map(synstack(line('.'),col('.')),'synIDattr(v:val, "name")')
+endfunc
 
 "Underlines current line with =, ", or *
-	function! s:Underline(chars)
-		let chars = empty(a:chars) ? '=' : a:chars
-		let nr_columns = virtcol('$') - 1
-		let uline = repeat(chars, (nr_columns / len(chars)) + 1)
-		put =strpart(uline, 0, nr_columns)
-	endfunction
-	command! -nargs=? Underline call s:Underline(<q-args>)
-	nnoremap <leader>u= :Underline =<return>
-	nnoremap <leader>u" :Underline "<return>
-	nnoremap <leader>u* :Underline *<return>
+function! s:Underline(chars)
+	let chars = empty(a:chars) ? '=' : a:chars
+	let nr_columns = virtcol('$') - 1
+	let uline = repeat(chars, (nr_columns / len(chars)) + 1)
+	put =strpart(uline, 0, nr_columns)
+endfunction
+command! -nargs=? Underline call s:Underline(<q-args>)
+nnoremap <leader>u= :Underline =<return>
+nnoremap <leader>u" :Underline "<return>
+nnoremap <leader>u* :Underline *<return>
 
 " Command for openning a buffer with the output of a shell command, such as ls or ruby myprogram.rb" --
-	command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
-	function! s:RunShellCommand(cmdline)
-		echo a:cmdline
-		let expanded_cmdline = a:cmdline
-		for part in split(a:cmdline, ' ')
-			if part[0] =~ '\v[%#<]'
-				let expanded_part = fnameescape(expand(part))
-				let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
-			endif
-		endfor
-		botright new
-		setlocal bufhidden=wipe nobuflisted noswapfile nowrap "remove the buftype=file so that you can save the buffer into a file
-		call setline(1, 'You entered:    ' . a:cmdline)
-		call setline(2, 'Expanded Form:  ' .expanded_cmdline)
-		call setline(3,substitute(getline(2),'.','=','g'))
-		execute '$read !'. expanded_cmdline
-		"setlocal nomodifiable
-		1
-	endfunction
-	"Set leader + rc to run the ruby program in current buffer
-	nnoremap <leader>rc :Shell ruby %:t<return>
-	"run rake routes and show the output on a buffer
-	nnoremap <leader>rr :Shell rake routes<return>
-	"run bundle exec ruby buffer_name.rb
-	nnoremap <leader>rbe :Shell bundle exec ruby %:t<return>
+command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+function! s:RunShellCommand(cmdline)
+	echo a:cmdline
+	let expanded_cmdline = a:cmdline
+	for part in split(a:cmdline, ' ')
+		if part[0] =~ '\v[%#<]'
+			let expanded_part = fnameescape(expand(part))
+			let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
+		endif
+	endfor
+	botright new
+	setlocal bufhidden=wipe nobuflisted noswapfile nowrap "remove the buftype=file so that you can save the buffer into a file
+	call setline(1, 'You entered:    ' . a:cmdline)
+	call setline(2, 'Expanded Form:  ' .expanded_cmdline)
+	call setline(3,substitute(getline(2),'.','=','g'))
+	execute '$read !'. expanded_cmdline
+	"setlocal nomodifiable
+	1
+endfunction
+"Set leader + rc to run the ruby program in current buffer
+nnoremap <leader>rc :Shell ruby %:t<return>
+"run rake routes and show the output on a buffer
+nnoremap <leader>rr :Shell rake routes<return>
+"run bundle exec ruby buffer_name.rb
+nnoremap <leader>rbe :Shell bundle exec ruby %:t<return>
 " }}}
 "
 "=========================================================
@@ -283,32 +320,32 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 "Ag global configs, ctrlp also --- {{{
 "Ag for searching files
-	if executable('ag')
-		"Use ag over grep
-		set grepprg=ag\ --nogroup
-		let g:grep_cmd_opts = '--line-numbers --noheading'
-		"Use ag in CtrlP for listing files. Faster than grep and respects
-		".gitignore
-		let g:ctrlp_user_command = 'ag %s -l -g ""'
-		"ag is fast enough that CtrlP doesn't need to cache
-		let g:ctrlp_use_caching=0
-	endif
+if executable('ag')
+	"Use ag over grep
+	set grepprg=ag\ --nogroup
+	let g:grep_cmd_opts = '--line-numbers --noheading'
+	"Use ag in CtrlP for listing files. Faster than grep and respects
+	".gitignore
+	let g:ctrlp_user_command = 'ag %s -l -g ""'
+	"ag is fast enough that CtrlP doesn't need to cache
+	let g:ctrlp_use_caching=0
+endif
 
 "bind K to search word under cursor
-	nnoremap <leader>K :Ag! <C-R><C-W><CR>
+nnoremap <leader>K :Ag! <C-R><C-W><CR>
 " }}}
 "
 " Setup some default ignores
-	let g:ctrlp_custom_ignore = {
-		\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-		\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
-		 \}
+let g:ctrlp_custom_ignore = {
+			\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+			\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+			\}
 
 " Use the nearest .git directory as the cwd
 " This makes a lot of sense if you are working on a project that is in version control. It also supports works with .svn, .hg, .bzr.
-	let g:ctrlp_working_path_mode = 'c'
-	nnoremap <leader>. :CtrlPTag<cr>
+let g:ctrlp_working_path_mode = 'c'
+nnoremap <leader>. :CtrlPTag<cr>
 
 "Set control + e to sparkup completion
-	let g:sparkupExecuteMapping='<C-e>'
+let g:sparkupExecuteMapping='<C-e>'
 " }}}
