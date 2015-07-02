@@ -44,17 +44,17 @@ source ~/.bin/tmuxinator.zsh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 #Basic alias
-	alias vimbp='vim --noplugin ~/.bash_profile' #For faster openning of .bash_profile
+	alias vimbp='vim ~/.bash_profile' #For faster openning of .bash_profile
 	alias sbp='source ~/.bash_profile' #For faster sourcing
 	alias sz='source ~/.zshrc'
-	alias vimrc='vim --noplugin ~/.vimrc'	#convenient way for open .vimrc
-	alias vimgc='vim --noplugin ~/.gitconfig' #vimgc: open .gitconfig
-	alias vimz='vim --noplugin ~/.zshrc'
+	alias vimrc='vim ~/.vimrc'	#convenient way for open .vimrc
+	alias vimgc='vim ~/.gitconfig' #vimgc: open .gitconfig
+	alias vimz='vim ~/.zshrc'
 	alias c='clear' #I'm lazy, so what...
 	alias e='exit'
 	alias o='open'
 	alias o1='open .'
-	alias v='vim --noplugin'
+	alias v='vim'
 	alias n='nvim'
 	alias nvimrc='nvim ~/.nvimrc'
 	alias nvimz='nvim ~/.zshrc'
