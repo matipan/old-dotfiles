@@ -108,6 +108,7 @@ execute pathogen#infect()
 "					Graphical configs					 "
 "=========================================================
 "
+" colorscheme hlsearch ---- {{{
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 	if &t_Co > 2 || has("gui_running")
@@ -119,6 +120,7 @@ execute pathogen#infect()
 
 "Use 256 color(only when terminal support it)
 	set t_Co=256
+" }}}
 
 "=========================================================
 "					Search configs						 "
@@ -230,7 +232,7 @@ execute pathogen#infect()
 "=========================================================
 "					Navigation keymaps 					 "
 "=========================================================
-"
+" Windows resizing, tab-buffer navigation and some other stuffs --- {{{
 "Visual mode pressing * or # searches for the current selection
 	vnoremap <silent> *:call VisualSelection('f')<CR>
 	vnoremap <silent> #:call VisualSelection('b')<CR>
@@ -304,19 +306,18 @@ execute pathogen#infect()
 
 "Set LEADER + l + b to show current buffers
 	nnoremap <leader>bl :ls<return>
+" }}}
 
 "=========================================================
 "					Other keymaps and abbrev			 "
 "=========================================================
 "
+" Keymaps for simple things ---- {{{
 "set rlt to generate c-tags on current project, excluding .git/ - pkg - only
 "for rails directory
 	noremap <leader>rlt :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=ruby,javascript,sql<CR><CR>
 	nnoremap <leader>rt :!ctags --tag-relative -R --languages=ruby --exclude=.git,log<CR><CR>
 	set tags+=.git/tags
-
-"Turn relative number on and off, sometimes is useful
-	nnoremap <leader>rn :set relativenumber!<return>
 
 "Sometimes is useful to see where the cursor is
 	nnoremap <leader>cl :set cursorline!<return>
@@ -358,6 +359,7 @@ execute pathogen#infect()
 
 "myemail = matias.pan26@gmail.com
 	iabbrev myemail matias.pan26@gmail.com
+" }}}
 
 "=========================================================
 "					Plugins config						 "
