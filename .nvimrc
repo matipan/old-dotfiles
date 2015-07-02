@@ -178,8 +178,8 @@ execute pathogen#infect()
 "					Functions and helpers				 "
 "=========================================================
 "functions to show highligting groups for current word, underline current line, and bring a shell command output to a buffer - {{{
-"Show highlighting groups for current word with CTRL-SHIFT-H, usefull when having miss syntax highlight
-	nmap <C-S-H> :call <SID>SynStack()<CR>
+"Show highlighting groups for current word with leader + f + s, usefull when having miss syntax highlight
+	nmap <leader>fs :call <SID>SynStack()<CR>
 	function! <SID>SynStack()
 		if !exists("*synstack")
 			return
