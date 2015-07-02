@@ -4,14 +4,13 @@
 let g:airline#themes#mkolor#palette = {}
 
 " Normal mode
-	let s:N1 = [ '#1a1a18' , '#ffffff' , 255 , 93 ] "Mode
-	let s:N2 = [ '#ffffff' , '#44403a' , 206, 238 ] "branch or directory
+	let s:N1 = [ '#1a1a18' , '#ffffff' , 236 , 115 ] "Mode
+	let s:N2 = [ '#ffffff' , '#44403a' , 115, 238 ] "branch or directory
 	let s:N3 = [ '#90a680' , '#2e2d2a' , 255, 235 ] "information
-
 	let s:N4 = [ '#777470' , 240 ] " modified
 	let g:airline#themes#mkolor#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
 	let g:airline#themes#mkolor#palette.normal_modified = {
-		  \ 'airline_c': [ '#e2e2e2' , '#4f3598' , 254     , 93      , ''     ] ,
+		  \ 'airline_c': [ '#e2e2e2' , '#4f3598' , 236     , 115      , ''     ] ,
 		  \ }
 
 " Terminal mode(for neovim only)
@@ -25,22 +24,23 @@ let g:airline#themes#mkolor#palette = {}
 		  \ }
 
 " Insert mode
-	let s:I1 = [ '#1a1a18' , '#1693a5' , 235 , 39 ]
-	let s:I2 = [ '#515744' , '#44403a' , 39 , 238 ]
+	let s:I1 = [ '#1a1a18' , '#1693a5' , 235 , 50 ]
+	let s:I2 = [ '#515744' , '#44403a' , 50 , 238 ]
 	let s:I3 = [ '#1693a5' , '#2e2d2a' , 255 , 235 ]
 	let g:airline#themes#mkolor#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
 	let g:airline#themes#mkolor#palette.insert_modified = {
-		  \ 'airline_c': [ '#242322' , '#7eaefd' , 234     , 39     , ''     ] ,
+		  \ 'airline_c': [ '#242322' , '#7eaefd' , 234     , 50     , ''     ] ,
 		  \ }
 
+
 " Visual mode
-	let s:V1 = [ '#1a1a18' , '#ab3e5d' , 232 , 215 ]
-	let s:V2 = [ '#000000' , '#908571' , 215 , 238 ]
+	let s:V1 = [ '#1a1a18' , '#ab3e5d' , 232 , 210 ]
+	let s:V2 = [ '#000000' , '#908571' , 210 , 238 ]
 	let s:V3 = [ '#ab3e5d' , '#8c7f77' , 255 , 235 ]
-	let s:V4 = [ '#515744' , 101 ] " lichen
+	let s:V4 = [ '#515744' , 210 ] " lichen
 	let g:airline#themes#mkolor#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
 	let g:airline#themes#mkolor#palette.visual_modified = {
-		  \ 'airline_c': [ '#242322' , '#e6987a' , 234     , 215      , ''     ] ,
+		  \ 'airline_c': [ '#242322' , '#e6987a' , 234     , 210      , ''     ] ,
 		  \ }
 
 " Replace mode
@@ -54,7 +54,7 @@ let g:airline#themes#mkolor#palette = {}
 
 " Paste mode
 	let s:PA = [ '#ab3e5d' , 161 ] " raspberry
-	let s:IA = [ s:N2[1] , s:N3[1] , s:N2[3], s:N3[3] , '' ]
+	" let s:IA = [ s:N2[1] , s:N3[1] , s:N2[3], s:N3[3] , '' ]
 	let g:airline#themes#mkolor#palette.insert_paste = {
 		  \ 'airline_a' : [ s:I1[0] , s:PA[0] , s:I1[2] , s:PA[1] , '' ] }
 
@@ -64,11 +64,46 @@ let g:airline#themes#mkolor#palette = {}
 		  \ }
 
 "Inactive mode
+	let s:IA = [ '#767676' , s:N3[1] , 243 , 236 , '' ]
 	let g:airline#themes#mkolor#palette.inactive = airline#themes#generate_color_map(s:IA, s:IA, s:IA)
 	let g:airline#themes#mkolor#palette.inactive_modified = {
 		  \ 'airline_c' : [ s:V1[1] , ''      , s:V1[3] , ''      , '' ] }
 
 
+
+	" previous normal, keep it in case i want to go back
+" " Normal mode
+" 	let s:N1 = [ '#1a1a18' , '#ffffff' , 255 , 93 ] "Mode
+" 	let s:N2 = [ '#ffffff' , '#44403a' , 206, 238 ] "branch or directory
+" 	let s:N3 = [ '#90a680' , '#2e2d2a' , 255, 235 ] "information
+
+" 	let s:N4 = [ '#777470' , 240 ] " modified
+" 	let g:airline#themes#mkolor#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
+" 	let g:airline#themes#mkolor#palette.normal_modified = {
+" 		  \ 'airline_c': [ '#e2e2e2' , '#4f3598' , 254     , 93      , ''     ] ,
+" 		  \ }
+
+	"
+" " Insert mode, previous
+" 	let s:I1 = [ '#1a1a18' , '#1693a5' , 235 , 39 ]
+" 	let s:I2 = [ '#515744' , '#44403a' , 39 , 238 ]
+" 	let s:I3 = [ '#1693a5' , '#2e2d2a' , 255 , 235 ]
+" 	let g:airline#themes#mkolor#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
+" 	let g:airline#themes#mkolor#palette.insert_modified = {
+" 		  \ 'airline_c': [ '#242322' , '#7eaefd' , 234     , 39     , ''     ] ,
+" 		  \ }
+"
+" " Visual mode, previous
+" 	let s:V1 = [ '#1a1a18' , '#ab3e5d' , 232 , 215 ]
+" 	let s:V2 = [ '#000000' , '#908571' , 215 , 238 ]
+" 	let s:V3 = [ '#ab3e5d' , '#8c7f77' , 255 , 235 ]
+" 	let s:V4 = [ '#515744' , 101 ] " lichen
+" 	let g:airline#themes#mkolor#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
+" 	let g:airline#themes#mkolor#palette.visual_modified = {
+" 		  \ 'airline_c': [ '#242322' , '#e6987a' , 234     , 215      , ''     ] ,
+" 		  \ }
+"
+"
 " Previous replace mode, keep it just in case i want to go back
 " Replace mode
 	"let s:RE = [ '#233e09' , 39 ] " oakleaf
