@@ -7,8 +7,8 @@ Having the Terminal inside the editor lead me to stop using Tmux. But since NeoV
 
 Screenshots of my NeoVim + tmux setup:
 
-![simple-neovim](https://github.com/kriox26/dotfiles/blob/imgs/neovim1.png)
-![neovim+term](https://github.com/kriox26/dotfiles/blob/imgs/neovim2.png)
+![simple-neovim](https://github.com/kriox26/dotfiles/blob/nvim_main/imgs/neovim1.png)
+![neovim+term](https://github.com/kriox26/dotfiles/blob/nvim_main/imgs/neovim2.png)
 
 
 I said that I had a lot less plugins, but they are still a lot... Some of them I barely use, but when I do is because I really need them. So I decided to keep all of this, it's not like makes NeoVim slower anyway, Pathogen does a pretty good work with the $RUNTIMEPATH, so NeoVim startup is still fast.
