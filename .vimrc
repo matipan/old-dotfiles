@@ -193,6 +193,7 @@ nnoremap <c-u> gUiw
 iabbrev myemail matias.pan26@gmail.com
 "tagbar toggle for functions
 nnoremap <leader>tf :TagbarToggle<return>
+nnoremap <leader>ps mqA;<esc>`q
 " }}}
 "
 "=========================================================
