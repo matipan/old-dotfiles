@@ -156,11 +156,9 @@ execute pathogen#infect()
 	let g:airline_powerline_fonts = 1
 	let g:airline#extensions#tabline#enabled = 1
 	let g:airline_theme = 'mkolor'
-  	let g:airline#extensions#whitespace#enabled = 0
 	let g:airline#extensions#tabline#enabled=1		"Enables plugins to appear on statusline, such as syntastic
 	let g:airline#extensions#syntastic#enabled = 1 	"Enable syntastic
   	let g:airline#extensions#whitespace#enabled = 0
-	let g:airline_detect_paste=1
 	let g:airline_detect_syntastic=1	"set the syntastic error message on statusline
 	let g:syntastic_enable_signs=1	 		"Enable signs for syntastic
 	let g:syntastic_always_populate_loc_list=1 "For using :lopen or :lwindow
