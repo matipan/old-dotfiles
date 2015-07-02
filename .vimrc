@@ -1,10 +1,23 @@
-let mapleader="-"
+" .nvimrc configuration by Matias Pan - <matias.pan26@gmail.com>
+" Github account: https://github.com/kriox26
+"=======================================================================
+"			Index
+" 1 -- General settings
+" 2 -- Statusbar
+" 3 -- Mappings and stuff
+" 4 -- Helpers and functions
+" 5 -- Plugins configs
+"
+"=========================================================
+"					General settings					 "
+"=========================================================
+"
 "Pathogen plugin handles $RUNTIMEPATH
 execute pathogen#infect()
-" Statusline configs --- {{{
-set laststatus=2
-set statusline=[%n]\ %<%F\ %h%m%r%{fugitive#statusline()}\ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ %P
-" }}}
+
+" Set mapleader to -
+let mapleader="-"
+
 " General settings --- {{{
 " do incremental searching
 set incsearch
@@ -16,7 +29,7 @@ if &t_Co > 2 || has("gui_running")
 	syntax on
 	set hlsearch
 endif
-colorscheme last256
+colorscheme flattown
 "Set tab indent, 4 spaces
 set tabstop=4
 set softtabstop=0
@@ -26,7 +39,6 @@ set smarttab
 " do not keep a backup file, it's all in github anyway
 set nobackup
 set noswapfile
-" }}}
 " Autocmd settings ------ {{{
 if has("autocmd")
 	" Enable file type detection.
@@ -75,6 +87,21 @@ if has("autocmd")
 	augroup END
 endif " has("autocmd")
 " }}}
+" }}}
+"
+"=========================================================
+"					Statusbar							 "
+"=========================================================
+"
+" Statusline configs --- {{{
+set laststatus=2
+set statusline=[%n]\ %<%F\ %h%m%r%{fugitive#statusline()}\ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ %P
+" }}}
+"
+"=========================================================
+"					Mappings and stuff 					 "
+"=========================================================
+"
 "General use mappings --- {{{
 nnoremap <leader>w :w!<return>
 nnoremap <leader>q :q!<return>
@@ -115,8 +142,6 @@ onoremap il[ :<c-u>normal! F]vi[<cr>
 "set <esc> for deselect highlighted text after doing a search
 nnoremap <silent> <esc>k :noh<return>
 vnoremap <leader>" <esc>`<i"<esc>`>la"<esc>
-inoremap jk <esc>
-inoremap <esc> <nop>
 "Set jk to go back to normal mode when on insert mode
 inoremap jk <esc>
 "Disable esc to force jk, disable arroy keys also
@@ -130,6 +155,65 @@ nnoremap <c-u> gUiw
 "myemail = matias.pan26@gmail.com
 iabbrev myemail matias.pan26@gmail.com
 " }}}
+"
+"=========================================================
+"					Helpers and functions				 "
+"=========================================================
+"
+"functions to show highligting groups for current word, underline current line, and bring a shell command output to a buffer - {{{
+"Show highlighting groups for current word with CTRL-SHIFT-H, usefull when having miss syntax highlight
+	nmap <C-S-H> :call <SID>SynStack()<CR>
+	function! <SID>SynStack()
+		if !exists("*synstack")
+			return
+		endif
+		echo map(synstack(line('.'),col('.')),'synIDattr(v:val, "name")')
+	endfunc
+
+"Underlines current line with =, ", or *
+	function! s:Underline(chars)
+		let chars = empty(a:chars) ? '=' : a:chars
+		let nr_columns = virtcol('$') - 1
+		let uline = repeat(chars, (nr_columns / len(chars)) + 1)
+		put =strpart(uline, 0, nr_columns)
+	endfunction
+	command! -nargs=? Underline call s:Underline(<q-args>)
+	nnoremap <leader>u= :Underline =<return>
+	nnoremap <leader>u" :Underline "<return>
+	nnoremap <leader>u* :Underline *<return>
+
+" Command for openning a buffer with the output of a shell command, such as ls or ruby myprogram.rb" --
+	command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+	function! s:RunShellCommand(cmdline)
+		echo a:cmdline
+		let expanded_cmdline = a:cmdline
+		for part in split(a:cmdline, ' ')
+			if part[0] =~ '\v[%#<]'
+				let expanded_part = fnameescape(expand(part))
+				let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
+			endif
+		endfor
+		botright new
+		setlocal bufhidden=wipe nobuflisted noswapfile nowrap "remove the buftype=file so that you can save the buffer into a file
+		call setline(1, 'You entered:    ' . a:cmdline)
+		call setline(2, 'Expanded Form:  ' .expanded_cmdline)
+		call setline(3,substitute(getline(2),'.','=','g'))
+		execute '$read !'. expanded_cmdline
+		"setlocal nomodifiable
+		1
+	endfunction
+	"Set leader + rc to run the ruby program in current buffer
+	nnoremap <leader>rc :Shell ruby %:t<return>
+	"run rake routes and show the output on a buffer
+	nnoremap <leader>rr :Shell rake routes<return>
+	"run bundle exec ruby buffer_name.rb
+	nnoremap <leader>rbe :Shell bundle exec ruby %:t<return>
+" }}}
+"
+"=========================================================
+"					Plugins configs 					 "
+"=========================================================
+"
 " Plugins configs -- {{{
 "Fugitive plugin keymaps for basic git operations:
 nnoremap <leader>gb :Gblame<return>
@@ -141,19 +225,88 @@ nnoremap <leader>gw :Gwrite<return>
 nnoremap <leader>ge :Gedit<return>
 nnoremap <leader>gn :Gbrowse<return>
 nnoremap <leader>gp :Git push<return>
-"Ultisnips triggers
-let g:UltiSnipsSnippetsDir = $HOME.'/.vim/bundle/vim-snippets/UltiSnips/'
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-l>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-b>"
 
 "Gist plugin configs
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 nnoremap <leader>gg :Gist<return>
+
 "Set control + e to sparkup completion
 let g:sparkupExecuteMapping='<C-e>'
+
 "set to 0 so that vim-instant-markdown doesn't open a new tab in the browser
 let g:instant_markdown_autostart = 0
-" }}} 
+
+" Enable autopop up at startup
+let g:acp_enableAtStartup = 1
+"" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+	return neocomplete#close_popup() . "\<CR>"
+	"     " For no inserting <CR> key.
+	"return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" Close popup by <Space>.
+inoremap <expr><return> pumvisible() ? neocomplete#close_popup() : "\<return>"
+" AutoComplPop like behavior.
+let g:neocomplete#enable_auto_select = 1
+" Enable omni completion.
+augroup autocompletion
+	autocmd!
+	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+	autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+augroup END
+" Neosnippet configs
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
+"Ag global configs, ctrlp also --- {{{
+"Ag for searching files
+	if executable('ag')
+		"Use ag over grep
+		set grepprg=ag\ --nogroup
+		let g:grep_cmd_opts = '--line-numbers --noheading'
+		"Use ag in CtrlP for listing files. Faster than grep and respects
+		".gitignore
+		let g:ctrlp_user_command = 'ag %s -l -g ""'
+		"ag is fast enough that CtrlP doesn't need to cache
+		let g:ctrlp_use_caching=0
+	endif
+
+"bind K to search word under cursor
+	nnoremap <leader>K :Ag! <C-R><C-W><CR>
+" }}}
+"
+" Setup some default ignores
+	let g:ctrlp_custom_ignore = {
+		\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+		\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+		 \}
+
+" Use the nearest .git directory as the cwd
+" This makes a lot of sense if you are working on a project that is in version control. It also supports works with .svn, .hg, .bzr.
+	let g:ctrlp_working_path_mode = 'c'
+	nnoremap <leader>. :CtrlPTag<cr>
+
+"Set control + e to sparkup completion
+	let g:sparkupExecuteMapping='<C-e>'
+" }}}
