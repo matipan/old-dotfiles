@@ -417,9 +417,6 @@ execute pathogen#infect()
 "Set control + e to sparkup completion
 	let g:sparkupExecuteMapping='<C-e>'
 
-" Suppress buffergator keymaps
-	let g:buffergator_suppress_keymaps=1
-
 "You complete me, set global path for .ycm_extra_conf.py
 	" let g:ycm_global_ycm_extra_conf = $HOME.'/.nvim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 	" let g:ycm_complete_in_comments = 1
