@@ -1,4 +1,4 @@
-" .nvimrc configuration by Matias Pan - <matias.pan26@gmail.com>
+" .vimrc configuration by Matias Pan - <matias.pan26@gmail.com>
 " Github account: https://github.com/kriox26
 "=======================================================================
 "			Index
@@ -29,7 +29,7 @@ if &t_Co > 2 || has("gui_running")
 	syntax on
 	set hlsearch
 endif
-colorscheme flattown
+colorscheme symfony
 "Set tab indent, 4 spaces
 set tabstop=4
 set softtabstop=0
@@ -154,6 +154,8 @@ inoremap <c-u> <Esc>gUiw
 nnoremap <c-u> gUiw
 "myemail = matias.pan26@gmail.com
 iabbrev myemail matias.pan26@gmail.com
+"tagbar toggle for functions
+nnoremap <leader>tf :TagbarToggle<return>
 " }}}
 "
 "=========================================================
