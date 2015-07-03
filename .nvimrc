@@ -21,17 +21,13 @@
 "Map leader key to -
 	let mapleader = "-"
 
-"You complete me makes nvim startup kind of slow, disable it, currently
-"uninstalled
-	" let pathogen_disabled=["YouCompleteMe"]
-
 "Open your .nvimrc with this key map
 	nnoremap <leader>en :edit $MYVIMRC<return>
 
 "Allows to navigate between modified buffers
 	set hidden
 
-"Relative number is way better for motions performance, set number first to
+"Relative number is way better for motions triggering, set number first to
 "show the 'real' number of current line
 	set number
 	set relativenumber
@@ -44,7 +40,7 @@
 " allow backspacing over everything in insert mode
 	set backspace=indent,eol,start
 
-"Preview => more info of completion,menu=>when more than one result
+"Preview => more info of completion,menuone=>when one or more results
 	set completeopt=preview,menuone
 
 "Set tab indent, 4 spaces
@@ -179,6 +175,7 @@
 "=========================================================
 "					Functions and helpers				 "
 "=========================================================
+"
 "functions to show highligting groups for current word, underline current line, and bring a shell command output to a buffer - {{{
 "Show highlighting groups for current word with leader + f + s, usefull when having miss syntax highlight
 	nmap <leader>fs :call <SID>SynStack()<CR>
@@ -232,6 +229,7 @@
 "=========================================================
 "					Navigation keymaps 					 "
 "=========================================================
+"
 " Windows resizing, tab-buffer navigation and some other stuffs --- {{{
 "Visual mode pressing * or # searches for the current selection
 	vnoremap <silent> *:call VisualSelection('f')<CR>
