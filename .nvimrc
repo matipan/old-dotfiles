@@ -153,7 +153,7 @@
 "airline configurations
 	let g:airline_powerline_fonts = 1
 	let g:airline#extensions#tabline#enabled = 1
-	let g:airline_theme = 'mkolor'
+	let g:airline_theme = 'kriox'
 	let g:airline#extensions#tabline#enabled=1		"Enables plugins to appear on statusline, such as syntastic
 	let g:airline#extensions#syntastic#enabled = 1 	"Enable syntastic
   	let g:airline#extensions#whitespace#enabled = 0
