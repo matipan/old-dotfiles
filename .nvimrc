@@ -27,8 +27,8 @@
 "Allows to navigate between modified buffers
 	set hidden
 
-"Relative number is way better for motions triggering, set number first to
-"show the 'real' number of current line
+"Relative number is way better for motions triggering, set number to show the
+"'real' number of current line.
 	set number
 	set relativenumber
 
@@ -66,9 +66,9 @@
 		augroup filetypes
 			autocmd!
 			autocmd FileType text setlocal textwidth=130
-			autocmd FileType ruby set tabstop=4|set shiftwidth=2|set noexpandtab|set softtabstop=0
-			autocmd FileType python set tabstop=4|set shiftwidth=2|set noexpandtab|set softtabstop=0
-			autocmd FileType erb set tabstop=4|set shiftwidth=2|set noexpandtab|set softtabstop=0
+			autocmd FileType ruby set shiftwidth=2
+			autocmd FileType python set shiftwidth=2
+			autocmd FileType erb set shiftwidth=2
 			"Enable spellchecking for markdown
 			autocmd FileType markdown setlocal spell
 			autocmd FileType vim setlocal foldmethod=marker
@@ -415,16 +415,6 @@
 "Set control + e to sparkup completion
 	let g:sparkupExecuteMapping='<C-e>'
 
-"You complete me, set global path for .ycm_extra_conf.py
-	" let g:ycm_global_ycm_extra_conf = $HOME.'/.nvim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-	" let g:ycm_complete_in_comments = 1
-	" let g:ycm_seed_identifiers_with_syntax = 1
-	" let g:ycm_collect_identifiers_from_comments_and_strings = 1
-	" let g:ycm_min_num_of_chars_for_completion = 2
-	" let g:ycm_use_ultisnips_completer = 2
-	" let g:ycm_warning_symbol="⚠"
-	" let g:ycm_error_symbol="✗"
-
 "Supertab configuration
     let g:SuperTabDefaultCompletionType = "context"
     let g:SuperTabMappingForward = '<tab>'
@@ -457,5 +447,6 @@
 				\ ]
 
 "set to 0 so that vim-instant-markdown doesn't open a new tab in the browser
+"automatically
 	let g:instant_markdown_autostart = 0
 " }}}
