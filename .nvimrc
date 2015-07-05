@@ -83,6 +83,7 @@
 			autocmd!
 			"Source .nvimrc after writing it, reloads nvim
 			autocmd bufwritepost .nvimrc nested source $MYVIMRC
+			au! BufNewFile,BufRead *.applescript   setf applescript
 			autocmd BufNewFile,BufRead *.json set ft=javascript
 			"Indent .rb files before writing them
 			" autocmd BufWritePre *.rb :normal gg=G
