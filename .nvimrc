@@ -69,6 +69,7 @@
 			autocmd FileType ruby set shiftwidth=2
 			autocmd FileType python set shiftwidth=2
 			autocmd FileType erb set shiftwidth=2
+			autocmd FileType c set shiftwidth=2
 			"Enable spellchecking for markdown
 			autocmd FileType markdown setlocal spell
 			autocmd FileType vim setlocal foldmethod=marker
