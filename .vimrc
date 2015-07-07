@@ -278,47 +278,6 @@ let g:sparkupExecuteMapping='<C-e>'
 "set to 0 so that vim-instant-markdown doesn't open a new tab in the browser
 let g:instant_markdown_autostart = 0
 
-" Enable autopop up at startup
-let g:acp_enableAtStartup = 1
-"" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-	return neocomplete#close_popup() . "\<CR>"
-	"     " For no inserting <CR> key.
-	"return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" Close popup by <Space>.
-inoremap <expr><return> pumvisible() ? neocomplete#close_popup() : "\<return>"
-" AutoComplPop like behavior.
-let g:neocomplete#enable_auto_select = 1
-" Enable omni completion.
-augroup autocompletion
-	autocmd!
-	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-	autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-augroup END
-" Neosnippet configs
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-" Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-
 "Ag global configs, ctrlp also --- {{{
 "Ag for searching files
 if executable('ag')
@@ -347,6 +306,7 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_working_path_mode = 'c'
 nnoremap <leader>. :CtrlPTag<cr>
 
-"Set control + e to sparkup completion
-let g:sparkupExecuteMapping='<C-e>'
+"SnipMate trigger
+imap <C-J> <Plug>snipMateNextOrTrigger
+
 " }}}
