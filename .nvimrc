@@ -22,7 +22,7 @@
 	let mapleader = "-"
 
 "Open your .nvimrc with this key map
-	nnoremap <leader>en :edit $MYVIMRC<return>
+	nnoremap <leader>en :vsplit $MYVIMRC<return>
 
 "Allows to navigate between modified buffers
 	set hidden
@@ -318,6 +318,9 @@
 	noremap <leader>rlt :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=ruby,javascript,sql<CR><CR>
 	nnoremap <leader>rt :!ctags --tag-relative -R --languages=ruby --exclude=.git,log<CR><CR>
 	set tags+=.git/tags
+
+"Fire up IRB with --simple-prompt
+	nnoremap <leader>i :term irb --simple-prompt<return>
 
 "Sometimes is useful to see where the cursor is
 	nnoremap <leader>cl :set cursorline!<return>
