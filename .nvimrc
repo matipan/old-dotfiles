@@ -128,6 +128,12 @@
 	set incsearch
 
 "Ag global configs, ctrlp also --- {{{
+
+"PyMatcher for CtrlP
+	if has("python")
+		let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+	endif
+
 "Ag for searching files
 	if executable('ag')
 		"Use ag over grep
@@ -135,13 +141,34 @@
 		let g:grep_cmd_opts = '--line-numbers --noheading'
 		"Use ag in CtrlP for listing files. Faster than grep and respects
 		".gitignore
-		let g:ctrlp_user_command = 'ag %s -l -g ""'
-		"ag is fast enough that CtrlP doesn't need to cache
-		let g:ctrlp_use_caching=0
+		" let g:ctrlp_user_command = 'ag %s -l -g \""'
+		let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
 	endif
 
 "bind K to search word under cursor
 	nnoremap <leader>K :Ag! <C-R><C-W><CR>
+
+" Set delay to prevent extra search
+	let g:ctrlp_lazy_update = 350
+
+" Do not clear filenames cache, to improve CtrlP startup
+" You can manualy clear it by <F5>
+	let g:ctrlp_clear_cache_on_exit = 0
+
+" Set no file limit, we are building a big project
+	let g:ctrlp_max_files = 0
+
+" Setup some default ignores
+	let g:ctrlp_custom_ignore = {
+		\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+		\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+		 \}
+
+" Use the nearest .git directory as the cwd
+" This makes a lot of sense if you are working on a project that is in version control. It also supports works with .svn, .hg, .bzr.
+	let g:ctrlp_working_path_mode = 'c'
+	nnoremap <leader>. :CtrlPTag<cr>
+
 " }}}
 
 "=========================================================
@@ -400,17 +427,6 @@
 	let g:multi_cursor_next_key='<C-n>'
 	let g:multi_cursor_skip_key='<C-x>'
 	let g:multi_cursor_quit_key='<Esc>'
-
-" Setup some default ignores
-	let g:ctrlp_custom_ignore = {
-		\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-		\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
-		 \}
-
-" Use the nearest .git directory as the cwd
-" This makes a lot of sense if you are working on a project that is in version control. It also supports works with .svn, .hg, .bzr.
-	let g:ctrlp_working_path_mode = 'c'
-	nnoremap <leader>. :CtrlPTag<cr>
 
 " Indent when defining private, protected or public methods
 	let g:ruby_indent_access_modifier_style = 'indent'
