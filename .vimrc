@@ -306,6 +306,9 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_working_path_mode = 'c'
 nnoremap <leader>. :CtrlPTag<cr>
 
+"FZF fuzzy find
+set rtp+=~/.fzf
+
 "SnipMate trigger
 imap <C-J> <Plug>snipMateNextOrTrigger
 
