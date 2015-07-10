@@ -199,6 +199,7 @@
 	nnoremap <leader>u= :Underline =<return>
 	nnoremap <leader>u" :Underline "<return>
 	nnoremap <leader>u* :Underline *<return>
+	nnoremap <leader>u- :Underline -<return>
 
 " Command for openning a buffer with the output of a shell command, such as ls or ruby myprogram.rb" --
 	command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
@@ -315,8 +316,8 @@
 " Keymaps for simple things ---- {{{
 "set rlt to generate c-tags on current project, excluding .git/ - pkg - only
 "for rails directory
-	noremap <leader>rlt :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=ruby,javascript,sql<CR><CR>
-	nnoremap <leader>rt :!ctags --tag-relative -R --languages=ruby --exclude=.git,log<CR><CR>
+	noremap <leader>rlt :term ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=ruby,javascript,sql<CR><CR>
+	nnoremap <leader>rt :term ctags --tag-relative -R --languages=ruby --exclude=.git,log<CR><CR>
 	set tags+=.git/tags
 
 "Fire up IRB with --simple-prompt
@@ -454,4 +455,7 @@
 "set to 0 so that vim-instant-markdown doesn't open a new tab in the browser
 "automatically
 	let g:instant_markdown_autostart = 0
+
+"FZF config
+	set rtp+=~/.fzf
 " }}}
