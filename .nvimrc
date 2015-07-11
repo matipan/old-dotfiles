@@ -58,6 +58,7 @@
 " Only do this part when compiled with support for autocommands.
 	if has("autocmd")
 		" Enable file type detection.
+		syntax enable
 		filetype on
 		" Also load indent files, to automatically do language-dependent indenting.
 		filetype indent on
@@ -82,6 +83,7 @@
 			"Source .nvimrc after writing it, reloads nvim
 			autocmd bufwritepost .nvimrc nested source $MYVIMRC
 			au! BufNewFile,BufRead *.applescript   setf applescript
+			autocmd BufRead,BufNewFile *.scss set filetype=scss.css
 			autocmd BufNewFile,BufRead *.json set ft=javascript
 			"Indent .rb files before writing them
 			" autocmd BufWritePre *.rb :normal gg=G
@@ -439,31 +441,31 @@
     let g:SuperTabMappingForward = '<tab>'
 
 "Startify header, appears only if you launch vim with no arguments
-	let g:startify_custom_header = [
-				\'				***************************',
-				\'		   *****					       *****',
-				\'		 **	  The programmers of tomorrow are   **',
-				\'	   **   the wizards of the future, you are    **',
-				\'	   *   gonna look like you have magic powers   *',
-				\'	   **        compare to everybody else        **',
-				\'		 **            -Gabe Newell-            **',
-				\'		   *****					       *****',
-				\'				***************************',
-				\'',
-				\'',
-				\]
+	" let g:startify_custom_header = [
+	" 			\'				***************************',
+	" 			\'		   *****					       *****',
+	" 			\'		 **	  The programmers of tomorrow are   **',
+	" 			\'	   **   the wizards of the future, you are    **',
+	" 			\'	   *   gonna look like you have magic powers   *',
+	" 			\'	   **        compare to everybody else        **',
+	" 			\'		 **            -Gabe Newell-            **',
+	" 			\'		   *****					       *****',
+	" 			\'				***************************',
+	" 			\'',
+	" 			\'',
+	" 			\]
 
-	let g:startify_session_dir = '~/.nvim/session'
-	let g:startify_list_order =[
-				\ ['	Sessions available:'],
-				\ 'sessions',
-				\ ['	Recently used in current dir:'],
-				\ 'dir',
-				\ ['	Recently used files:'],
-				\ 'files',
-				\ ['	Bookmarks:'],
-				\ 'bookmarks',
-				\ ]
+	" let g:startify_session_dir = '~/.nvim/session'
+	" let g:startify_list_order =[
+	" 			\ ['	Sessions available:'],
+	" 			\ 'sessions',
+	" 			\ ['	Recently used in current dir:'],
+	" 			\ 'dir',
+	" 			\ ['	Recently used files:'],
+	" 			\ 'files',
+	" 			\ ['	Bookmarks:'],
+	" 			\ 'bookmarks',
+	" 			\ ]
 
 "set to 0 so that vim-instant-markdown doesn't open a new tab in the browser
 "automatically
