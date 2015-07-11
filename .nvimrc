@@ -47,7 +47,7 @@
 	set tabstop=4
 	set softtabstop=0
 	set noexpandtab
-	set shiftwidth=4
+	set shiftwidth=2
 	set smarttab
 
 " do not keep a backup file, it's all in github anyway
@@ -66,10 +66,7 @@
 		augroup filetypes
 			autocmd!
 			autocmd FileType text setlocal textwidth=130
-			autocmd FileType ruby set shiftwidth=2
-			autocmd FileType python set shiftwidth=2
-			autocmd FileType erb set shiftwidth=2
-			autocmd FileType c set shiftwidth=2
+			autocmd FileType java set shiftwidth=4
 			"Enable spellchecking for markdown
 			autocmd FileType markdown setlocal spell
 			autocmd FileType vim setlocal foldmethod=marker
@@ -197,8 +194,8 @@
 
 "set syntastic mode active at startup with certain fyletype
     let g:syntastic_mode_map = { "mode": "active",
-                               \ "active_filetypes": ["ruby", "php","c","javascript","css","cpp","go","python"],
-                               \ "passive_filetypes": ["java"] }
+                               \ "active_filetypes": ["ruby", "php","c","javascript","cpp","go","python"],
+                               \ "passive_filetypes": ["java", "css", "scss"] }
 " }}}
 
 "=========================================================
