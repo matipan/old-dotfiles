@@ -157,6 +157,9 @@
 " Set no file limit, we are building a big project
 	let g:ctrlp_max_files = 0
 
+"This makes CtrlP faster
+	set wildignore+=*/.git/*,*/tmp/*,*.so,*.swp,*.zip
+
 " Setup some default ignores
 	let g:ctrlp_custom_ignore = {
 		\ 'dir':  '\v[\/]\.(git|hg|svn)$',
@@ -165,7 +168,7 @@
 
 " Use the nearest .git directory as the cwd
 " This makes a lot of sense if you are working on a project that is in version control. It also supports works with .svn, .hg, .bzr.
-	let g:ctrlp_working_path_mode = 'c'
+	let g:ctrlp_working_path_mode = 'rc'
 	nnoremap <leader>. :CtrlPTag<cr>
 
 " }}}
@@ -473,4 +476,5 @@
 
 "FZF config
 	set rtp+=~/.fzf
+	nnoremap <leader>ff :FZF<return>
 " }}}
