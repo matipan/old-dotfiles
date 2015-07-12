@@ -138,9 +138,9 @@
 		"Use ag over grep
 		set grepprg=ag\ --nogroup
 		let g:grep_cmd_opts = '--line-numbers --noheading'
+		" let g:ctrlp_user_command = 'ag %s -l -g \""'
 		"Use ag in CtrlP for listing files. Faster than grep and respects
 		".gitignore
-		" let g:ctrlp_user_command = 'ag %s -l -g \""'
 		let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
 	endif
 
@@ -156,6 +156,9 @@
 
 " Set no file limit, we are building a big project
 	let g:ctrlp_max_files = 0
+
+" Set the height of ctrlp window of results
+	let g:ctrlp_max_height =  50
 
 "This makes CtrlP faster
 	set wildignore+=*/.git/*,*/tmp/*,*.so,*.swp,*.zip
@@ -346,7 +349,7 @@
 "set rlt to generate c-tags on current project, excluding .git/ - pkg - only
 "for rails directory
 	noremap <leader>rlt :term ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=ruby,javascript,sql<CR><CR>
-	nnoremap <leader>rt :term ctags --tag-relative -R --languages=ruby --exclude=.git,log<CR><CR>
+	nnoremap <leader>rt :term ctags --tag-relative -R --languages=ruby,javascript --exclude=.git,log<CR><CR>
 	set tags+=.git/tags
 
 "Fire up IRB with --simple-prompt
