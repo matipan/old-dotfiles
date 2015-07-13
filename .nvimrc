@@ -247,7 +247,7 @@
 		botright new
 		setlocal bufhidden=wipe nobuflisted noswapfile nowrap "remove the buftype=file so that you can save the buffer into a file
 		call setline(1, 'You entered:    ' . a:cmdline)
-		call setline(2, 'Expanded Form:  ' .expanded_cmdline)
+		call setline(2, 'Expanded From:  ' .expanded_cmdline)
 		call setline(3,substitute(getline(2),'.','=','g'))
 		execute '$read !'. expanded_cmdline
 		"setlocal nomodifiable
@@ -284,7 +284,7 @@
 	nnoremap <leader>ct :checktime<return>
 
 "Maps for windows resize
-	nnoremap <silent> <leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+	nnoremap <silent> <leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
 	nnoremap <silent> <leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 	nnoremap <silent> <leader>] :vertical resize +5<CR>
 	nnoremap <silent> <leader>[ :vertical resize -5<CR>
