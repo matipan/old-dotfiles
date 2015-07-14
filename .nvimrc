@@ -68,6 +68,7 @@
 			autocmd!
 			autocmd FileType text setlocal textwidth=130
 			autocmd FileType java set shiftwidth=4
+			autocmd FileType php set shiftwidth=4
 			"Enable spellchecking for markdown
 			autocmd FileType markdown setlocal spell
 			autocmd FileType vim setlocal foldmethod=marker
