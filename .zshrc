@@ -1,30 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/Matias/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Theme
 ZSH_THEME="kriox26"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
 # User configuration
@@ -67,6 +46,7 @@ source ~/.bin/tmuxinator.zsh
 	alias changelog='sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText'
 	alias resetlog='sudo defaults delete /Library/Preferences/com.apple.loginwindow'
 	alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+	alias msqlstart='sudo /usr/local/Cellar/mysql/5.6.25/support-files/mysql.server start'
 
 #Brew
 	alias bupd='sudo brew update'  			#bupd = brew update
