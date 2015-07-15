@@ -68,7 +68,7 @@
 			autocmd!
 			autocmd FileType text setlocal textwidth=130
 			autocmd FileType java set shiftwidth=4
-			autocmd FileType php set shiftwidth=4
+			autocmd FileType php set shiftwidth=4|set relativenumber!
 			"Enable spellchecking for markdown
 			autocmd FileType markdown setlocal spell
 			autocmd FileType vim setlocal foldmethod=marker
@@ -86,6 +86,7 @@
 			au! BufNewFile,BufRead *.applescript   setf applescript
 			autocmd BufRead,BufNewFile *.scss set filetype=scss.css
 			autocmd BufNewFile,BufRead *.json set ft=javascript
+			autocmd BufNewFile,BufRead *.php set relativenumber!
 			"Indent .rb files before writing them
 			" autocmd BufWritePre *.rb :normal gg=G
 			" autocmd BufRead *.rb :normal gg=G
