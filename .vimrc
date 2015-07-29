@@ -181,8 +181,6 @@ nnoremap <silent> <esc>k :noh<return>
 vnoremap <leader>" <esc>`<i"<esc>`>la"<esc>
 "Set jk to go back to normal mode when on insert mode
 inoremap jk <esc>
-"Disable esc to force jk, disable arroy keys also
-inoremap <esc> <nop>
 "control + d(down) to move current down one line, control + a(above) to move up one line
 noremap <c-d> ddp
 noremap <c-a> ddkP
