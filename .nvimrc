@@ -68,7 +68,7 @@
 			autocmd!
 			autocmd FileType text setlocal textwidth=130
 			autocmd FileType java set shiftwidth=4
-			autocmd FileType php set shiftwidth=4|set relativenumber!
+			autocmd FileType php set shiftwidth=4|set norelativenumber
 			"Enable spellchecking for markdown
 			autocmd FileType markdown setlocal spell
 			autocmd FileType vim setlocal foldmethod=marker
@@ -86,7 +86,7 @@
 			au! BufNewFile,BufRead *.applescript   setf applescript
 			autocmd BufRead,BufNewFile *.scss set filetype=scss.css
 			autocmd BufNewFile,BufRead *.json set ft=javascript
-			autocmd BufNewFile,BufRead *.php set relativenumber!
+			autocmd BufNewFile,BufRead *.php set norelativenumber
 			"Indent .rb files before writing them
 			" autocmd BufWritePre *.rb :normal gg=G
 			" autocmd BufRead *.rb :normal gg=G
@@ -359,11 +359,15 @@
 	nnoremap <leader>rtt :terminal bundle exec rake test<return>
 	"don't run the command, let the user choose with test to run
 	nnoremap <leader>rte :terminal bundle exec rake test
-	"run migration
-	nnoremap <leader>rm :terminal bundle exec rake db:migrate<return>
+	"run migration and rollback previous migration
+	nnoremap <leader>rdm :terminal bundle exec rake db:migrate<return>
+	nnoremap <leader>rdr :terminal bundle exec rake db:rollback<return>
 
 "Sometimes is useful to see where the cursor is
 	nnoremap <leader>cl :set cursorline!<return>
+
+"Set relativenumber on and off, sometimes i dont need relativenumber
+	nnoremap <leader>rn :set relativenumber!<return>
 
 "Mappings for sourcing and making sessions, ss for save session and so
 " session-source, now works with neovim
