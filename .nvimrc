@@ -257,10 +257,6 @@
 	endfunction
 	"Set leader + rc to run the ruby program in current buffer
 	nnoremap <leader>rc :terminal ruby %:t<return>
-	"run rake routes and show the output on a :terminal buffer
-	nnoremap <leader>rr :terminal rake routes<return>
-	"run bundle exec ruby buffer_name.rb
-	nnoremap <leader>rbe :terminal bundle exec ruby %:t<return>
 " }}}
 
 "=========================================================
@@ -350,12 +346,21 @@
 " Keymaps for simple things ---- {{{
 "set rlt to generate c-tags on current project, excluding .git/ - pkg - only
 "for rails directory
-	noremap <leader>rlt :term ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=ruby,javascript,sql<CR><CR>
-	nnoremap <leader>rt :term ctags --tag-relative -R --languages=ruby,javascript --exclude=.git,log<CR><CR>
+	nnoremap <leader>trj :term ctags --tag-relative -R --languages=ruby,javascript --exclude=.git,log<CR><CR>
 	set tags+=.git/tags
 
 "Fire up IRB with --simple-prompt
-	nnoremap <leader>i :term irb --simple-prompt<return>
+	nnoremap <leader>ri :term irb --simple-prompt<return>
+
+"For some rake tasks
+	"run rake routes and show the output on a :terminal buffer
+	nnoremap <leader>rr :terminal bundle exec rake routes<return>
+	"run the whole suite of tests
+	nnoremap <leader>rtt :terminal bundle exec rake test<return>
+	"don't run the command, let the user choose with test to run
+	nnoremap <leader>rte :terminal bundle exec rake test
+	"run migration
+	nnoremap <leader>rm :terminal bundle exec rake db:migrate<return>
 
 "Sometimes is useful to see where the cursor is
 	nnoremap <leader>cl :set cursorline!<return>
