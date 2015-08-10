@@ -247,6 +247,7 @@ nnoremap <leader>rr :Shell rake routes<return>
 "run bundle exec ruby buffer_name.rb
 nnoremap <leader>rbe :Shell bundle exec ruby %:t<return>
 " }}}
+set wildignore+=*/.git/*
 "
 "=========================================================
 "					Plugins configs 					 "
