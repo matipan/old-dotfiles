@@ -379,6 +379,10 @@
 
 "Set jk to go back to normal mode when on insert mode
 	inoremap jk <esc>
+	inoremap <Down> <NOP>
+	inoremap <Up> <NOP>
+	inoremap <Left> <NOP>
+	inoremap <Right> <NOP>
 	noremap <Down> <NOP>
 	noremap <Up> <NOP>
 	noremap <Left> <NOP>
