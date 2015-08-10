@@ -163,7 +163,7 @@
 	let g:ctrlp_max_height =  50
 
 "This makes CtrlP faster
-	" set wildignore+=*/.git/*,*/tmp/*,*.so,*.swp,*.zip
+	set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 " Setup some default ignores
 	let g:ctrlp_custom_ignore = {
