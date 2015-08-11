@@ -234,6 +234,7 @@
 	nnoremap <leader>u" :Underline "<return>
 	nnoremap <leader>u* :Underline *<return>
 	nnoremap <leader>u- :Underline -<return>
+	nnoremap <leader>u# :Underline #<return>
 
 " Command for openning a buffer with the output of a shell command, such as ls or ruby myprogram.rb" --
 	command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
