@@ -355,13 +355,16 @@
 "For some rake tasks
 	"run rake routes and show the output on a :terminal buffer
 	nnoremap <leader>rr :terminal bundle exec rake routes<return>
-	"run the whole suite of tests
+	"run the whole suite of tests, leader + rtt(rake test tests)
 	nnoremap <leader>rtt :terminal bundle exec rake test<return>
 	"don't run the command, let the user choose with test to run
 	nnoremap <leader>rte :terminal bundle exec rake test
-	"run migration and rollback previous migration
+	"leader + rdm(rake db:migrate)
 	nnoremap <leader>rdm :terminal bundle exec rake db:migrate<return>
+	"leader + rdr(rake db:rollback)
 	nnoremap <leader>rdr :terminal bundle exec rake db:rollback<return>
+	"leader + rrs(run ruby script)
+	nnoremap <leader>rrs :terminal bundle exec ruby %:t<return>
 
 "Sometimes is useful to see where the cursor is
 	nnoremap <leader>cl :set cursorline!<return>
