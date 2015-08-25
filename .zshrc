@@ -45,7 +45,8 @@ source ~/.bin/tmuxinator.zsh
 	alias starwars='telnet towel.blinkenlights.nl'
 	alias changelog='sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText'
 	alias resetlog='sudo defaults delete /Library/Preferences/com.apple.loginwindow'
-	alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+	# alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+	eval "$(thefuck --alias)"
 	alias msqlstart='sudo /usr/local/Cellar/mysql/5.6.25/support-files/mysql.server start'
 
 #Brew
