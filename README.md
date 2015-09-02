@@ -56,10 +56,7 @@ Lightweight support for Ruby's bundler.
 * **[Vim-rvm](https://github.com/tpope/vim-rvm)**:
 Switch Ruby versions from inside Vim.
 
-* **[Vim-rake]()**: Vim rails without the rails part
-
-* **[Vim-startify](https://github.com/mhinz/vim-startify)**:
-Fancy start screen for vim
+* **[Vim-rake](https://github.com/tpope/vim-rake)**: Vim rails without the rails part
 
 * **[UltiSnips](https://github.com/SirVer/ultisnips)**:
 Awesome snippets.
