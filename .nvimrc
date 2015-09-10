@@ -496,4 +496,6 @@
 "FZF config
 	set rtp+=~/.fzf
 	nnoremap <leader>ff :FZF<return>
+"Indent line configs
+	let g:indentLine_color_term = 239
 " }}}
