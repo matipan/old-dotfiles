@@ -498,4 +498,5 @@
 	nnoremap <leader>ff :FZF<return>
 "Indent line configs
 	let g:indentLine_color_term = 239
+	let g:indentLine_fileType = [ 'haml', 'html', 'css', 'yaml', 'yml' ]
 " }}}
