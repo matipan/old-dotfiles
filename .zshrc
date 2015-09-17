@@ -10,7 +10,8 @@ plugins=(git)
 
 export PATH=$PATH:"/Users/Matias/.rvm/gems/ruby-2.2.0/bin:/Users/Matias/.rvm/gems/ruby-2.2.0@global/bin:/Users/Matias/.rvm/rubies/ruby-2.2.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/Users/Matias/.rvm/bin"
  export MANPATH="/usr/local/man:$MANPATH"
-
+export GOPATH=$HOME/Documents/GoProjects
+export PATH=$PATH:$GOPATH/bin
 
 export EDITOR="nvim"
 source $ZSH/oh-my-zsh.sh
