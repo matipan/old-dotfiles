@@ -12,6 +12,7 @@ export PATH=$PATH:"/Users/Matias/.rvm/gems/ruby-2.2.0/bin:/Users/Matias/.rvm/gem
  export MANPATH="/usr/local/man:$MANPATH"
 export GOPATH=$HOME/Documents/GoProjects
 export PATH=$PATH:$GOPATH/bin
+export PATH="/usr/local/sbin:$PATH"
 
 export EDITOR="nvim"
 source $ZSH/oh-my-zsh.sh
