@@ -31,6 +31,8 @@
 "'real' number of current line.
 	set number
 	set relativenumber
+	" Workaround for the clumsy redraw with relativenumber
+	set lazyredraw
 
 "Reduce timeout after <ESC> is pressed
 	set ttimeout
