@@ -39,7 +39,7 @@ highlight DiffText ctermfg=254 ctermbg=124 guifg=#E6E1DC guibg=#b00000
 
 " Cursor
 highlight CursorColumn ctermbg=241 guibg=Grey40
-highlight CursorLine ctermbg=0 guibg=#000000
+highlight CursorLine ctermbg=0 cterm=none guibg=#000000
 highlight CursorLineNR ctermfg=115 cterm=bold guibg=#000000
 highlight Cursor ctermfg=0 ctermbg=15 guifg=#000000 guibg=#FFFFFF
 highlight lCursor ctermfg=15 ctermbg=235 guifg=bg guibg=fg
