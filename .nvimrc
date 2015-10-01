@@ -494,11 +494,21 @@
 "set to 0 so that vim-instant-markdown doesn't open a new tab in the browser
 "automatically
 	let g:instant_markdown_autostart = 0
-
 "FZF config
 	set rtp+=~/.fzf
 	nnoremap <leader>ff :FZF<return>
+
 "Indent line configs
 	let g:indentLine_color_term = 239
-	let g:indentLine_fileType = [ 'haml', 'html', 'css', 'yaml', 'yml' ]
+	let g:indentLine_fileType = [  'haml', 'html', 'css', 'yaml', 'yml' ]
+
+"Disable hunks
+	let g:airline#extensions#hunks#enabled = 0
+	let g:gitgutter_override_sign_column_highlight = 0
+	let g:gitgutter_map_keys = 0
+	let g:gitgutter_sign_added = '│'
+	let g:gitgutter_sign_modified = '│'
+	let g:gitgutter_sign_removed = '│'
+	let g:gitgutter_sign_removed_first_line = '│'
+	let g:gitgutter_sign_modified_removed = '│'
 " }}}
