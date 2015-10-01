@@ -96,7 +96,7 @@ highlight SpecialKey ctermfg=51 guifg=Cyan
 highlight Title cterm=bold ctermfg=15 gui=bold guifg=#FFFFFF
 highlight Visual ctermbg=238 guibg=#5A647E
 highlight MatchParen ctermfg=80 ctermbg=240 guifg=#FFFFFF guibg=#005f5f
-highlight SignColumn      ctermfg=244     ctermbg=235     cterm=none
+highlight SignColumn      ctermfg=244     ctermbg=234     cterm=none
 "highlight SignColumn ctermfg=51 ctermbg=234 guifg=Cyan guibg=Grey
 highlight Structure ctermfg=221 guifg=#ffcc66
 highlight TabLineFill cterm=reverse gui=reverse
@@ -107,6 +107,10 @@ highlight htmlEndTag ctermfg=114 ctermbg=none cterm=none
 highlight xmlEndTag ctermfg=114 ctermbg=none cterm=none
 highlight ExtraWhitespace ctermbg=60
 highlight Colorcolumn ctermbg=240
+highlight GitGutterAdd ctermfg=35 ctermbg=234
+highlight GitGutterChange ctermfg=190 ctermbg=234
+highlight GitGutterRemove ctermfg=196 ctermbg=234
+highlight GitGutterChangeDelete ctermfg=80 ctermbg=234
 
 " Links
 highlight link Macro PreProc
