@@ -86,6 +86,9 @@ source ~/.bin/tmuxinator.zsh
 	alias tmxd='tmuxinator doctor'
 	alias tmxv='tmuxinator version'
 
+#hub
+	alias git=hub
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Load zsh-syntax-highlighting.
