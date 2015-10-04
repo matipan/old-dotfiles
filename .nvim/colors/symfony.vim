@@ -110,7 +110,7 @@ highlight Colorcolumn ctermbg=240
 highlight GitGutterAdd ctermfg=35 ctermbg=234
 highlight GitGutterChange ctermfg=190 ctermbg=234
 highlight GitGutterRemove ctermfg=196 ctermbg=234
-highlight GitGutterChangeDelete ctermfg=80 ctermbg=234
+highlight GitGutterChangeDelete ctermfg=25 ctermbg=234
 
 " Links
 highlight link Macro PreProc
