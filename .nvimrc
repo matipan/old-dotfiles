@@ -408,6 +408,9 @@
 	inoremap <c-u> <Esc>gUiw
 	nnoremap <c-u> gUiw
 
+"Navigate throw related files, only for rails.vim
+	nnoremap <leader>a :A<CR>
+
 "myemail = matias.pan26@gmail.com
 	iabbrev myemail matias.pan26@gmail.com
 " }}}
