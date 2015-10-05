@@ -93,7 +93,7 @@
 			" autocmd BufWritePre *.rb :normal gg=G
 			" autocmd BufRead *.rb :normal gg=G
 			"Change the PWD of current window to the dir of currently opened file, only if the file is not in a /tmp folder
-			autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
+			" autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 			" When editing a file, always jump to the last known cursor position.
 			" don't do it when the mark is in the first line, that is the default
 			" position when opening a file.
@@ -188,7 +188,7 @@
 "airline configurations
 	let g:airline_powerline_fonts = 1
 	let g:airline_theme = 'kriox'
-	let g:airline#extensions#tabline#enabled=1		"Enables plugins to appear on statusline, such as syntastic
+	let g:airline#extensions#tabline#enabled=0		"Enables plugins to appear on statusline, such as syntastic
 	let g:airline#extensions#syntastic#enabled = 1 	"Enable syntastic
   	let g:airline#extensions#whitespace#enabled = 0
 	let g:airline_detect_syntastic=1	"set the syntastic error message on statusline
@@ -441,6 +441,7 @@
 	let g:gist_clip_command = 'pbcopy'
 	let g:gist_detect_filetype = 1
 	let g:gist_open_browser_after_post = 1
+    let g:gist_update_on_write = 1
 	nnoremap <leader>gg :Gist<return>
 
 "Maps for vim-multiple cursor
@@ -448,7 +449,7 @@
 	let g:multi_cursor_skip_key='<C-x>'
 	let g:multi_cursor_quit_key='<Esc>'
 
-" Indent when defining private, protected or public methods
+" Indent when defining private, protected and public methods
 	let g:ruby_indent_access_modifier_style = 'indent'
 
 "For drew neils vim-textobj-rubyblock definition
@@ -461,36 +462,10 @@
     let g:SuperTabDefaultCompletionType = "context"
     let g:SuperTabMappingForward = '<tab>'
 
-"Startify header, appears only if you launch vim with no arguments
-	" let g:startify_custom_header = [
-	" 			\'				***************************',
-	" 			\'		   *****					       *****',
-	" 			\'		 **	  The programmers of tomorrow are   **',
-	" 			\'	   **   the wizards of the future, you are    **',
-	" 			\'	   *   gonna look like you have magic powers   *',
-	" 			\'	   **        compare to everybody else        **',
-	" 			\'		 **            -Gabe Newell-            **',
-	" 			\'		   *****					       *****',
-	" 			\'				***************************',
-	" 			\'',
-	" 			\'',
-	" 			\]
-
-	" let g:startify_session_dir = '~/.nvim/session'
-	" let g:startify_list_order =[
-	" 			\ ['	Sessions available:'],
-	" 			\ 'sessions',
-	" 			\ ['	Recently used in current dir:'],
-	" 			\ 'dir',
-	" 			\ ['	Recently used files:'],
-	" 			\ 'files',
-	" 			\ ['	Bookmarks:'],
-	" 			\ 'bookmarks',
-	" 			\ ]
-
 "set to 0 so that vim-instant-markdown doesn't open a new tab in the browser
 "automatically
 	let g:instant_markdown_autostart = 0
+
 "FZF config
 	set rtp+=~/.fzf
 	nnoremap <leader>ff :FZF<return>
