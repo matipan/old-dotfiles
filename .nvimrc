@@ -151,9 +151,6 @@
 "bind K to search word under cursor
 	nnoremap <leader>K :Ag! <C-R><C-W><CR>
 
-" Set delay to prevent extra search
-	let g:ctrlp_lazy_update = 350
-
 " Do not clear filenames cache, to improve CtrlP startup
 " You can manualy clear it by <F5>
 	let g:ctrlp_clear_cache_on_exit = 0
@@ -162,7 +159,7 @@
 	let g:ctrlp_max_files = 0
 
 " Set the height of ctrlp window of results
-	let g:ctrlp_max_height =  50
+	let g:ctrlp_max_height =  25
 
 "This makes CtrlP faster
 	set wildignore+=*/tmp/*,*.so,*.swp,*.zip
