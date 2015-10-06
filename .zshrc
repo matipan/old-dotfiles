@@ -16,7 +16,6 @@ export PATH="/usr/local/sbin:$PATH"
 
 export EDITOR="nvim"
 source $ZSH/oh-my-zsh.sh
-source ~/.bin/tmuxinator.zsh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
