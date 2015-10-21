@@ -24,7 +24,7 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 #Basic alias
-	alias gtg='sudo brew update && brew upgrade && brew cleanup'
+	alias gtg='brew update && brew upgrade && brew cleanup'
 	alias vimbp='vim ~/.bash_profile' #For faster openning of .bash_profile
 	alias sbp='source ~/.bash_profile' #For faster sourcing
 	alias sz='source ~/.zshrc'
