@@ -487,4 +487,10 @@
   let g:gitgutter_sign_removed = '│'
   let g:gitgutter_sign_removed_first_line = '│'
   let g:gitgutter_sign_modified_removed = '│'
+
+  let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+  nnoremap <Leader>ts :call RunCurrentSpecFile()<CR>
+  nnoremap <Leader>s :call RunNearestSpec()<CR>
+  nnoremap <Leader>l :call RunLastSpec()<CR>
+  nnoremap <Leader>ta :call RunAllSpecs()<CR>
 " }}}
