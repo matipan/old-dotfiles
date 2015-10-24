@@ -25,6 +25,7 @@ source $ZSH/oh-my-zsh.sh
 
 #Basic alias
 	alias gtg='brew update && brew upgrade && brew cleanup'
+  alias lg='/bin/zsh --login'
 	alias vimbp='vim ~/.bash_profile' #For faster openning of .bash_profile
 	alias sbp='source ~/.bash_profile' #For faster sourcing
 	alias sz='source ~/.zshrc'
