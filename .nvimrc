@@ -493,4 +493,5 @@
   nnoremap <Leader>s :call RunNearestSpec()<CR>
   nnoremap <Leader>l :call RunLastSpec()<CR>
   nnoremap <Leader>ta :call RunAllSpecs()<CR>
+  let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 " }}}
