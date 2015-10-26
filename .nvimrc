@@ -489,9 +489,12 @@
   let g:gitgutter_sign_modified_removed = '│'
 
   let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
-  nnoremap <Leader>ts :call RunCurrentSpecFile()<CR>
-  nnoremap <Leader>s :call RunNearestSpec()<CR>
-  nnoremap <Leader>l :call RunLastSpec()<CR>
-  nnoremap <Leader>ta :call RunAllSpecs()<CR>
+  nnoremap <Leader>fs :call RunCurrentSpecFile()<CR>
+  nnoremap <Leader>ns :call RunNearestSpec()<CR>
+  nnoremap <Leader>ls :call RunLastSpec()<CR>
+  nnoremap <Leader>as :call RunAllSpecs()<CR>
   let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+  "NERDTree
+  nnoremap <leader>nt :NERDTreeToggle<CR>
 " }}}
