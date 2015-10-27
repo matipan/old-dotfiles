@@ -496,5 +496,5 @@
   let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
   "NERDTree
-  nnoremap <leader>nt :NERDTreeToggle<CR>
+  nnoremap <leader>nt :NERDTree<CR>
 " }}}
