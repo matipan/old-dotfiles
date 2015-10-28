@@ -146,7 +146,7 @@
     " let g:ctrlp_user_command = 'ag %s -l -g \""'
     "Use ag in CtrlP for listing files. Faster than grep and respects
     ".gitignore
-    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
+    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --ignore ''log'' --hidden -g ""'
   endif
 
 "bind K to search word under cursor
@@ -167,7 +167,7 @@
 
 " Setup some default ignores
   let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'dir':  '\v[\/]\.(git|hg|svn|log)$',
     \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
      \}
 
