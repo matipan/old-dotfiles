@@ -346,8 +346,7 @@
 " Keymaps for simple things ---- {{{
 "set rlt to generate c-tags on current project, excluding .git/ - pkg - only
 "for rails directory
-  nnoremap <leader>trj :term ctags --tag-relative -R --languages=ruby,javascript --exclude=.git,log<CR><CR>
-  set tags+=.git/tags
+  set tags=.git/tags
 
 "Fire up IRB with --simple-prompt
   nnoremap <leader>ri :term irb --simple-prompt<return>
