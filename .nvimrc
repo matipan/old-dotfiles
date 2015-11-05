@@ -329,6 +329,9 @@
 "Set ]b to go to previous buffer
   nnoremap [b :bp<return>
 
+"Go to previously visited buffer
+  nnoremap <leader>v :b#<CR><return>
+
 "Set LEADER + b + c to close current buffer
   nnoremap <leader>bc :bd!<return>
 
