@@ -69,7 +69,7 @@
     augroup filetypes
       autocmd!
       autocmd FileType text setlocal textwidth=130
-      autocmd FileType java set shiftwidth=4|set noexpandtab
+      autocmd FileType java set shiftwidth=4|set noexpandtab|set tabstop=4
       autocmd FileType c set shiftwidth=4|set tabstop=8|set noexpandtab
       autocmd FileType php set shiftwidth=4|set norelativenumber
       "Enable spellchecking for markdown
