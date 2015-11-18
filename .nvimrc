@@ -90,6 +90,7 @@
       autocmd BufRead,BufNewFile *.scss set filetype=scss.css
       autocmd BufNewFile,BufRead *.json set ft=javascript
       autocmd BufNewFile,BufRead *.php set norelativenumber
+      autocmd BufNewFile,BufRead *.mote set syntax=html
       "Indent .rb files before writing them
       " autocmd BufWritePre *.rb :normal gg=G
       " autocmd BufRead *.rb :normal gg=G
