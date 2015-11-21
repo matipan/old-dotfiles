@@ -72,6 +72,7 @@
       autocmd FileType java set shiftwidth=4|set noexpandtab|set tabstop=4
       autocmd FileType c set shiftwidth=4|set tabstop=8|set noexpandtab
       autocmd FileType php set shiftwidth=4|set norelativenumber
+      autocmd FileType go set shiftwidth=4|set tabstop=4
       "Enable spellchecking for markdown
       autocmd FileType markdown setlocal spell
       autocmd FileType vim setlocal foldmethod=marker
@@ -500,4 +501,12 @@
 
   "NERDTree
   nnoremap <leader>nt :NERDTree<CR>
+
+"Go configs
+  let g:go_highlight_extra_types = 1
+	let g:go_highlight_operators = 1
+	let g:go_highlight_functions = 1
+	let g:go_highlight_methods = 1
+	let g:go_highlight_structs = 1
+	let g:go_highlight_build_constraints = 1
 " }}}
