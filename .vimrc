@@ -29,7 +29,7 @@ if &t_Co > 2 || has("gui_running")
 	syntax on
 	set hlsearch
 endif
-colorscheme symfony
+colorscheme molokai_mod
 "Set tab indent, 4 spaces
 set tabstop=4
 set softtabstop=0
