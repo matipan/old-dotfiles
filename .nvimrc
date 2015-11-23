@@ -503,10 +503,23 @@
   nnoremap <leader>nt :NERDTree<CR>
 
 "Go configs
+  nnoremap <leader>gd :GoDoc<CR>
+  nnoremap <leader>gb :GoBuild<CR>
+  nnoremap <leader>gi :GoImports<CR>
+  nnoremap <leader>gl :GoLint<CR>
   let g:go_highlight_extra_types = 1
-	let g:go_highlight_operators = 1
-	let g:go_highlight_functions = 1
-	let g:go_highlight_methods = 1
-	let g:go_highlight_structs = 1
-	let g:go_highlight_build_constraints = 1
+  let g:go_highlight_operators = 1
+  let g:go_highlight_functions = 1
+  let g:go_highlight_methods = 1
+  let g:go_highlight_structs = 1
+  let g:go_highlight_build_constraints = 1
+  let g:go_fmt_command = "goimports"
+  let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+  let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+"Tslime stuff
+  let g:tslime_always_current_session = 1
+  let g:tslime_always_current_window = 1
+  nmap <leader>x :Tmux 
+
 " }}}
