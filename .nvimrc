@@ -15,6 +15,9 @@
 "         General settings           "
 "=========================================================
 "
+" Enable pipe shape cursor when in insert mode
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
 "Pathogen plugin handles $RUNTIMEPATH
   execute pathogen#infect()
 
@@ -521,5 +524,8 @@
   let g:tslime_always_current_session = 1
   let g:tslime_always_current_window = 1
   nmap <leader>x :Tmux 
+
+"Tagbar stuff
+  nmap <F8> :TagbarToggle<CR>
 
 " }}}
