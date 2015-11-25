@@ -28,9 +28,11 @@ source $ZSH/oh-my-zsh.sh
   alias lg='/bin/zsh --login'
 	alias vimbp='vim ~/.bash_profile' #For faster openning of .bash_profile
 	alias sbp='source ~/.bash_profile' #For faster sourcing
-	alias sz='source ~/.zshrc'
+	alias sz='source ~/Documents/dotfiles/.zshrc'
 	alias vimrc='vim ~/.vimrc'	#convenient way for open .vimrc
 	alias vimgc='vim ~/.gitconfig' #vimgc: open .gitconfig
+	alias nvimrc='nvim ~/Documents/dotfiles/.nvimrc'
+	alias nvimz='nvim ~/Documents/dotfiles/.zshrc'
 	alias vimz='vim ~/.zshrc'
 	alias c='clear' #I'm lazy, so what...
 	alias e='exit'
@@ -38,8 +40,6 @@ source $ZSH/oh-my-zsh.sh
 	alias o1='open .'
 	alias v='vim'
 	alias n='nvim'
-	alias nvimrc='nvim ~/.nvimrc'
-	alias nvimz='nvim ~/.zshrc'
 	alias ls='ls -G'  #Displays a list of dirs and files with colors
 	alias la='ls -Ga' #Displays all hidden files and reg files with la
 	alias lf='ls -GFlash' #Displays hidden and reg files with usefull info
