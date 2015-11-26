@@ -209,7 +209,7 @@
 "set syntastic mode active at startup with certain fyletype
     let g:syntastic_mode_map = { "mode": "active",
                                \ "active_filetypes": ["ruby", "php","c","javascript","cpp","go","python"],
-                               \ "passive_filetypes": ["java", "css", "scss" ,"erb"] }
+                               \ "passive_filetypes": ["css", "scss" ,"erb"] }
 " }}}
 
 "=========================================================
@@ -218,7 +218,7 @@
 "
 "functions to show highligting groups for current word, underline current line, and bring a shell command output to a buffer - {{{
 "Show highlighting groups for current word with leader + f + s, usefull when having miss syntax highlight
-  nmap <leader>fs :call <SID>SynStack()<CR>
+  nmap <leader>hg :call <SID>SynStack()<CR>
   function! <SID>SynStack()
     if !exists("*synstack")
       return
@@ -452,7 +452,7 @@
   let g:gist_clip_command = 'pbcopy'
   let g:gist_detect_filetype = 1
   let g:gist_open_browser_after_post = 1
-    let g:gist_update_on_write = 1
+  let g:gist_update_on_write = 1
   nnoremap <leader>gg :Gist<return>
 
 "Maps for vim-multiple cursor
@@ -502,7 +502,7 @@
   nnoremap <Leader>as :call RunAllSpecs()<CR>
   let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
-  "NERDTree
+"NERDTree
   nnoremap <leader>nt :NERDTree<CR>
 
 "Go configs
