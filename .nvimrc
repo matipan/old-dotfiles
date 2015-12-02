@@ -209,7 +209,7 @@
 "set syntastic mode active at startup with certain fyletype
     let g:syntastic_mode_map = { "mode": "active",
                                \ "active_filetypes": ["ruby", "php","c","javascript","cpp","go","python"],
-                               \ "passive_filetypes": ["css", "scss" ,"erb"] }
+                               \ "passive_filetypes": ["css", "scss" ,"erb", "java"] }
 " }}}
 
 "=========================================================
@@ -433,7 +433,7 @@
   nnoremap <leader>gd :Gdiff<return>
   nnoremap <leader>gs :Gstatus<return>
   nnoremap <leader>gc :Gcommit<return>
-  nnoremap <leader>gl :Glog<return>
+  nnoremap <leader>gl :Git log --oneline --abbrev-commit --graph --decorate<return>
   nnoremap <leader>gw :Gwrite<return>
   nnoremap <leader>ge :Gedit<return>
   nnoremap <leader>gn :Gbrowse<return>
@@ -506,10 +506,10 @@
   nnoremap <leader>nt :NERDTree<CR>
 
 "Go configs
-  nnoremap <leader>gd :GoDoc<CR>
-  nnoremap <leader>gb :GoBuild<CR>
-  nnoremap <leader>gi :GoImports<CR>
-  nnoremap <leader>gl :GoLint<CR>
+  " nnoremap <leader>gd :GoDoc<CR>
+  " nnoremap <leader>gb :GoBuild<CR>
+  " nnoremap <leader>gi :GoImports<CR>
+  " nnoremap <leader>gl :GoLint<CR>
   let g:go_highlight_extra_types = 1
   let g:go_highlight_operators = 1
   let g:go_highlight_functions = 1
@@ -528,4 +528,6 @@
 "Tagbar stuff
   nmap <F8> :TagbarToggle<CR>
 
+"Vim-javascript
+let g:javascript_enable_domhtmlcss=1
 " }}}
