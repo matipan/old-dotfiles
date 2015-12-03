@@ -501,8 +501,7 @@ set encoding=utf8
   let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 "NERDTree
-  nnoremap <leader>nt :NERDTree<CR>
-  nmap <F7> :NERDTreeToggle<CR>
+  nnoremap <c-t> :NERDTreeToggle<CR>
 
 "Go configs
   " nnoremap <leader>gd :GoDoc<CR>
