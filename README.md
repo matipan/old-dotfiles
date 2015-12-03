@@ -23,6 +23,18 @@ Vim plugin to search using the silver searcher.
 * **[CtrlP](https://github.com/kien/ctrlp.vim)**:
 Full path fuzzy file finder for vim.
 
+* **[Vim-go](https://github.com/fatih/vim-go)**:
+Awesome vim plugin for go development.
+
+* **[Vim-devicons](https://github.com/ryanoasis/vim-devicons)**:
+Nice icons for terminal vim
+
+* **[Unite.vim](https://github.com/Shougo/unite.vim)**:
+Unite and create user interfaces
+
+* **[Tagbar](https://github.com/majutsushi/tagbar)**:
+Displays tags in a window
+
 * **[Vim-commentary](https://github.com/tpope/vim-commentary)**:
 Vim plugin for better commenting.
 

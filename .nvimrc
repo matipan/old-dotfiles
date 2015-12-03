@@ -28,7 +28,7 @@
   nnoremap <leader>en :vsplit $MYVIMRC<return>
 
 "set encoding for vim-devicons
-set encoding=utf8
+  set encoding=utf8
 
 "Allows to navigate between modified buffers
   set hidden
