@@ -27,6 +27,9 @@
 "Open your .nvimrc with this key map
   nnoremap <leader>en :vsplit $MYVIMRC<return>
 
+"set encoding for vim-devicons
+set encoding=utf8
+
 "Allows to navigate between modified buffers
   set hidden
 
@@ -311,11 +314,6 @@
   nnoremap tv :vsplit +terminal<return>
   nnoremap th :split +terminal<return>
 
-"Netrw is an awesome replacemente of nerdtree(and faster)
-  let g:netrw_liststyle=3
-  let g:netrw_winsize=20
-  nnoremap <leader>k :Lexplore<return>
-
 "Set LEADER + t to open new tab
   nnoremap <leader>tn :tabnew<return>
 
@@ -504,6 +502,7 @@
 
 "NERDTree
   nnoremap <leader>nt :NERDTree<CR>
+  nmap <F7> :NERDTreeToggle<CR>
 
 "Go configs
   " nnoremap <leader>gd :GoDoc<CR>
