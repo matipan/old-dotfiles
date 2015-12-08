@@ -77,15 +77,7 @@ source $ZSH/oh-my-zsh.sh
 	alias tmuxa='tmux attach -t'
 	alias tmuxk='tmux kill-session -t'
 	alias tls='tmux ls'
-	alias tns='tmux new-session'
-
-#tmuxinator
-	alias tmxn='tmuxinator new'
-	alias tmxo='tmuxinator open'
-	alias tmxs='tmuxinator start'
-	alias tmxls='tmuxinator list'
-	alias tmxd='tmuxinator doctor'
-	alias tmxv='tmuxinator version'
+	alias tn='tmux new -s'
 
 #hub
 	alias git=hub

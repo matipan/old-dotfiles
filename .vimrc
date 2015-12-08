@@ -29,7 +29,7 @@ if &t_Co > 2 || has("gui_running")
 	syntax on
 	set hlsearch
 endif
-colorscheme symfony
+colorscheme railscasts
 "Set tab indent, 4 spaces
 set tabstop=4
 set softtabstop=0
@@ -76,7 +76,7 @@ if has("autocmd")
 		autocmd BufWritePre *.rb :normal gg=G
 		" autocmd BufRead *.rb :normal gg=G
 		"Change the PWD of current window to the dir of currently opened file, only if the file is not in a /tmp folder
-		autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
+		" autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 		" When editing a file, always jump to the last known cursor position.
 		" don't do it when the mark is in the first line, that is the default
 		" position when opening a file.
@@ -95,44 +95,17 @@ endif " has("autocmd")
 "
 " Statusline configs --- {{{
 set laststatus=2
-" set statusline=[%n]\ %<%F\ %h%m%r%{fugitive#statusline()}\ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ %P
-let g:lightline = {
-			\ 'colorscheme': 'wombat',
-			\ 'active': {
-			\   'left': [ [ 'mode', 'paste' ],
-			\             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-			\ },
-			\ 'component_function': {
-			\   'fugitive': 'MyFugitive',
-			\   'readonly': 'MyReadonly',
-			\   'modified': 'MyModified'
-			\ },
-			\ }
-function! MyModified()
-	if &filetype == "help"
-		return ""
-	elseif &modified
-		return "+"
-	elseif &modifiable
-		return ""
-	else
-		return ""
-	endif
-endfunction
-
-function! MyReadonly()
-	if &filetype == "help"
-		return ""
-	elseif &readonly
-		return ""
-	else
-		return ""
-	endif
-endfunction
-
-function! MyFugitive()
-	return fugitive#statusline()
-endfunction
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'wombat'
+let g:airline#extensions#tabline#enabled=0    "Enables plugins to appear on statusline, such as syntastic
+" let g:airline#extensions#syntastic#enabled = 1  "Enable syntastic
+let g:airline#extensions#whitespace#enabled = 0
+" let g:airline_detect_syntastic=1  "set the syntastic error message on statusline
+" let g:syntastic_enable_signs=1      "Enable signs for syntastic
+" let g:syntastic_always_populate_loc_list=1 "For using :lopen or :lwindow
+" let g:syntastic_auto_jump=1
+" let g:syntastic_error_symbol = "✗"
+" let g:syntastic_warning_symbol = "⚠ "
 " }}}
 "
 "=========================================================

@@ -527,5 +527,6 @@
   nmap <F8> :TagbarToggle<CR>
 
 "Vim-javascript
-let g:javascript_enable_domhtmlcss=1
+  let g:javascript_enable_domhtmlcss=1
+  let g:used_javascript_libs = 'angularjs, react, jquery'
 " }}}
