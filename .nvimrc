@@ -126,7 +126,7 @@
     set hlsearch
   endif
 
-  colorscheme symfony
+  colorscheme hybrid
 
 "Use 256 color(only when terminal support it)
   set t_Co=256
@@ -196,7 +196,7 @@
 "Airline and syntastic global variables setup ------------------ {{{
 "airline configurations
   let g:airline_powerline_fonts = 1
-  let g:airline_theme = 'kriox'
+  let g:airline_theme = 'base16'
   let g:airline#extensions#tabline#enabled=0    "Enables plugins to appear on statusline, such as syntastic
   let g:airline#extensions#syntastic#enabled = 1  "Enable syntastic
     let g:airline#extensions#whitespace#enabled = 0
@@ -498,16 +498,11 @@
   nnoremap <Leader>ns :call RunNearestSpec()<CR>
   nnoremap <Leader>ls :call RunLastSpec()<CR>
   nnoremap <Leader>as :call RunAllSpecs()<CR>
-  let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 "NERDTree
   nnoremap <c-t> :NERDTreeToggle<CR>
 
 "Go configs
-  " nnoremap <leader>gd :GoDoc<CR>
-  " nnoremap <leader>gb :GoBuild<CR>
-  " nnoremap <leader>gi :GoImports<CR>
-  " nnoremap <leader>gl :GoLint<CR>
   let g:go_highlight_extra_types = 1
   let g:go_highlight_operators = 1
   let g:go_highlight_functions = 1
@@ -529,4 +524,5 @@
 "Vim-javascript
   let g:javascript_enable_domhtmlcss=1
   let g:used_javascript_libs = 'angularjs, react, jquery'
+  let g:jsx_ext_required = 1 " Allow JSX in normal JS files
 " }}}
