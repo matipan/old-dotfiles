@@ -27,18 +27,15 @@
 "Open your .nvimrc with this key map
   nnoremap <leader>en :vsplit $MYVIMRC<return>
 
-"set encoding for vim-devicons
-  set encoding=utf8
-
 "Allows to navigate between modified buffers
   set hidden
 
 "Relative number is way better for motions triggering, set number to show the
 "'real' number of current line.
   set number
-  set relativenumber
+  " set relativenumber
   " Workaround for the clumsy redraw with relativenumber
-  set lazyredraw
+  " set lazyredraw
 
 "Reduce timeout after <ESC> is pressed
   set ttimeout
@@ -77,7 +74,7 @@
       autocmd FileType text setlocal textwidth=130
       autocmd FileType java set shiftwidth=4|set noexpandtab|set tabstop=4
       autocmd FileType c set shiftwidth=4|set tabstop=8|set noexpandtab
-      autocmd FileType php set shiftwidth=4|set norelativenumber
+      autocmd FileType php set shiftwidth=4
       autocmd FileType go set shiftwidth=4|set tabstop=4
       "Enable spellchecking for markdown
       autocmd FileType markdown setlocal spell
@@ -500,7 +497,7 @@
   nnoremap <Leader>as :call RunAllSpecs()<CR>
 
 "NERDTree
-  nnoremap <c-t> :NERDTreeToggle<CR>
+  nnoremap <F7> :NERDTreeToggle<CR>
 
 "Go configs
   let g:go_highlight_extra_types = 1
