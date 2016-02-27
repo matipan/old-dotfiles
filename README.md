@@ -1,21 +1,20 @@
 dotfiles
 ========
 
-I've recently changed my main text editor(vim) to [NeoVim](https://github.com/neovim/neovim), NeoVim is a bit more "fancy" than vim. It has a few more features which makes it much more fast and useful. One of them that I find really great is the Terminal Emulator(meaning that you can open a terminal inside neovim, do splits and all that). I've also reduced my plugins list because I had a lot of them and use only half.
+Since I handle mostly everything for the terminal, I think I have a pretty good setup. I use `zsh` with the `oh-my-zsh` framework, and [neovim](https://github.com/neovim/neovim) for editing. Since I started using iTerm2 tabs and panes I stopped using tmux, since iTerm2 is a native OS X application and the only reason I used tmux in the past was for the split panes and windows. So iTerm2 is clearly a better replacement.
 
-Having the Terminal inside the editor lead me to stop using Tmux. But since NeoVim lacks of Ruby support, some of the commands(like rake) don't work inside NeoVim, so I started using it again.
-
-Screenshots of my NeoVim + tmux setup:
-
-![simple-neovim](https://github.com/kriox26/dotfiles/blob/master/imgs/neovim1.png)
-![neovim+term](https://github.com/kriox26/dotfiles/blob/master/imgs/neovim2.png)
+Screen shots of the setup:
+![iterm2+neovim](https://github.com/kriox26/dotfiles/blob/master/imgs/neovim1.png)
+![neovim+plugin](https://github.com/kriox26/dotfiles/blob/master/imgs/neovim2.png)
 
 
-I said that I had a lot less plugins, but they are still a lot... Some of them I barely use, but when I do is because I really need them. So I decided to keep all of this, it's not like makes NeoVim slower anyway, Pathogen does a pretty good work with the $RUNTIMEPATH, so NeoVim startup is still fast.
-### Neovim/vim-plugins installed
+### Neovim plugins I use the most:
 
 * **[Vim-airline](https://github.com/bling/vim-airline)**:
 lean & mean status/tabline.
+
+* **[Unite.vim](https://github.com/Shougo/unite.vim)**:
+Unite and create user interfaces
 
 * **[Ag](https://github.com/ervandew/ag)**:
 Vim plugin to search using the silver searcher.
@@ -29,8 +28,8 @@ Awesome vim plugin for go development.
 * **[Vim-devicons](https://github.com/ryanoasis/vim-devicons)**:
 Nice icons for terminal vim
 
-* **[Unite.vim](https://github.com/Shougo/unite.vim)**:
-Unite and create user interfaces
+* **[NERDTree](https://github.com/scrooloose/nerdtree.git)**:
+A tree explorer
 
 * **[Tagbar](https://github.com/majutsushi/tagbar)**:
 Displays tags in a window
@@ -50,31 +49,14 @@ Context and language-specific completion.
 * **[Vim-fugitive](https://github.com/tpope/vim-fugitive)**:
 Awesome git wrapper for vim.
 
-* **[Vim-exchange](https://github.com/tommcdo/vim-exchange)**:
-Easy text exchange operator.
-
-* **[Vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)**:
-Multiple selection.
-
 * **[Vim-ruby](https://github.com/vim-ruby/vim-ruby)**:
 For better syntax highlight and integration.
 
 * **[Vim-rails](https://github.com/tpope/vim-rails)**:
 Ruby on rails power tools.
 
-* **[Vim-bundler](https://github.com/tpope/vim-bundler)**:
-Lightweight support for Ruby's bundler.
-
-* **[Vim-rvm](https://github.com/tpope/vim-rvm)**:
-Switch Ruby versions from inside Vim.
-
-* **[Vim-rake](https://github.com/tpope/vim-rake)**: Vim rails without the rails part
-
 * **[UltiSnips](https://github.com/SirVer/ultisnips)**:
 Awesome snippets.
-
-* **[Auto-pairs](https://github.com/jiangmiao/auto-pairs)**:
-Vim plugin, insert or delete brackets, parens, quotes in pair.
 
 * **[Vim-repeat](https://github.com/tpope/vim-repeat)**:
 Enable repeating supported plugin maps with ".".
@@ -82,25 +64,10 @@ Enable repeating supported plugin maps with ".".
 * **[Gist-vim](https://github.com/mattn/gist-vim)**:
 Vimscript for handling gists inside vim.
 
-* **[Vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace)**:
-Better whitespace highlighting for Vim.
-
 * **[Vim-textobj-indent](https://github.com/kana/vim-textobj-indent)**:
 Text objects for indented blocks of lines.
 
 * **[Vim-textobj-line](https://github.com/kana/vim-textobj-line)**:
 Text objects for the current line.
-
-* **[Vim-textobj-rubyblock](https://github.com/nelstrom/vim-textobj-rubyblock)**:
-A custom text object for selecting ruby blocks.
-
-* **[Vim-textobj-user](https://github.com/kana/vim-textobj-user)**:
-Create your own text objects.
-
-* **[Vim-tmux](https://github.com/tmux-plugins/vim-tmux)**:
-Vim plugin for tmux.conf.
-
-* **[Webapi-vim](https://github.com/mattn/webapi-vim)**:
-Vim interface to Web API.
 
 PD: I recommend to use [pathogen](https://github.com/tpope/vim-pathogen) as a plugin manager :smiley: :ok_hand:
