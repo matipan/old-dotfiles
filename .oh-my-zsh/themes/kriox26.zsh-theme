@@ -12,7 +12,8 @@ local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
 #%{$fg_bold[white]%}╰─%{$fg_bold[white]%}$PR_PROMPT %{$fg[red]%}\$ % %{$reset_color%}'
 PROMPT='%{$fg_bold[white]%}╭─ %{$fg[yellow]%}%~ %{$fg_bold[red]%}❯%{$fg_bold[yellow]%}❯%{$fg_bold[green]%}❯ %{$fg_bold[red]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}
 %{$fg_bold[white]%}╰─%{$fg_bold[white]%}$PR_PROMPT %{$fg[red]%}\$ % %{$reset_color%}'
-RPROMPT='%{$fg_bold[magenta]%}$(rvm_prompt_info) %{$reset_color%}'
+# RPROMPT='%{$fg_bold[magenta]%}$(rvm_prompt_info) %{$reset_color%}'
+RPROMPT=''
 
 #${ret_status}%{$fg_bold[green]%}%p
 

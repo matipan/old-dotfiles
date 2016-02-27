@@ -13,10 +13,17 @@ export PATH=$PATH:"/Users/Matias/.rvm/gems/ruby-2.2.0/bin:/Users/Matias/.rvm/gem
 export GOPATH=$HOME/Code/GoWorkspace
 export PATH=$PATH:$GOPATH/bin
 export PATH="/usr/local/sbin:$PATH"
+export PATH=~/Code/bin:$PATH
+# export PATH=~/Code/go_appengine:$PATH
+export PATH=~/Library/Android/sdk/platform-tools:$PATH
+export PATH=~/Library/Android/sdk/tools:$PATH
+export GOROOT="/usr/local/opt/go/libexec"
+export PATH=$PATH:$GOROOT/bin
 
 export EDITOR="nvim"
 source $ZSH/oh-my-zsh.sh
 
+alias emacs="/usr/local/Cellar/emacs/24.5/bin/emacs --no-window-system"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
