@@ -15,6 +15,9 @@
 "         General settings           "
 "=========================================================
 "
+"Disable pathogen plugins
+  let g:pathogen_disabled = [ "auto-pairs", "vim-gitgutter" ]
+
 " Enable pipe shape cursor when in insert mode
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
@@ -32,7 +35,7 @@
 
 "Relative number is way better for motions triggering, set number to show the
 "'real' number of current line.
-  set number
+  set nonumber
   " set relativenumber
   " Workaround for the clumsy redraw with relativenumber
   " set lazyredraw
@@ -75,7 +78,7 @@
       autocmd FileType java set shiftwidth=4|set noexpandtab|set tabstop=4
       autocmd FileType c set shiftwidth=4|set tabstop=8|set noexpandtab
       autocmd FileType php set shiftwidth=4
-      autocmd FileType go set shiftwidth=4|set tabstop=4
+      autocmd FileType go set shiftwidth=4|set tabstop=4|set noexpandtab
       "Enable spellchecking for markdown
       autocmd FileType markdown setlocal spell
       autocmd FileType vim setlocal foldmethod=marker
@@ -354,6 +357,9 @@
 "Fire up IRB with --simple-prompt
   nnoremap <leader>ri :term irb --simple-prompt<return>
 
+"Focus on the current pane
+  nnoremap <silent> <leader>o :on<return>
+
 "For some rake tasks
   "run rake routes and show the output on a :terminal buffer
   nnoremap <leader>rr :terminal bundle exec rake routes<return>
@@ -395,7 +401,7 @@
   inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 "instead of ci) use <space>, in, il: {,(,[
-  nnoremap <space> ci)
+  nnoremap <space><space> ci)
   onoremap in( :<c-u>normal! f(vi(<cr>
   onoremap il( :<c-u>normal! F)vi(<cr>
   onoremap in{ :<c-u>normal! f{vi{<cr>
@@ -522,4 +528,12 @@
   let g:javascript_enable_domhtmlcss=1
   let g:used_javascript_libs = 'angularjs, react, jquery'
   let g:jsx_ext_required = 1 " Allow JSX in normal JS files
+
+"Unite
+  let g:unite_source_history_yank_enable = 1
+  nnoremap <space>y :Unite history/yank<cr>
+  nnoremap <space>/ :Unite grep:.<cr>
+  nnoremap <space>p :Unite -start-insert file_rec/async<cr>
+  nnoremap <space>f :Unite -start-insert file<CR>
+  nnoremap <space>s :Unite -quick-match buffer<cr>
 " }}}
