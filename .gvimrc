@@ -1,7 +1,8 @@
 set guifont=Sauce\ Code\ Pro:h13
-colorscheme railscasts
+colorscheme hybrid
 set shiftwidth=2
 let mapleader = "-"
+let g:airline_theme="jellybeans"
 nnoremap <leader>ct :checktime<CR>
 nnoremap <c-t> :NERDTreeToggle<CR>
 "better window navigation
@@ -48,3 +49,13 @@ nnoremap <c-t> :NERDTreeToggle<CR>
   let g:ctrlp_working_path_mode = 'rc'
   nnoremap <leader>. :CtrlPTag<cr>
 
+"Go stuff
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
