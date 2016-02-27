@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-Since I handle mostly everything for the terminal, I think I have a pretty good setup. I use `zsh` with the `oh-my-zsh` framework, and [neovim](https://github.com/neovim/neovim) for editing. Since I started using iTerm2 tabs and panes I stopped using tmux, since iTerm2 is a native OS X application and the only reason I used tmux in the past was for the split panes and windows. So iTerm2 is clearly a better replacement.
+Since I handle mostly everything for the terminal, I think I have a pretty good setup. I use `zsh` with the `oh-my-zsh` framework, and [neovim](https://github.com/neovim/neovim) for editing. iTerm2 tabs and panes repalced tmux entirely for me because I only used the tmux for having different terminal panes, and iTerm2 is a native application so it has native OS X native key bindings.
 
 Screen shots of the setup:
 ![iterm2+neovim](https://github.com/kriox26/dotfiles/blob/master/imgs/neovim1.png)
